@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="54487e500fe6479995141d3318869693" Name="Diagram1">
+        <EntityTypeShape EntityType="FinalAppWebModel.admin" Width="1.5" PointX="3" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.clinicDate" Width="1.5" PointX="8.25" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.clinicHistory" Width="1.5" PointX="5.25" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.doctor" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.doctor_speciality" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.nurse" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.patient" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.person" Width="1.5" PointX="0.75" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.service" Width="1.5" PointX="10.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.speciality" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinalAppWebModel.user" Width="1.5" PointX="0.75" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="FinalAppWebModel.FK_admin_person" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_admin_user" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_clinicDate_doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_clinicDate_nurse" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_clinicDate_patient" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_services_clinicDate" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_clinicHistory_patient" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_doctor_person" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_doctor_speciality_doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_doctor_user" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_services_doctor" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_doctor_speciality_specialties" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_nurse_person" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_nurse_user" ManuallyRouted="false" />
+        <AssociationConnector Association="FinalAppWebModel.FK_patient_person" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
