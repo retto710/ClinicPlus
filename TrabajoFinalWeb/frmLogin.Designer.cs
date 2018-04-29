@@ -35,18 +35,20 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.checkBoxContraseña = new System.Windows.Forms.CheckBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(199, 140);
+            this.txtUsername.Location = new System.Drawing.Point(199, 117);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(100, 20);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(199, 210);
+            this.txtPassword.Location = new System.Drawing.Point(199, 166);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(100, 20);
@@ -67,7 +69,7 @@
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(196, 111);
+            this.lblUser.Location = new System.Drawing.Point(196, 92);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(43, 13);
             this.lblUser.TabIndex = 3;
@@ -76,7 +78,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(196, 182);
+            this.lblPassword.Location = new System.Drawing.Point(196, 145);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(61, 13);
             this.lblPassword.TabIndex = 4;
@@ -84,7 +86,7 @@
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(192, 287);
+            this.btnIngresar.Location = new System.Drawing.Point(199, 298);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(107, 32);
             this.btnIngresar.TabIndex = 5;
@@ -95,7 +97,7 @@
             // checkBoxContraseña
             // 
             this.checkBoxContraseña.AutoSize = true;
-            this.checkBoxContraseña.Location = new System.Drawing.Point(199, 238);
+            this.checkBoxContraseña.Location = new System.Drawing.Point(199, 192);
             this.checkBoxContraseña.Name = "checkBoxContraseña";
             this.checkBoxContraseña.Size = new System.Drawing.Size(118, 17);
             this.checkBoxContraseña.TabIndex = 6;
@@ -103,11 +105,35 @@
             this.checkBoxContraseña.UseVisualStyleBackColor = true;
             this.checkBoxContraseña.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Admin",
+            "Doctor",
+            "Nurse"});
+            this.comboBox1.Location = new System.Drawing.Point(199, 254);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 7;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(196, 228);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Tipo Usuario";
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 361);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkBoxContraseña);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.lblPassword);
@@ -132,6 +158,8 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.CheckBox checkBoxContraseña;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
