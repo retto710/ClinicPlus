@@ -13,5 +13,6 @@ namespace buisnessLogic.User
         user GetUserByUsername(String username);
         void DeleteUser(user objUser);
         void UpadteUser(user objUser);
+        List<user> GetUsers();
     }
 }

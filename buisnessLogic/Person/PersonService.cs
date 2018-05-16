@@ -11,7 +11,8 @@ namespace buisnessLogic.Person
     {
         public void CreatePerson(person objPerson)
         {
-            throw new NotImplementedException();
+            IPersonRepository repo = new PersonRepository();
+            repo.CreatePerson(objPerson);
         }
 
         public void DeletePerson(int id)

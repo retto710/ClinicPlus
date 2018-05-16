@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using buisnessLogic.Person;
+using buisnessLogic.User;
 using Entities;
 namespace TrabajoFinalWeb
 {
@@ -15,9 +16,12 @@ namespace TrabajoFinalWeb
     public partial class frmAdd : Form
     {
         IPersonService personServ = new PersonService();
+        IUserService userService = new UserService();
+        bool exist;
         public frmAdd()
         {
             InitializeComponent();
+            dateOfBirth.MaxDate = DateTime.Today;
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
@@ -40,7 +44,7 @@ namespace TrabajoFinalWeb
                     txtDNI2.Text = txtDNI.Text;
                     cmbGender.Enabled = false;
                     numericAge.Enabled = false;
-                    txtPhoneNumber.Enabled = false;
+                    numericPhoneNumber.Enabled = false;
                     dateOfBirth.Enabled = false;
                     txtEmail.Enabled = false;
                     txtAddress.Enabled = false;
@@ -59,33 +63,74 @@ namespace TrabajoFinalWeb
                         cmbGender.SelectedIndex = 0;
                     }
                     numericAge.Value = objPerson.age;
-                    txtPhoneNumber.Text = objPerson.phone.ToString();
+                    numericPhoneNumber.Value = objPerson.phone;
                     dateOfBirth.Text = objPerson.dateOfBith.ToString();
                     txtEmail.Text = objPerson.email;
                     txtAddress.Text = objPerson.address;
                     txtNationality.Text = objPerson.nationality;
                     txtType.Enabled = true;
+                    exist = true;
                 }
                 else
                 {
                     MessageBox.Show("New Person");
-                    txtName.Enabled = true;
-                    txtLastName.Enabled = true;
+                    txtName.Enabled = true; txtName.Text = "";
+                    txtLastName.Enabled = true; txtLastName.Text ="";
                     txtDNI2.Enabled = true;
                     txtDNI2.Text = txtDNI.Text;
-                    cmbGender.Enabled = true;
-                    numericAge.Enabled = true;
-                    txtPhoneNumber.Enabled = true;
-                    dateOfBirth.Enabled = true;
-                    txtEmail.Enabled = true;
-                    txtAddress.Enabled = true;
-                    txtNationality.Enabled = true;
-                    txtType.Enabled = true;
-
+                    cmbGender.Enabled = true; 
+                    numericAge.Enabled = true; numericAge.Value = 0;
+                    numericPhoneNumber.Enabled = true; numericPhoneNumber.Value = 0;
+                    dateOfBirth.Enabled = true; dateOfBirth.Value=DateTime.Today;
+                    txtEmail.Enabled = true; txtEmail.Text = "";
+                    txtAddress.Enabled = true; txtAddress.Text = "";
+                    txtNationality.Enabled = true; txtNationality.Text = "";
+                    txtType.Enabled = true; txtType.Text = "";
+                    exist = false;
 
                 }
             }
             
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            person objPerson = new person();
+            objPerson.name = txtName.Text.ToString();
+            objPerson.lastName = txtLastName.Text.ToString();
+            objPerson.age = Decimal.ToInt32(numericAge.Value);
+            objPerson.email = txtEmail.Text.ToString();
+            objPerson.address = txtAddress.Text.ToString();
+            objPerson.phone = Decimal.ToInt32(numericPhoneNumber.Value);
+            objPerson.nationality = txtNationality.Text.ToString();
+            objPerson.DNI = Decimal.Parse(txtDNI2.Text.ToString());
+            objPerson.gender = cmbGender.SelectedItem.ToString();
+            objPerson.dateOfBith = dateOfBirth.Value.Date;
+            personServ.CreatePerson(objPerson);
+            String type= txtType.SelectedItem.ToString();
+            char firstLetter = char.ToLower(type[0]);
+            user ObjUser = new user();
+            if (exist==false)
+            {
+                ObjUser.username = firstLetter + txtDNI2.Text.ToString();
+                ObjUser.password = "default";
+                ObjUser.email = txtEmail.Text.ToString();
+                userService.CreateUser(ObjUser);
+            }
+            if (firstLetter=='a')
+            {
+                //Crear administrador
+
+            }
+            else if (firstLetter=='n')
+            {
+                //Crear enferma
+            }
+            else 
+            {
+                //Crear doctor
+            }
 
         }
     }

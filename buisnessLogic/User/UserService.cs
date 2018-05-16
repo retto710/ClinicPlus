@@ -26,6 +26,12 @@ namespace buisnessLogic.User
             return repo.GetUserByUsername(username);
         }
 
+        public List<user> GetUsers()
+        {
+            IUserRepository repo = new UserRepository();
+            return repo.GetUsers();
+        }
+
         public void UpadteUser(user objUser)
         {
             throw new NotImplementedException();

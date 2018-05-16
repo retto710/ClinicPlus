@@ -13,29 +13,11 @@ namespace DataAccess.User
     {
         public void CreateUser(user objUser)
         {
-            string connectionString =
-                  ConfigurationManager.ConnectionStrings["FinalAppWeb"].ConnectionString;
-            string queryString = "usp_CreateUser";
-            using (SqlConnection connection =
-                new SqlConnection(connectionString))
+            using (var dataContext = new FinalAppWebEntities())
             {
-                // Create the Command and Parameter objects.
-                SqlCommand command = new SqlCommand(queryString, connection);
-                command.CommandType = System.Data.CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@username", objUser.username);
-                command.Parameters.AddWithValue("@password", objUser.password);
-                command.Parameters.AddWithValue("@email", objUser.email);
-                    
-                // set to the console window.
-                try
-                {
-                    connection.Open();
-                    command.ExecuteNonQuery();
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
+                
+                dataContext.users.Add(objUser);
+                dataContext.SaveChanges();
             }
         }
 
@@ -55,6 +37,19 @@ namespace DataAccess.User
                             select c;
                 user objUser= custs.FirstOrDefault();
                 return objUser;
+            }
+        }
+
+        public List<user> GetUsers()
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.users
+                            select c;
+                List<user> objsUser = custs.ToList();
+                return objsUser;
             }
         }
 

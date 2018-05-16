@@ -1,4 +1,5 @@
 ﻿using buisnessLogic.User;
+using buisnessLogic.Person;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,9 @@ namespace TrabajoFinalWeb
     {
         frmAdmin frmAdministrador;
         frmDoc frmDoctor;
+        int contador = 0;
         IUserService userService = new UserService();
+        IPersonService personService = new PersonService();
         public frmAdmin FrmAdministrador {
             get {
                 if (frmAdministrador == null || frmAdministrador.IsDisposed)
@@ -50,7 +53,15 @@ namespace TrabajoFinalWeb
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            AutoCompleteStringCollection source = new AutoCompleteStringCollection();
+            List<user> suggestions = userService.GetUsers();
+            while (contador<suggestions.Count)
+            {
+                source.Add(suggestions[contador].username);
+                contador++;
+            }
+            txtUsername.AutoCompleteCustomSource = source;
+           
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -78,12 +89,16 @@ namespace TrabajoFinalWeb
             //Validar Contraseña
             else if (objUser.password == txtPassword.Text)
             {
-                MessageBox.Show("Bienvenido " + objUser.username);
+                String userString = txtUsername.Text.ToString();
+                char type = userString[0];
+                int dni = Int32.Parse(userString.Substring(1));
+                String name = personService.GetPersonByDni(dni).name;
+                MessageBox.Show("Bienvenido " + name);
                 this.Hide();
-                String user = txtUsername.Text.ToString();
-                char type = user[0];
+                
                 if (type == 'a')
                 {
+                    
                     FrmAdministrador.Show();
                 }
                 else if (type == 'd')
@@ -96,6 +111,11 @@ namespace TrabajoFinalWeb
                 MessageBox.Show("Contraseña y/o nombre de usuario incorrecto");
             }
 
+
+        }
+
+        private void lblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
 
         }
     }

@@ -35,21 +35,26 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.checkBoxContraseña = new System.Windows.Forms.CheckBox();
+            this.lblForgotPassword = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(199, 117);
+            this.txtUsername.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtUsername.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtUsername.Location = new System.Drawing.Point(298, 180);
+            this.txtUsername.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(148, 26);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(199, 166);
+            this.txtPassword.Location = new System.Drawing.Point(298, 255);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(148, 26);
             this.txtPassword.TabIndex = 1;
             // 
             // lblTitle
@@ -58,56 +63,73 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.Location = new System.Drawing.Point(150, 31);
+            this.lblTitle.Location = new System.Drawing.Point(225, 48);
+            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(244, 50);
+            this.lblTitle.Size = new System.Drawing.Size(367, 75);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "ClinicPLus";
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(196, 92);
+            this.lblUser.Location = new System.Drawing.Point(294, 142);
+            this.lblUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(43, 13);
+            this.lblUser.Size = new System.Drawing.Size(83, 20);
             this.lblUser.TabIndex = 3;
-            this.lblUser.Text = "Usuario";
+            this.lblUser.Text = "Username";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(196, 145);
+            this.lblPassword.Location = new System.Drawing.Point(294, 223);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(61, 13);
+            this.lblPassword.Size = new System.Drawing.Size(78, 20);
             this.lblPassword.TabIndex = 4;
-            this.lblPassword.Text = "Contraseña";
+            this.lblPassword.Text = "Password";
             // 
             // btnIngresar
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(199, 298);
+            this.btnIngresar.Location = new System.Drawing.Point(298, 384);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(107, 32);
+            this.btnIngresar.Size = new System.Drawing.Size(160, 49);
             this.btnIngresar.TabIndex = 5;
-            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.Text = "Log in";
             this.btnIngresar.UseVisualStyleBackColor = true;
             this.btnIngresar.Click += new System.EventHandler(this.Button1_Click);
             // 
             // checkBoxContraseña
             // 
             this.checkBoxContraseña.AutoSize = true;
-            this.checkBoxContraseña.Location = new System.Drawing.Point(199, 192);
+            this.checkBoxContraseña.Location = new System.Drawing.Point(298, 295);
+            this.checkBoxContraseña.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.checkBoxContraseña.Name = "checkBoxContraseña";
-            this.checkBoxContraseña.Size = new System.Drawing.Size(118, 17);
+            this.checkBoxContraseña.Size = new System.Drawing.Size(148, 24);
             this.checkBoxContraseña.TabIndex = 6;
-            this.checkBoxContraseña.Text = "Mostrar Contraseña";
+            this.checkBoxContraseña.Text = "Show Password";
             this.checkBoxContraseña.UseVisualStyleBackColor = true;
             this.checkBoxContraseña.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // lblForgotPassword
+            // 
+            this.lblForgotPassword.AutoSize = true;
+            this.lblForgotPassword.Location = new System.Drawing.Point(298, 342);
+            this.lblForgotPassword.Name = "lblForgotPassword";
+            this.lblForgotPassword.Size = new System.Drawing.Size(137, 20);
+            this.lblForgotPassword.TabIndex = 7;
+            this.lblForgotPassword.TabStop = true;
+            this.lblForgotPassword.Text = "Forgot password?";
+            this.lblForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lblForgotPassword_LinkClicked);
+            // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 361);
+            this.ClientSize = new System.Drawing.Size(816, 555);
+            this.Controls.Add(this.lblForgotPassword);
             this.Controls.Add(this.checkBoxContraseña);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.lblPassword);
@@ -115,6 +137,7 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -133,6 +156,7 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.CheckBox checkBoxContraseña;
+        private System.Windows.Forms.LinkLabel lblForgotPassword;
     }
 }
 
