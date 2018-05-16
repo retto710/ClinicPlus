@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TrabajoFinalWeb
 {
-    public partial class frmAddDoctor : Form
+    public partial class frmDoc : Form
     {
-        public frmAddDoctor()
+        public frmDoc()
         {
             InitializeComponent();
         }

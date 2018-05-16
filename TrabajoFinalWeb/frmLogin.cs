@@ -15,6 +15,7 @@ namespace TrabajoFinalWeb
     public partial class frmLogin : Form
     {
         frmAdmin frmAdministrador;
+        frmDoc frmDoctor;
         IUserService userService = new UserService();
         public frmAdmin FrmAdministrador {
             get {
@@ -27,11 +28,25 @@ namespace TrabajoFinalWeb
             }
 
         }
+        public frmDoc FrmDoctor
+        {
+            get
+            {
+                if (frmDoctor == null || frmDoctor.IsDisposed)
+                {
+                    frmDoctor = new frmDoc();
+
+                }
+                return frmDoctor;
+            }
+        }
 
         public frmLogin()
         {
             InitializeComponent();
         }
+
+      
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -53,9 +68,9 @@ namespace TrabajoFinalWeb
         private void Button1_Click(object sender, EventArgs e)
         {
             user objUser;
-            objUser=userService.GetUserByUsername(txtUsername.Text.ToLower());
+            objUser = userService.GetUserByUsername(txtUsername.Text.ToLower());
             //Validar si existe
-            if (objUser==null)
+            if (objUser == null)
             {
                 MessageBox.Show("Username incorrecto");
             }
@@ -63,15 +78,25 @@ namespace TrabajoFinalWeb
             //Validar Contraseña
             else if (objUser.password == txtPassword.Text)
             {
-                MessageBox.Show("Bienvenido "+objUser.username);
+                MessageBox.Show("Bienvenido " + objUser.username);
                 this.Hide();
-                FrmAdministrador.Show();
+                String user = txtUsername.Text.ToString();
+                char type = user[0];
+                if (type == 'a')
+                {
+                    FrmAdministrador.Show();
+                }
+                else if (type == 'd')
+                {
+                    FrmDoctor.Show();
+                }
             }
-            else {
+            else
+            {
                 MessageBox.Show("Contraseña y/o nombre de usuario incorrecto");
             }
-           
-      
+
+
         }
     }
 }

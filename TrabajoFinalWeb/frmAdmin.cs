@@ -12,9 +12,30 @@ namespace TrabajoFinalWeb
 {
     public partial class frmAdmin : Form
     {
+        frmAdd frmAddPerson;
+        public frmAdd FrmAdd
+        {
+            get
+            {
+                if (frmAddPerson == null ||
+                    frmAddPerson.IsDisposed)
+                {
+                    frmAddPerson =
+                        new frmAdd();
+                    frmAddPerson.MdiParent = this;
+                }
+                return frmAddPerson;
+            }
+
+        }
         public frmAdmin()
         {
             InitializeComponent();
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.FrmAdd.Show();
         }
     }
 }

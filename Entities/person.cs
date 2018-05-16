@@ -27,7 +27,7 @@ namespace Entities
         public string name { get; set; }
         public string lastName { get; set; }
         public decimal DNI { get; set; }
-        public bool gender { get; set; }
+        public string gender { get; set; }
         public int age { get; set; }
         public decimal phone { get; set; }
         public System.DateTime dateOfBith { get; set; }

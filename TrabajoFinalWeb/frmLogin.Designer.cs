@@ -35,8 +35,6 @@
             this.lblPassword = new System.Windows.Forms.Label();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.checkBoxContraseña = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -105,35 +103,11 @@
             this.checkBoxContraseña.UseVisualStyleBackColor = true;
             this.checkBoxContraseña.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Admin",
-            "Doctor",
-            "Nurse"});
-            this.comboBox1.Location = new System.Drawing.Point(199, 254);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(196, 228);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Tipo Usuario";
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(544, 361);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.checkBoxContraseña);
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.lblPassword);
@@ -142,6 +116,7 @@
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -158,8 +133,6 @@
         private System.Windows.Forms.Label lblPassword;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.CheckBox checkBoxContraseña;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label1;
     }
 }
 
