@@ -20,5 +20,11 @@ namespace buisnessLogic.Doctor
             IDoctorRepository repo = new DoctorRepository();
             return repo.GetDoctorByUserId(userid);
         }
+
+        public List<doctor> GetDoctors()
+        {
+            IDoctorRepository repo = new DoctorRepository();
+            return repo.GetDoctors();
+        }
     }
 }

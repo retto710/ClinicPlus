@@ -52,6 +52,8 @@
     <Compile Include="Doctor\IDoctorService.cs" />
     <Compile Include="Nurse\INurseService.cs" />
     <Compile Include="Nurse\NurseService.cs" />
+    <Compile Include="Patient\IPatientService.cs" />
+    <Compile Include="Patient\PatientService.cs" />
     <Compile Include="Person\IPersonService.cs" />
     <Compile Include="Person\PersonService.cs" />
     <Compile Include="User\IUserService.cs" />

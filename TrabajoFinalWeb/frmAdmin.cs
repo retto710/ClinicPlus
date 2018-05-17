@@ -13,6 +13,7 @@ namespace TrabajoFinalWeb
     public partial class frmAdmin : Form
     {
         frmAdd frmAddPerson;
+        frmList frmListPerson;
         public frmAdd FrmAdd
         {
             get
@@ -28,6 +29,24 @@ namespace TrabajoFinalWeb
             }
 
         }
+
+        public frmList FrmList
+        {
+            get
+            {
+                if (frmListPerson == null ||
+                    frmListPerson.IsDisposed)
+                {
+                    frmListPerson =
+                        new frmList();
+                    frmListPerson.MdiParent = this;
+                }
+                return frmListPerson;
+            }
+
+        }
+
+
         public frmAdmin()
         {
             InitializeComponent();
@@ -36,6 +55,11 @@ namespace TrabajoFinalWeb
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.FrmAdd.Show();
+        }
+
+        private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.FrmList.Show();
         }
     }
 }

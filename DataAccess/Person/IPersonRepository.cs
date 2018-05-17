@@ -12,5 +12,7 @@ namespace DataAccess.Person
         person GetPersonByDni(int dni);
         void UpdatePerson(person objPerson);
         void DeletePerson(int id);
+
+        List<person> GetPersons();
     }
 }

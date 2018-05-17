@@ -17,7 +17,8 @@ namespace buisnessLogic.Person
 
         public void DeletePerson(int id)
         {
-            throw new NotImplementedException();
+            IPersonRepository repo = new PersonRepository();
+            repo.DeletePerson(id);
         }
 
         public person GetPersonByDni(int dni)
@@ -29,6 +30,12 @@ namespace buisnessLogic.Person
         public void UpdatePerson(person objPerson)
         {
             throw new NotImplementedException();
+        }
+
+        public List<person> GetPersons()
+        {
+            IPersonRepository repo = new PersonRepository();
+            return repo.GetPersons();
         }
     }
 }

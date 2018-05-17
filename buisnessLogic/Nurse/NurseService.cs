@@ -20,5 +20,11 @@ namespace buisnessLogic.Nurse
             INurseRepository repo = new NurseRepository();
             return repo.GetNurseByUserId(userid);
         }
+
+        public List<nurse> GetNurses()
+        {
+            INurseRepository repo = new NurseRepository();
+            return repo.GetNurses();
+        }
     }
 }

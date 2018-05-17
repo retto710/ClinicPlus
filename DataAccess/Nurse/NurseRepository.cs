@@ -33,5 +33,18 @@ namespace DataAccess.Nurse
                 return objNurse;
             }
         }
+        
+        public List<nurse> GetNurses()
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.nurses
+                            select c;
+                List<nurse> objPerson = custs.ToList();
+                return objPerson;
+            }
+        }
     }
 }

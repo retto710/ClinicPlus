@@ -54,6 +54,8 @@
     <Compile Include="Doctor\IDoctorRepository.cs" />
     <Compile Include="Nurse\INurseRepository.cs" />
     <Compile Include="Nurse\NurseRepository.cs" />
+    <Compile Include="Patient\IPatientRepository.cs" />
+    <Compile Include="Patient\PatientRepository.cs" />
     <Compile Include="Person\IPersonRepository.cs" />
     <Compile Include="Person\PersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,5 +68,6 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

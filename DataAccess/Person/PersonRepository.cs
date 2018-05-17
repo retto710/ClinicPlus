@@ -24,7 +24,7 @@ namespace DataAccess.Person
 
         public void DeletePerson(int id)
         {
-            throw new NotImplementedException();
+
         }
 
         public person GetPersonByDni(int dni)
@@ -37,6 +37,19 @@ namespace DataAccess.Person
                             where c.DNI == dni
                             select c;
                 person objPerson = custs.FirstOrDefault();
+                return objPerson;
+            }
+        }
+
+        public List<person> GetPersons()
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.people
+                            select c;
+                List<person> objPerson = custs.ToList();
                 return objPerson;
             }
         }

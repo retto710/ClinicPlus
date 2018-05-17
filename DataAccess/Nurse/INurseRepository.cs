@@ -11,5 +11,7 @@ namespace DataAccess.Nurse
     {
         void CreateNurse(nurse objNurse);
         nurse GetNurseByUserId(int userid);
+
+        List<nurse> GetNurses();
     }
 }

@@ -33,5 +33,18 @@ namespace DataAccess.Doctor
                 return objDoctor;
             }
         }
+
+        public List<doctor> GetDoctors()
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.doctors
+                            select c;
+                List<doctor> objDoctor = custs.ToList();
+                return objDoctor;
+            }
+        }
     }
 }
