@@ -50,6 +50,10 @@
     <Compile Include="Admin\AdminRepository.cs" />
     <Compile Include="Admin\IAdminRepository.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="Doctor\DoctorRepository.cs" />
+    <Compile Include="Doctor\IDoctorRepository.cs" />
+    <Compile Include="Nurse\INurseRepository.cs" />
+    <Compile Include="Nurse\NurseRepository.cs" />
     <Compile Include="Person\IPersonRepository.cs" />
     <Compile Include="Person\PersonRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

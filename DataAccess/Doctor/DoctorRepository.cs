@@ -5,32 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 
-namespace DataAccess.Admin
+namespace DataAccess.Doctor
 {
-    public class AdminRepository : IAdminRepository
+    public class DoctorRepository : IDoctorRepository
     {
-        public void CreateAdmin(admin objAdmin)
+        public void CreateDoctor(doctor objDoctor)
         {
             using (var dataContext = new FinalAppWebEntities())
             {
                 //LINQ
                 //return dataContext.Customers.ToList();
-                dataContext.admins.Add(objAdmin);
+                dataContext.doctors.Add(objDoctor);
                 dataContext.SaveChanges();
             }
         }
 
-        public admin GetAdminByUserId(int userid)
+        public doctor GetDoctorByUserId(int userid)
         {
             using (var dataContext = new FinalAppWebEntities())
             {
                 //LINQ
                 //return dataContext.Customers.ToList();
-                var custs = from c in dataContext.admins
+                var custs = from c in dataContext.doctors
                             where c.userId == userid
                             select c;
-                admin objAdmin = custs.FirstOrDefault();
-                return objAdmin;
+                doctor objDoctor = custs.FirstOrDefault();
+                return objDoctor;
             }
         }
     }

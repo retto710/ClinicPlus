@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Entities;
-namespace DataAccess.Admin
+
+namespace buisnessLogic.Admin
 {
-    public interface IAdminRepository
+    public interface IAdminService
     {
         void CreateAdmin(admin objAdmin);
-
         admin GetAdminByUserId(int userid);
     }
 }

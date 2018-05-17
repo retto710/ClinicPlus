@@ -10,6 +10,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using buisnessLogic.Doctor;
+using buisnessLogic.Nurse;
+using buisnessLogic.Admin;
 
 namespace TrabajoFinalWeb
 {
@@ -79,36 +82,75 @@ namespace TrabajoFinalWeb
         private void Button1_Click(object sender, EventArgs e)
         {
             user objUser;
+            
             objUser = userService.GetUserByUsername(txtUsername.Text.ToLower());
-            //Validar si existe
-            if (objUser == null)
+            //validar tipo
+            if (cmbTypeOfUser.SelectedIndex==-1)
             {
-                MessageBox.Show("Username incorrecto");
+                MessageBox.Show("Select a type of user");
+            }
+            //Validar si existe
+            else if (objUser == null)
+            {
+                MessageBox.Show("Username incorrect");
             }
 
             //Validar Contraseña
             else if (objUser.password == txtPassword.Text)
             {
                 String userString = txtUsername.Text.ToString();
-                char type = userString[0];
                 int dni = Int32.Parse(userString.Substring(1));
                 String name = personService.GetPersonByDni(dni).name;
-                MessageBox.Show("Bienvenido " + name);
-                this.Hide();
-                
-                if (type == 'a')
+                MessageBox.Show("Welcome " + name);
+               
+                int userid = objUser.id;
+                String type = cmbTypeOfUser.SelectedItem.ToString();
+                if (type.Equals("Admin"))
                 {
+                    IAdminService adminService = new AdminService();
+                    if (adminService.GetAdminByUserId(userid)==null)
+                    {
+                        MessageBox.Show("Access Denied");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        FrmAdministrador.Show();
+                    }
                     
-                    FrmAdministrador.Show();
                 }
-                else if (type == 'd')
+                else if (type.Equals("Nurse"))
                 {
-                    FrmDoctor.Show();
+                    INurseService nurService = new NurseService();
+                    if (nurService.GetNurseByUserId(userid) == null)
+                    {
+                        MessageBox.Show("Access Denied");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        FrmDoctor.Show();
+                    }
+ 
+                }
+                else if (type.Equals("Doctor"))
+                {
+                    IDoctorService docService = new DoctorService();
+                    if (docService.GetDoctorByUserId(userid) == null)
+                    {
+                        MessageBox.Show("Access Denied");
+                    }
+                    else
+                    {
+                        this.Hide();
+                        FrmDoctor.Show();
+                    }
+
                 }
             }
             else
             {
-                MessageBox.Show("Contraseña y/o nombre de usuario incorrecto");
+                MessageBox.Show("Password or username incorrect");
             }
 
 

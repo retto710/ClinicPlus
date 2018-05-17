@@ -5,32 +5,32 @@ using System.Text;
 using System.Threading.Tasks;
 using Entities;
 
-namespace DataAccess.Admin
+namespace DataAccess.Nurse
 {
-    public class AdminRepository : IAdminRepository
+    public class NurseRepository : INurseRepository
     {
-        public void CreateAdmin(admin objAdmin)
+        public void CreateNurse(nurse objNurse)
         {
             using (var dataContext = new FinalAppWebEntities())
             {
                 //LINQ
                 //return dataContext.Customers.ToList();
-                dataContext.admins.Add(objAdmin);
+                dataContext.nurses.Add(objNurse);
                 dataContext.SaveChanges();
             }
         }
 
-        public admin GetAdminByUserId(int userid)
+        public nurse GetNurseByUserId(int userid)
         {
             using (var dataContext = new FinalAppWebEntities())
             {
                 //LINQ
                 //return dataContext.Customers.ToList();
-                var custs = from c in dataContext.admins
-                            where c.userId == userid
+                var custs = from c in dataContext.nurses
+                            where c.userid == userid
                             select c;
-                admin objAdmin = custs.FirstOrDefault();
-                return objAdmin;
+                nurse objNurse = custs.FirstOrDefault();
+                return objNurse;
             }
         }
     }

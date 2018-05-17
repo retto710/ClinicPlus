@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\AdminService.cs" />
+    <Compile Include="Admin\IAdminService.cs" />
+    <Compile Include="Doctor\DoctorService.cs" />
+    <Compile Include="Doctor\IDoctorService.cs" />
+    <Compile Include="Nurse\INurseService.cs" />
+    <Compile Include="Nurse\NurseService.cs" />
     <Compile Include="Person\IPersonService.cs" />
     <Compile Include="Person\PersonService.cs" />
     <Compile Include="User\IUserService.cs" />
@@ -63,8 +69,6 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Admin\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
