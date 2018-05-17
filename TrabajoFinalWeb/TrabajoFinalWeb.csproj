@@ -51,11 +51,42 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinalAppWebDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalAppWebDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalAppWebDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalAppWebDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalAppWebDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalAppWebDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalAppWebDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalAppWebDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FinalAppWebDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalAppWebDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmAdd.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAdd.Designer.cs">
       <DependentUpon>frmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAddSpeciality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAddSpeciality.Designer.cs">
+      <DependentUpon>frmAddSpeciality.cs</DependentUpon>
     </Compile>
     <Compile Include="frmAdmin.cs">
       <SubType>Form</SubType>
@@ -68,6 +99,12 @@
     </Compile>
     <Compile Include="frmDoc.Designer.cs">
       <DependentUpon>frmDoc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDoctorSpeciality.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDoctorSpeciality.Designer.cs">
+      <DependentUpon>frmDoctorSpeciality.cs</DependentUpon>
     </Compile>
     <Compile Include="frmList.cs">
       <SubType>Form</SubType>
@@ -86,8 +123,14 @@
     <EmbeddedResource Include="frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAddSpeciality.resx">
+      <DependentUpon>frmAddSpeciality.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDoctorSpeciality.resx">
+      <DependentUpon>frmDoctorSpeciality.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmList.resx">
       <DependentUpon>frmList.cs</DependentUpon>
@@ -105,6 +148,61 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="App.config" />
+    <None Include="FinalAppWebDataSet.xsc">
+      <DependentUpon>FinalAppWebDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalAppWebDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalAppWebDataSet.xss">
+      <DependentUpon>FinalAppWebDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet1.xsc">
+      <DependentUpon>FinalAppWebDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalAppWebDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalAppWebDataSet1.xss">
+      <DependentUpon>FinalAppWebDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet2.xsc">
+      <DependentUpon>FinalAppWebDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalAppWebDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalAppWebDataSet2.xss">
+      <DependentUpon>FinalAppWebDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet3.xsc">
+      <DependentUpon>FinalAppWebDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalAppWebDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalAppWebDataSet3.xss">
+      <DependentUpon>FinalAppWebDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet4.xsc">
+      <DependentUpon>FinalAppWebDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalAppWebDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalAppWebDataSet4.xss">
+      <DependentUpon>FinalAppWebDataSet4.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\Entities.doctor.datasource" />
     <None Include="Properties\DataSources\Entities.nurse.datasource" />
     <None Include="Properties\DataSources\Entities.patient.datasource" />

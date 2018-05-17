@@ -17,7 +17,7 @@ namespace Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public speciality()
         {
-            this.doctor_speciality = new HashSet<doctor_speciality>();
+          this.doctor_speciality = new HashSet<doctor_speciality>();
         }
     
         public int ID { get; set; }

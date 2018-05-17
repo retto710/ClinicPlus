@@ -37,6 +37,7 @@
             this.btnNurses = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +48,6 @@
             this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -127,6 +127,7 @@
             this.btnNurses.TabIndex = 0;
             this.btnNurses.Text = "Listar enfermeras";
             this.btnNurses.UseVisualStyleBackColor = true;
+            this.btnNurses.Click += new System.EventHandler(this.btnNurses_Click);
             // 
             // groupBox2
             // 
@@ -164,6 +165,13 @@
             this.dataGridView1.Size = new System.Drawing.Size(1728, 582);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // Delete
+            // 
+            this.Delete.HeaderText = "Delete";
+            this.Delete.Name = "Delete";
+            this.Delete.Text = "Delete";
+            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -224,13 +232,6 @@
             this.nationalityDataGridViewTextBoxColumn.DataPropertyName = "nationality";
             this.nationalityDataGridViewTextBoxColumn.HeaderText = "nationality";
             this.nationalityDataGridViewTextBoxColumn.Name = "nationalityDataGridViewTextBoxColumn";
-            // 
-            // Delete
-            // 
-            this.Delete.HeaderText = "Delete";
-            this.Delete.Name = "Delete";
-            this.Delete.Text = "Delete";
-            this.Delete.UseColumnTextForButtonValue = true;
             // 
             // personBindingSource
             // 

@@ -52,5 +52,10 @@ namespace TrabajoFinalWeb
         {
             loadPersons();
         }
+
+        private void btnNurses_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

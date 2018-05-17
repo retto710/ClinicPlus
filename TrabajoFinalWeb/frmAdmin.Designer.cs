@@ -31,7 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.doctoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.specialityToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.typeOfUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modifyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doctorSpecialitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.solicitudesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
@@ -55,24 +59,57 @@
             // 
             this.doctoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarToolStripMenuItem,
-            this.buscarToolStripMenuItem});
+            this.buscarToolStripMenuItem,
+            this.modifyToolStripMenuItem});
             this.doctoresToolStripMenuItem.Name = "doctoresToolStripMenuItem";
             this.doctoresToolStripMenuItem.Size = new System.Drawing.Size(97, 29);
             this.doctoresToolStripMenuItem.Text = "Accounts";
             // 
             // agregarToolStripMenuItem
             // 
+            this.agregarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.specialityToolStripMenuItem,
+            this.typeOfUserToolStripMenuItem});
             this.agregarToolStripMenuItem.Name = "agregarToolStripMenuItem";
-            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(130, 30);
+            this.agregarToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.agregarToolStripMenuItem.Text = "Add";
             this.agregarToolStripMenuItem.Click += new System.EventHandler(this.agregarToolStripMenuItem_Click);
+            // 
+            // specialityToolStripMenuItem
+            // 
+            this.specialityToolStripMenuItem.Name = "specialityToolStripMenuItem";
+            this.specialityToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.specialityToolStripMenuItem.Text = "Speciality";
+            this.specialityToolStripMenuItem.Click += new System.EventHandler(this.specialityToolStripMenuItem_Click);
+            // 
+            // typeOfUserToolStripMenuItem
+            // 
+            this.typeOfUserToolStripMenuItem.Name = "typeOfUserToolStripMenuItem";
+            this.typeOfUserToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.typeOfUserToolStripMenuItem.Text = "User";
+            this.typeOfUserToolStripMenuItem.Click += new System.EventHandler(this.typeOfUserToolStripMenuItem_Click);
             // 
             // buscarToolStripMenuItem
             // 
             this.buscarToolStripMenuItem.Name = "buscarToolStripMenuItem";
-            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(130, 30);
+            this.buscarToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
             this.buscarToolStripMenuItem.Text = "List";
             this.buscarToolStripMenuItem.Click += new System.EventHandler(this.buscarToolStripMenuItem_Click);
+            // 
+            // modifyToolStripMenuItem
+            // 
+            this.modifyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.doctorSpecialitiesToolStripMenuItem});
+            this.modifyToolStripMenuItem.Name = "modifyToolStripMenuItem";
+            this.modifyToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.modifyToolStripMenuItem.Text = "Modify";
+            // 
+            // doctorSpecialitiesToolStripMenuItem
+            // 
+            this.doctorSpecialitiesToolStripMenuItem.Name = "doctorSpecialitiesToolStripMenuItem";
+            this.doctorSpecialitiesToolStripMenuItem.Size = new System.Drawing.Size(252, 30);
+            this.doctorSpecialitiesToolStripMenuItem.Text = "Doctor Specialities";
+            this.doctorSpecialitiesToolStripMenuItem.Click += new System.EventHandler(this.doctorSpecialitiesToolStripMenuItem_Click);
             // 
             // solicitudesToolStripMenuItem
             // 
@@ -115,5 +152,9 @@
         private System.Windows.Forms.ToolStripMenuItem buscarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem solicitudesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem specialityToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem typeOfUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem doctorSpecialitiesToolStripMenuItem;
     }
 }

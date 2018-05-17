@@ -17,7 +17,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="clinicHistorytId" Type="int" Nullable="false" />
           <Property Name="doctorId" Type="int" Nullable="false" />
           <Property Name="nurseId" Type="int" Nullable="false" />
@@ -45,7 +45,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="personId" Type="int" Nullable="false" />
           <Property Name="userId" Type="int" Nullable="false" />
           <Property Name="dateOfEnrollment" Type="date" Nullable="false" />
@@ -55,7 +55,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="doctorId" Type="int" Nullable="false" />
           <Property Name="specialityId" Type="int" Nullable="false" />
         </EntityType>
@@ -107,7 +107,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="user">
@@ -391,7 +391,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="clinicHistorytId" Type="Int32" Nullable="false" />
           <Property Name="doctorId" Type="Int32" Nullable="false" />
           <Property Name="nurseId" Type="Int32" Nullable="false" />
@@ -425,7 +425,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="personId" Type="Int32" Nullable="false" />
           <Property Name="userId" Type="Int32" Nullable="false" />
           <Property Name="dateOfEnrollment" Type="DateTime" Nullable="false" Precision="0" />
@@ -440,7 +440,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="doctorId" Type="Int32" Nullable="false" />
           <Property Name="specialityId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="doctor" Relationship="Self.FK_doctor_speciality_doctor" FromRole="doctor_speciality" ToRole="doctor" />
@@ -505,7 +505,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="doctor_speciality" Relationship="Self.FK_doctor_speciality_specialties" FromRole="speciality" ToRole="doctor_speciality" />
         </EntityType>
