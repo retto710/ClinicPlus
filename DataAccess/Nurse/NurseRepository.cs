@@ -20,6 +20,34 @@ namespace DataAccess.Nurse
             }
         }
 
+        public void DeleteNurse(int id)
+        {
+            using (var dataContext =
+                 new FinalAppWebEntities())
+            {         
+                var cust = from c in dataContext.nurses
+                           where c.id == id
+                           select c;
+                nurse objNurse = cust.FirstOrDefault();
+                dataContext.nurses.Remove(objNurse);              
+                dataContext.SaveChanges();
+            }
+        }
+
+        public nurse GetNurseByPersonId(int personid)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.nurses
+                            where c.personId == personid
+                            select c;
+                nurse objNurse = custs.FirstOrDefault();
+                return objNurse;
+            }
+        }
+
         public nurse GetNurseByUserId(int userid)
         {
             using (var dataContext = new FinalAppWebEntities())

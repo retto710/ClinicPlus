@@ -15,6 +15,18 @@ namespace buisnessLogic.Nurse
             repo.CreateNurse(objNurse);
         }
 
+        public void DeleteNurse(int id)
+        {
+            INurseRepository repo = new NurseRepository();
+            repo.DeleteNurse(id);
+        }
+
+        public nurse GetNurseByPersonId(int personid)
+        {
+            INurseRepository repo = new NurseRepository();
+            return repo.GetNurseByUserId(personid);
+        }
+
         public nurse GetNurseByUserId(int userid)
         {
             INurseRepository repo = new NurseRepository();

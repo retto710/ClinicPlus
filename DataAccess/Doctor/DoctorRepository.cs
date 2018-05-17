@@ -20,6 +20,20 @@ namespace DataAccess.Doctor
             }
         }
 
+        public doctor GetDoctorByPersonId(int personid)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.doctors
+                            where c.personId == personid
+                            select c;
+                doctor objDoctor = custs.FirstOrDefault();
+                return objDoctor;
+            }
+        }
+
         public doctor GetDoctorByUserId(int userid)
         {
             using (var dataContext = new FinalAppWebEntities())

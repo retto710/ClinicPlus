@@ -10,6 +10,7 @@ namespace DataAccess.Person
     {
         void CreatePerson(person objPerson);
         person GetPersonByDni(int dni);
+        person GetPersonById(int id);
         void UpdatePerson(person objPerson);
         void DeletePerson(int id);
 

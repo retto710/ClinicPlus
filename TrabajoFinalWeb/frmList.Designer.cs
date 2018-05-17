@@ -87,6 +87,7 @@
             this.btnAll.TabIndex = 4;
             this.btnAll.Text = "Listar todos";
             this.btnAll.UseVisualStyleBackColor = true;
+            this.btnAll.Click += new System.EventHandler(this.btnAll_Click);
             // 
             // label1
             // 
@@ -107,6 +108,7 @@
             this.btnPatient.TabIndex = 2;
             this.btnPatient.Text = "Listar Pacientes";
             this.btnPatient.UseVisualStyleBackColor = true;
+            this.btnPatient.Click += new System.EventHandler(this.btnPatient_Click);
             // 
             // btnDoctors
             // 
@@ -117,6 +119,7 @@
             this.btnDoctors.TabIndex = 1;
             this.btnDoctors.Text = "Listar Doctores";
             this.btnDoctors.UseVisualStyleBackColor = true;
+            this.btnDoctors.Click += new System.EventHandler(this.btnDoctors_Click);
             // 
             // btnNurses
             // 

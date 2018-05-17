@@ -16,6 +16,12 @@ namespace buisnessLogic.Admin
             repo.CreateAdmin(objAdmin);
         }
 
+        public admin GetAdminByPersonId(int personid)
+        {
+            IAdminRepository repo = new AdminRepository();
+            return repo.GetAdminByUserId(personid);
+        }
+
         public admin GetAdminByUserId(int userid)
         {
             IAdminRepository repo = new AdminRepository();

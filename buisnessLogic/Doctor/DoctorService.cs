@@ -15,6 +15,12 @@ namespace buisnessLogic.Doctor
             repo.CreateDoctor(objDoctor);
         }
 
+        public doctor GetDoctorByPersonId(int personid)
+        {
+            IDoctorRepository repo = new DoctorRepository();
+            return repo.GetDoctorByPersonId(personid);
+        }
+
         public doctor GetDoctorByUserId(int userid)
         {
             IDoctorRepository repo = new DoctorRepository();

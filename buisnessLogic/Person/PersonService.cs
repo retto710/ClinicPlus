@@ -37,5 +37,11 @@ namespace buisnessLogic.Person
             IPersonRepository repo = new PersonRepository();
             return repo.GetPersons();
         }
+
+        public person GetPersonById(int id)
+        {
+            IPersonRepository repo = new PersonRepository();
+            return repo.GetPersonById(id);
+        }
     }
 }

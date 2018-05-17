@@ -11,5 +11,6 @@ namespace buisnessLogic.Admin
     {
         void CreateAdmin(admin objAdmin);
         admin GetAdminByUserId(int userid);
+        admin GetAdminByPersonId(int personid);
     }
 }
