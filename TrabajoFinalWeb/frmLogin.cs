@@ -13,6 +13,7 @@ using System.Windows.Forms;
 using buisnessLogic.Doctor;
 using buisnessLogic.Nurse;
 using buisnessLogic.Admin;
+using TrabajoFinalWeb.frmsNurses;
 
 namespace TrabajoFinalWeb
 {
@@ -20,6 +21,7 @@ namespace TrabajoFinalWeb
     {
         frmAdmin frmAdministrador;
         frmDoc frmDoctor;
+        frmNurse frmNurses;
         int contador = 0;
         IUserService userService = new UserService();
         IPersonService personService = new PersonService();
@@ -44,6 +46,18 @@ namespace TrabajoFinalWeb
 
                 }
                 return frmDoctor;
+            }
+        }
+        public frmNurse FrmNurses
+        {
+            get
+            {
+                if (frmNurses == null || frmNurses.IsDisposed)
+                {
+                    frmNurses = new frmNurse();
+
+                }
+                return frmNurses;
             }
         }
 
@@ -129,7 +143,7 @@ namespace TrabajoFinalWeb
                     else
                     {
                         this.Hide();
-                        FrmDoctor.Show();
+                        FrmNurses.Show();
                     }
  
                 }

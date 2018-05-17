@@ -1,7 +1,6 @@
-﻿
-namespace TrabajoFinalWeb
+﻿namespace TrabajoFinalWeb.frmsNurses
 {
-    partial class frmAdd
+    partial class frmRandU
     {
         /// <summary>
         /// Required designer variable.
@@ -36,8 +35,6 @@ namespace TrabajoFinalWeb
             this.BtnSearch = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.lblType = new System.Windows.Forms.Label();
             this.txtNationality = new System.Windows.Forms.TextBox();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -57,14 +54,30 @@ namespace TrabajoFinalWeb
             this.numericAge = new System.Windows.Forms.NumericUpDown();
             this.dateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.txtType = new System.Windows.Forms.ComboBox();
             this.numericPhoneNumber = new System.Windows.Forms.NumericUpDown();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblClinicHistoryDateCretion = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblInfoDateHistoryClinic = new System.Windows.Forms.Label();
+            this.lblWeigth = new System.Windows.Forms.Label();
+            this.lblHeigth = new System.Windows.Forms.Label();
+            this.txtWeigth = new System.Windows.Forms.TextBox();
+            this.txtHeigth = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblAlergias = new System.Windows.Forms.Label();
+            this.ckAlergias = new System.Windows.Forms.CheckBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblAlergiasPaciente = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericAge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPhoneNumber)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -76,7 +89,7 @@ namespace TrabajoFinalWeb
             this.groupBox1.Size = new System.Drawing.Size(800, 100);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.groupBox1.Text = "Registro paciente";
             // 
             // tableLayoutPanel1
             // 
@@ -127,18 +140,16 @@ namespace TrabajoFinalWeb
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 100);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(800, 338);
+            this.groupBox2.Size = new System.Drawing.Size(800, 362);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
+            this.groupBox2.Text = "Datos";
             // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.btnAdd, 0, 11);
-            this.tableLayoutPanel2.Controls.Add(this.lblType, 0, 10);
             this.tableLayoutPanel2.Controls.Add(this.txtNationality, 1, 9);
             this.tableLayoutPanel2.Controls.Add(this.txtAddress, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.txtEmail, 1, 7);
@@ -158,11 +169,11 @@ namespace TrabajoFinalWeb
             this.tableLayoutPanel2.Controls.Add(this.numericAge, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.dateOfBirth, 1, 6);
             this.tableLayoutPanel2.Controls.Add(this.lblAddress, 0, 8);
-            this.tableLayoutPanel2.Controls.Add(this.txtType, 1, 10);
             this.tableLayoutPanel2.Controls.Add(this.numericPhoneNumber, 1, 5);
+            this.tableLayoutPanel2.Controls.Add(this.btnAdd, 0, 10);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(12, 19);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 12;
+            this.tableLayoutPanel2.RowCount = 11;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00225F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00225F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.00225F));
@@ -173,35 +184,15 @@ namespace TrabajoFinalWeb
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.994749F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.994749F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.994749F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(396, 304);
             this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(3, 283);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 18);
-            this.btnAdd.TabIndex = 14;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(3, 260);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(31, 13);
-            this.lblType.TabIndex = 17;
-            this.lblType.Text = "Type";
             // 
             // txtNationality
             // 
             this.txtNationality.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtNationality.Enabled = false;
-            this.txtNationality.Location = new System.Drawing.Point(201, 237);
+            this.txtNationality.Location = new System.Drawing.Point(201, 255);
             this.txtNationality.Name = "txtNationality";
             this.txtNationality.Size = new System.Drawing.Size(192, 20);
             this.txtNationality.TabIndex = 12;
@@ -210,7 +201,7 @@ namespace TrabajoFinalWeb
             // 
             this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtAddress.Enabled = false;
-            this.txtAddress.Location = new System.Drawing.Point(201, 211);
+            this.txtAddress.Location = new System.Drawing.Point(201, 227);
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(192, 20);
             this.txtAddress.TabIndex = 11;
@@ -219,7 +210,7 @@ namespace TrabajoFinalWeb
             // 
             this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtEmail.Enabled = false;
-            this.txtEmail.Location = new System.Drawing.Point(201, 185);
+            this.txtEmail.Location = new System.Drawing.Point(201, 199);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(192, 20);
             this.txtEmail.TabIndex = 10;
@@ -227,7 +218,7 @@ namespace TrabajoFinalWeb
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(3, 182);
+            this.lblEmail.Location = new System.Drawing.Point(3, 196);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(32, 13);
             this.lblEmail.TabIndex = 3;
@@ -236,7 +227,7 @@ namespace TrabajoFinalWeb
             // lblNationality
             // 
             this.lblNationality.AutoSize = true;
-            this.lblNationality.Location = new System.Drawing.Point(3, 234);
+            this.lblNationality.Location = new System.Drawing.Point(3, 252);
             this.lblNationality.Name = "lblNationality";
             this.lblNationality.Size = new System.Drawing.Size(56, 13);
             this.lblNationality.TabIndex = 13;
@@ -246,7 +237,7 @@ namespace TrabajoFinalWeb
             // 
             this.txtDNI2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDNI2.Enabled = false;
-            this.txtDNI2.Location = new System.Drawing.Point(201, 55);
+            this.txtDNI2.Location = new System.Drawing.Point(201, 59);
             this.txtDNI2.Name = "txtDNI2";
             this.txtDNI2.Size = new System.Drawing.Size(192, 20);
             this.txtDNI2.TabIndex = 5;
@@ -255,7 +246,7 @@ namespace TrabajoFinalWeb
             // 
             this.txtLastName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtLastName.Enabled = false;
-            this.txtLastName.Location = new System.Drawing.Point(201, 29);
+            this.txtLastName.Location = new System.Drawing.Point(201, 31);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(192, 20);
             this.txtLastName.TabIndex = 4;
@@ -263,7 +254,7 @@ namespace TrabajoFinalWeb
             // lblDateOfBirth
             // 
             this.lblDateOfBirth.AutoSize = true;
-            this.lblDateOfBirth.Location = new System.Drawing.Point(3, 156);
+            this.lblDateOfBirth.Location = new System.Drawing.Point(3, 168);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
             this.lblDateOfBirth.Size = new System.Drawing.Size(66, 13);
             this.lblDateOfBirth.TabIndex = 2;
@@ -272,7 +263,7 @@ namespace TrabajoFinalWeb
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(3, 130);
+            this.lblPhoneNumber.Location = new System.Drawing.Point(3, 140);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(78, 13);
             this.lblPhoneNumber.TabIndex = 2;
@@ -281,7 +272,7 @@ namespace TrabajoFinalWeb
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(3, 104);
+            this.lblAge.Location = new System.Drawing.Point(3, 112);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(26, 13);
             this.lblAge.TabIndex = 2;
@@ -290,7 +281,7 @@ namespace TrabajoFinalWeb
             // lblGender
             // 
             this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(3, 78);
+            this.lblGender.Location = new System.Drawing.Point(3, 84);
             this.lblGender.Name = "lblGender";
             this.lblGender.Size = new System.Drawing.Size(42, 13);
             this.lblGender.TabIndex = 1;
@@ -308,7 +299,7 @@ namespace TrabajoFinalWeb
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(3, 26);
+            this.lblLastName.Location = new System.Drawing.Point(3, 28);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(58, 13);
             this.lblLastName.TabIndex = 1;
@@ -317,7 +308,7 @@ namespace TrabajoFinalWeb
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(3, 52);
+            this.lblDNI.Location = new System.Drawing.Point(3, 56);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(26, 13);
             this.lblDNI.TabIndex = 2;
@@ -332,7 +323,7 @@ namespace TrabajoFinalWeb
             this.cmbGender.Items.AddRange(new object[] {
             "Female",
             "Male"});
-            this.cmbGender.Location = new System.Drawing.Point(201, 81);
+            this.cmbGender.Location = new System.Drawing.Point(201, 87);
             this.cmbGender.Name = "cmbGender";
             this.cmbGender.Size = new System.Drawing.Size(192, 21);
             this.cmbGender.TabIndex = 6;
@@ -350,7 +341,7 @@ namespace TrabajoFinalWeb
             // 
             this.numericAge.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericAge.Enabled = false;
-            this.numericAge.Location = new System.Drawing.Point(201, 107);
+            this.numericAge.Location = new System.Drawing.Point(201, 115);
             this.numericAge.Name = "numericAge";
             this.numericAge.Size = new System.Drawing.Size(192, 20);
             this.numericAge.TabIndex = 7;
@@ -358,7 +349,7 @@ namespace TrabajoFinalWeb
             // dateOfBirth
             // 
             this.dateOfBirth.Enabled = false;
-            this.dateOfBirth.Location = new System.Drawing.Point(201, 159);
+            this.dateOfBirth.Location = new System.Drawing.Point(201, 171);
             this.dateOfBirth.Name = "dateOfBirth";
             this.dateOfBirth.Size = new System.Drawing.Size(192, 20);
             this.dateOfBirth.TabIndex = 9;
@@ -366,33 +357,17 @@ namespace TrabajoFinalWeb
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(3, 208);
+            this.lblAddress.Location = new System.Drawing.Point(3, 224);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(45, 13);
             this.lblAddress.TabIndex = 12;
             this.lblAddress.Text = "Address";
             // 
-            // txtType
-            // 
-            this.txtType.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.txtType.Enabled = false;
-            this.txtType.FormattingEnabled = true;
-            this.txtType.Items.AddRange(new object[] {
-            "Admin",
-            "Doctor",
-            "Nurse",
-            "Patient"});
-            this.txtType.Location = new System.Drawing.Point(201, 263);
-            this.txtType.Name = "txtType";
-            this.txtType.Size = new System.Drawing.Size(192, 21);
-            this.txtType.TabIndex = 13;
-            // 
             // numericPhoneNumber
             // 
             this.numericPhoneNumber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numericPhoneNumber.Enabled = false;
-            this.numericPhoneNumber.Location = new System.Drawing.Point(200, 132);
+            this.numericPhoneNumber.Location = new System.Drawing.Point(200, 142);
             this.numericPhoneNumber.Margin = new System.Windows.Forms.Padding(2);
             this.numericPhoneNumber.Maximum = new decimal(new int[] {
             999999999,
@@ -403,15 +378,156 @@ namespace TrabajoFinalWeb
             this.numericPhoneNumber.Size = new System.Drawing.Size(194, 20);
             this.numericPhoneNumber.TabIndex = 8;
             // 
-            // frmAdd
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(3, 283);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 18);
+            this.btnAdd.TabIndex = 14;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.lblAlergiasPaciente);
+            this.groupBox3.Controls.Add(this.dataGridView1);
+            this.groupBox3.Controls.Add(this.ckAlergias);
+            this.groupBox3.Controls.Add(this.lblAlergias);
+            this.groupBox3.Controls.Add(this.lblDescripcion);
+            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtHeigth);
+            this.groupBox3.Controls.Add(this.txtWeigth);
+            this.groupBox3.Controls.Add(this.lblHeigth);
+            this.groupBox3.Controls.Add(this.lblWeigth);
+            this.groupBox3.Controls.Add(this.lblInfoDateHistoryClinic);
+            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.lblClinicHistoryDateCretion);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox3.Location = new System.Drawing.Point(0, 468);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(800, 386);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Historia Clinica";
+            // 
+            // lblClinicHistoryDateCretion
+            // 
+            this.lblClinicHistoryDateCretion.AutoSize = true;
+            this.lblClinicHistoryDateCretion.Location = new System.Drawing.Point(15, 40);
+            this.lblClinicHistoryDateCretion.Name = "lblClinicHistoryDateCretion";
+            this.lblClinicHistoryDateCretion.Size = new System.Drawing.Size(197, 13);
+            this.lblClinicHistoryDateCretion.TabIndex = 0;
+            this.lblClinicHistoryDateCretion.Text = "fecha de creacion o ultima actualziacion";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(235, 37);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(160, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // lblInfoDateHistoryClinic
+            // 
+            this.lblInfoDateHistoryClinic.AutoSize = true;
+            this.lblInfoDateHistoryClinic.Location = new System.Drawing.Point(433, 40);
+            this.lblInfoDateHistoryClinic.Name = "lblInfoDateHistoryClinic";
+            this.lblInfoDateHistoryClinic.Size = new System.Drawing.Size(0, 13);
+            this.lblInfoDateHistoryClinic.TabIndex = 2;
+            // 
+            // lblWeigth
+            // 
+            this.lblWeigth.AutoSize = true;
+            this.lblWeigth.Location = new System.Drawing.Point(18, 77);
+            this.lblWeigth.Name = "lblWeigth";
+            this.lblWeigth.Size = new System.Drawing.Size(31, 13);
+            this.lblWeigth.TabIndex = 3;
+            this.lblWeigth.Text = "Peso";
+            // 
+            // lblHeigth
+            // 
+            this.lblHeigth.AutoSize = true;
+            this.lblHeigth.Location = new System.Drawing.Point(21, 114);
+            this.lblHeigth.Name = "lblHeigth";
+            this.lblHeigth.Size = new System.Drawing.Size(34, 13);
+            this.lblHeigth.TabIndex = 4;
+            this.lblHeigth.Text = "Altura";
+            // 
+            // txtWeigth
+            // 
+            this.txtWeigth.Location = new System.Drawing.Point(235, 70);
+            this.txtWeigth.Name = "txtWeigth";
+            this.txtWeigth.Size = new System.Drawing.Size(160, 20);
+            this.txtWeigth.TabIndex = 5;
+            // 
+            // txtHeigth
+            // 
+            this.txtHeigth.Location = new System.Drawing.Point(235, 111);
+            this.txtHeigth.Name = "txtHeigth";
+            this.txtHeigth.Size = new System.Drawing.Size(160, 20);
+            this.txtHeigth.TabIndex = 6;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(235, 200);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(160, 20);
+            this.textBox2.TabIndex = 7;
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(21, 203);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 8;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // lblAlergias
+            // 
+            this.lblAlergias.AutoSize = true;
+            this.lblAlergias.Location = new System.Drawing.Point(21, 160);
+            this.lblAlergias.Name = "lblAlergias";
+            this.lblAlergias.Size = new System.Drawing.Size(44, 13);
+            this.lblAlergias.TabIndex = 10;
+            this.lblAlergias.Text = "Alergias";
+            // 
+            // ckAlergias
+            // 
+            this.ckAlergias.AutoSize = true;
+            this.ckAlergias.Location = new System.Drawing.Point(235, 159);
+            this.ckAlergias.Name = "ckAlergias";
+            this.ckAlergias.Size = new System.Drawing.Size(15, 14);
+            this.ckAlergias.TabIndex = 11;
+            this.ckAlergias.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(467, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(272, 150);
+            this.dataGridView1.TabIndex = 12;
+            // 
+            // lblAlergiasPaciente
+            // 
+            this.lblAlergiasPaciente.AutoSize = true;
+            this.lblAlergiasPaciente.Location = new System.Drawing.Point(467, 40);
+            this.lblAlergiasPaciente.Name = "lblAlergiasPaciente";
+            this.lblAlergiasPaciente.Size = new System.Drawing.Size(42, 13);
+            this.lblAlergiasPaciente.TabIndex = 13;
+            this.lblAlergiasPaciente.Text = "Alergia:";
+            // 
+            // frmRandU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 854);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmAdd";
+            this.Name = "frmRandU";
             this.Text = "frmAddDoctor";
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
@@ -421,6 +537,9 @@ namespace TrabajoFinalWeb
             this.tableLayoutPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericAge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericPhoneNumber)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -454,8 +573,20 @@ namespace TrabajoFinalWeb
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.ComboBox txtType;
         private System.Windows.Forms.NumericUpDown numericPhoneNumber;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label lblClinicHistoryDateCretion;
+        private System.Windows.Forms.Label lblAlergiasPaciente;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.CheckBox ckAlergias;
+        private System.Windows.Forms.Label lblAlergias;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtHeigth;
+        private System.Windows.Forms.TextBox txtWeigth;
+        private System.Windows.Forms.Label lblHeigth;
+        private System.Windows.Forms.Label lblWeigth;
+        private System.Windows.Forms.Label lblInfoDateHistoryClinic;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

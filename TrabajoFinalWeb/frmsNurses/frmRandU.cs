@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,9 +14,9 @@ using buisnessLogic.User;
 using buisnessLogic.Admin;
 using buisnessLogic.Patient;
 using Entities;
-namespace TrabajoFinalWeb
+namespace TrabajoFinalWeb.frmsNurses
 {
-      public partial class frmAdd : Form
+      public partial class frmRandU : Form
     {
         IPersonService personServ = new PersonService();
         IPatientService patientServ = new PatientService();
@@ -42,7 +41,6 @@ namespace TrabajoFinalWeb
             txtEmail.Enabled = enable;
             txtAddress.Enabled = enable;
             txtNationality.Enabled = enable;
-            txtType.Enabled = enable;
 
         }
         private void initialize()
@@ -56,9 +54,8 @@ namespace TrabajoFinalWeb
             txtEmail.Text = "";
             txtAddress.Text = "";
             txtNationality.Text = "";
-            txtType.Text = "";
         }
-        public frmAdd()
+        public frmRandU()
         {
             InitializeComponent();
             dateOfBirth.MaxDate = DateTime.Today;
@@ -107,7 +104,6 @@ namespace TrabajoFinalWeb
                     txtEmail.Text = objPerson.email;
                     txtAddress.Text = objPerson.address;
                     txtNationality.Text = objPerson.nationality;
-                    txtType.Enabled = true;
                    
                 }
                 else
@@ -124,7 +120,6 @@ namespace TrabajoFinalWeb
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            String type = txtType.SelectedItem.ToString();
             String name = objPerson.name;
             char firstletter = name[0];
             int dniValue = Decimal.ToInt32(objPerson.DNI);
@@ -145,7 +140,7 @@ namespace TrabajoFinalWeb
                 personServ.CreatePerson(objPerson);
             }
             //Verifico si tiene usuario y si no es estoy creando paciente
-            if (userService.GetUserByUsername(username) == null&&type!="Patient")
+            if (userService.GetUserByUsername(username) == null)
             {
                 objUser = new user();
                 objUser.username = username;
@@ -153,88 +148,6 @@ namespace TrabajoFinalWeb
                 objUser.password = "default1";
                 userService.CreateUser(objUser);
             }
-            //VERIFICAR TIPO DE USUARIO 
-            if (type.Equals("Admin"))
-            {
-                admin objAdmin = new admin();
-                //Buscamos el usuario
-                objUser = userService.GetUserByUsername(username);
-                //Buscamos la persona
-                objPerson = personServ.GetPersonByDni(dniValue);
-                //Lo asignamos al admin
-                objAdmin = new admin();
-                objAdmin.userId = objUser.id;
-                objAdmin.personId = objPerson.ID;
-                //lo creamos
-                if (adminService.GetAdminByUserId(objAdmin.userId) != null)
-                {
-                    MessageBox.Show("This user is already an Admin");
-                }
-                else
-                {
-                    adminService.CreateAdmin(objAdmin);
-                    MessageBox.Show("New Admin Saved");
-                    enableTextbox(false);
-                    initialize();
-                }
-               
-            }
-
-            else if (type.Equals("Doctor"))
-            {
-                doctor objDoctor = new doctor();
-                //Buscamos el usuario
-                objUser = userService.GetUserByUsername(username);
-                //Buscamos la persona
-                objPerson = personServ.GetPersonByDni(dniValue);
-                //Lo asignamos al admin
-                objDoctor = new doctor();
-                objDoctor.userId = objUser.id;
-                objDoctor.personId = objPerson.ID;
-                objDoctor.dateOfEnrollment = DateTime.Today;
-                objDoctor.status = true;
-                //lo creamos
-                if (docService.GetDoctorByUserId(objDoctor.userId) != null)
-                {
-                    MessageBox.Show("This user is already a Doctor");
-                }
-                else
-                {
-                    docService.CreateDoctor(objDoctor);
-                    MessageBox.Show("New Doctor Saved");
-                    enableTextbox(false);
-                    initialize();
-                }
-
-            }
-
-            else if (type.Equals("Nurse"))
-            {
-                nurse objNurse = new nurse();
-                //Buscamos el usuario
-                objUser = userService.GetUserByUsername(username);
-                //Buscamos la persona
-                objPerson = personServ.GetPersonByDni(dniValue);
-                //Lo asignamos al admin
-                objNurse = new nurse();
-                objNurse.userid = objUser.id;
-                objNurse.personId = objPerson.ID;
-                //lo creamos
-                if (nurService.GetNurseByUserId(objNurse.userid) != null)
-                {
-                    MessageBox.Show("This user is already a Nurse");
-                }
-                else
-                {
-                    nurService.CreateNurse(objNurse);
-                    MessageBox.Show("New Nurse Saved");
-                    enableTextbox(false);
-                    initialize();
-                }
-
-            }
-            else if (type.Equals("Patient"))
-            {
                 patient objPatient = new patient();
                 //Buscamos el usuario
                 objUser = userService.GetUserByUsername(username);
@@ -255,8 +168,7 @@ namespace TrabajoFinalWeb
                     enableTextbox(false);
                     initialize();
                 }
-
-            }
+                
         }
     }
 }

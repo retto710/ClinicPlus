@@ -94,10 +94,10 @@
     <Compile Include="frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDoc.cs">
+    <Compile Include="frmsDoctor\frmDoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDoc.Designer.cs">
+    <Compile Include="frmsDoctor\frmDoc.Designer.cs">
       <DependentUpon>frmDoc.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDoctorSpeciality.cs">
@@ -118,6 +118,36 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmsDoctor\FrmMySpecialities.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsDoctor\FrmMySpecialities.Designer.cs">
+      <DependentUpon>FrmMySpecialities.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsDoctor\FrmPacientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsDoctor\FrmPacientes.Designer.cs">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsNurses\frmPatientDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsNurses\frmPatientDate.Designer.cs">
+      <DependentUpon>frmPatientDate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsNurses\frmRandU.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsNurses\frmRandU.Designer.cs">
+      <DependentUpon>frmRandU.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsNurses\frmNurse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsNurses\frmNurse.Designer.cs">
+      <DependentUpon>frmNurse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAdd.resx">
@@ -137,6 +167,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsDoctor\frmDoc.resx">
+      <DependentUpon>frmDoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsDoctor\FrmPacientes.resx">
+      <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsNurses\frmPatientDate.resx">
+      <DependentUpon>frmPatientDate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsNurses\frmRandU.resx">
+      <DependentUpon>frmRandU.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsNurses\frmNurse.resx">
+      <DependentUpon>frmNurse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

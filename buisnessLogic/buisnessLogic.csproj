@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Admin\AdminService.cs" />
     <Compile Include="Admin\IAdminService.cs" />
+    <Compile Include="ClinicHistory\ClinicHistoryService.cs" />
+    <Compile Include="ClinicHistory\IClinicHistoryService.cs" />
     <Compile Include="DoctorSpeciality\DoctorSpecialityService.cs" />
     <Compile Include="DoctorSpeciality\IDoctorSpecialityService.cs" />
     <Compile Include="Doctor\DoctorService.cs" />

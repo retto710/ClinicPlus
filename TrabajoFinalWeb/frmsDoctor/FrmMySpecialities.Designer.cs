@@ -1,6 +1,6 @@
-﻿namespace TrabajoFinalWeb
+﻿namespace TrabajoFinalWeb.frmsDoctor
 {
-    partial class frmDoc
+    partial class FrmMySpecialities
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "frmDctor";
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Text = "FrmMySpecialities";
         }
 
         #endregion

@@ -50,6 +50,8 @@
     <Compile Include="Admin\AdminRepository.cs" />
     <Compile Include="Admin\IAdminRepository.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="ClinicHistory\ClinicHistoryRepository.cs" />
+    <Compile Include="ClinicHistory\IClinicHistoryRepository.cs" />
     <Compile Include="DoctorSpeciality\DoctorSpecialityRepository.cs" />
     <Compile Include="DoctorSpeciality\IDoctorSpecialityRepository.cs" />
     <Compile Include="Doctor\DoctorRepository.cs" />

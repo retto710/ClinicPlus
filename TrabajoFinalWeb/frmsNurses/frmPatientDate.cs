@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TrabajoFinalWeb
+namespace TrabajoFinalWeb.frmsNurses
 {
-    public partial class frmDoc : Form
+    public partial class frmPatientDate : Form
     {
-        public frmDoc()
+        public frmPatientDate()
         {
             InitializeComponent();
         }
