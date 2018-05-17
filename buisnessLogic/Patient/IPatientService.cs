@@ -9,6 +9,8 @@ namespace buisnessLogic.Patient
 {
     public interface IPatientService
     {
+        void CreatePatient(patient objPatient);
+        patient GetPatientByPersonId(int personid);
         List<patient> GetPatients();
     }
 }

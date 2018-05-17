@@ -10,6 +10,8 @@ namespace DataAccess.Patient
 {
     public interface IPatientRepository
     {
+        void CreatePatient(patient objPatient);
+        patient GetPatientByPersonId(int personid);
         List<patient> GetPatients();
     }
 }

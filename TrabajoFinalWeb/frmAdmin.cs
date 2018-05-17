@@ -24,6 +24,7 @@ namespace TrabajoFinalWeb
                     frmAddPerson =
                         new frmAdd();
                     frmAddPerson.MdiParent = this;
+                    frmAddPerson.Dock = DockStyle.Fill;
                 }
                 return frmAddPerson;
             }
@@ -40,6 +41,7 @@ namespace TrabajoFinalWeb
                     frmListPerson =
                         new frmList();
                     frmListPerson.MdiParent = this;
+                    frmListPerson.Dock = DockStyle.Fill;
                 }
                 return frmListPerson;
             }
@@ -54,12 +56,20 @@ namespace TrabajoFinalWeb
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.FrmAdd.Show();
+            this.FrmAdd.BringToFront();
         }
 
         private void buscarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.FrmList.BringToFront();
+        }
+
+        private void frmAdmin_Load(object sender, EventArgs e)
+        {
+            this.FrmAdd.Show();
             this.FrmList.Show();
+            this.FrmAdd.BringToFront();
+            
         }
     }
 }

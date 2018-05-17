@@ -9,6 +9,31 @@ namespace DataAccess.Patient
 {
     public class PatientRepository : IPatientRepository
     {
+        public void CreatePatient(patient objPatient)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                dataContext.patients.Add(objPatient);
+                dataContext.SaveChanges();
+            }
+        }
+
+        public patient GetPatientByPersonId(int personid)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.patients
+                            where c.personId==personid
+                            select c;
+                patient objPerson = custs.FirstOrDefault();
+                return objPerson;
+            }
+        }
+
         public List<patient> GetPatients()
         {
             using (var dataContext = new FinalAppWebEntities())

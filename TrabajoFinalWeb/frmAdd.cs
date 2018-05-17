@@ -12,12 +12,14 @@ using buisnessLogic.Nurse;
 using buisnessLogic.Person;
 using buisnessLogic.User;
 using buisnessLogic.Admin;
+using buisnessLogic.Patient;
 using Entities;
 namespace TrabajoFinalWeb
 {
       public partial class frmAdd : Form
     {
         IPersonService personServ = new PersonService();
+        IPatientService patientServ = new PatientService();
         IUserService userService = new UserService();
         IDoctorService docService = new DoctorService();
         INurseService nurService = new NurseService();
@@ -121,6 +123,11 @@ namespace TrabajoFinalWeb
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            String type = txtType.SelectedItem.ToString();
+            String name = objPerson.name;
+            char firstletter = name[0];
+            int dniValue = Decimal.ToInt32(objPerson.DNI);
+            username = firstletter + dniValue.ToString();
             if (isANewPerson)
             {
                 objPerson = new person();
@@ -136,52 +143,119 @@ namespace TrabajoFinalWeb
                 objPerson.dateOfBith = dateOfBirth.Value.Date;
                 personServ.CreatePerson(objPerson);
             }
-            String type= txtType.SelectedItem.ToString();
+            //Verifico si tiene usuario y si no es estoy creando paciente
+            if (userService.GetUserByUsername(username) == null&&type!="Patient")
+            {
+                objUser = new user();
+                objUser.username = username;
+                objUser.email = txtEmail.Text.ToString();
+                objUser.password = "default1";
+                userService.CreateUser(objUser);
+            }
             //VERIFICAR TIPO DE USUARIO 
             if (type.Equals("Admin"))
             {
                 admin objAdmin = new admin();
-                if (isANewPerson)
+                //Buscamos el usuario
+                objUser = userService.GetUserByUsername(username);
+                //Buscamos la persona
+                objPerson = personServ.GetPersonByDni(dniValue);
+                //Lo asignamos al admin
+                objAdmin = new admin();
+                objAdmin.userId = objUser.id;
+                objAdmin.personId = objPerson.ID;
+                //lo creamos
+                if (adminService.GetAdminByUserId(objAdmin.userId) != null)
                 {
-                    String name = objPerson.name;
-                    char firstletter = name[0];
-                    int dniValue = Decimal.ToInt32(objPerson.DNI);
-                    username = firstletter + dniValue.ToString();
-                    //Buscamos el usuario
-                    objUser = userService.GetUserByUsername(username);
-                    //Buscamos la persona
-                    objPerson = personServ.GetPersonByDni(dniValue);
-                    //Lo asignamos al admin
-                    objAdmin = new admin();
-                    objAdmin.userId = objUser.id;
-                    objAdmin.personId = objPerson.ID;
-                    //lo creamos
+                    MessageBox.Show("This user is already an Admin");
+                }
+                else
+                {
                     adminService.CreateAdmin(objAdmin);
+                    MessageBox.Show("New Admin Saved");
+                    enableTextbox(false);
+                    initialize();
+                }
+               
+            }
+
+            else if (type.Equals("Doctor"))
+            {
+                doctor objDoctor = new doctor();
+                //Buscamos el usuario
+                objUser = userService.GetUserByUsername(username);
+                //Buscamos la persona
+                objPerson = personServ.GetPersonByDni(dniValue);
+                //Lo asignamos al admin
+                objDoctor = new doctor();
+                objDoctor.userId = objUser.id;
+                objDoctor.personId = objPerson.ID;
+                objDoctor.dateOfEnrollment = DateTime.Today;
+                objDoctor.status = true;
+                //lo creamos
+                if (docService.GetDoctorByUserId(objDoctor.userId) != null)
+                {
+                    MessageBox.Show("This user is already a Doctor");
+                }
+                else
+                {
+                    docService.CreateDoctor(objDoctor);
                     MessageBox.Show("New Doctor Saved");
                     enableTextbox(false);
                     initialize();
                 }
+
+            }
+
+            else if (type.Equals("Nurse"))
+            {
+                nurse objNurse = new nurse();
+                //Buscamos el usuario
+                objUser = userService.GetUserByUsername(username);
+                //Buscamos la persona
+                objPerson = personServ.GetPersonByDni(dniValue);
+                //Lo asignamos al admin
+                objNurse = new nurse();
+                objNurse.userid = objUser.id;
+                objNurse.personId = objPerson.ID;
+                //lo creamos
+                if (nurService.GetNurseByUserId(objNurse.userid) != null)
+                {
+                    MessageBox.Show("This user is already a Nurse");
+                }
                 else
                 {
-                    // si existe
-                    if (adminService.GetAdminByUserId(objAdmin.userId)!=null)
-                    {
-                        MessageBox.Show("This user is already a doctor");
-                    }
-                    else
-                    {
-                        adminService.CreateAdmin(objAdmin);
-                        MessageBox.Show("New Doctor Saved");
-                        enableTextbox(false);
-                        initialize();
-                    }
-                    
+                    nurService.CreateNurse(objNurse);
+                    MessageBox.Show("New Nurse Saved");
+                    enableTextbox(false);
+                    initialize();
                 }
-             
+
             }
-            
+            else if (type.Equals("Patient"))
+            {
+                patient objPatient = new patient();
+                //Buscamos el usuario
+                objUser = userService.GetUserByUsername(username);
+                //Buscamos la persona
+                objPerson = personServ.GetPersonByDni(dniValue);
+                //Lo asignamos al admin
+                objPatient = new patient();
+                objPatient.personId = objPerson.ID;
+                //lo creamos
+                if (patientServ.GetPatientByPersonId(objPatient.personId) != null)
+                {
+                    MessageBox.Show("This user is already a Patient");
+                }
+                else
+                {
+                    patientServ.CreatePatient(objPatient);
+                    MessageBox.Show("New Patient Saved");
+                    enableTextbox(false);
+                    initialize();
+                }
 
-
+            }
         }
     }
 }

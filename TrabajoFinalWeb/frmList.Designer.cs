@@ -37,10 +37,6 @@
             this.btnNurses = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dNIDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +48,10 @@
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nationalityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nurseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -70,17 +70,20 @@
             this.groupBox1.Controls.Add(this.btnNurses);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1182, 218);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1773, 335);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Control";
             // 
             // btnAll
             // 
-            this.btnAll.Location = new System.Drawing.Point(303, 69);
+            this.btnAll.Location = new System.Drawing.Point(454, 106);
+            this.btnAll.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAll.Name = "btnAll";
-            this.btnAll.Size = new System.Drawing.Size(159, 23);
+            this.btnAll.Size = new System.Drawing.Size(238, 35);
             this.btnAll.TabIndex = 4;
             this.btnAll.Text = "Listar todos";
             this.btnAll.UseVisualStyleBackColor = true;
@@ -88,35 +91,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 30);
+            this.label1.Location = new System.Drawing.Point(18, 46);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 13);
+            this.label1.Size = new System.Drawing.Size(152, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "Opciones de listado:";
             // 
             // btnPatient
             // 
-            this.btnPatient.Location = new System.Drawing.Point(85, 155);
+            this.btnPatient.Location = new System.Drawing.Point(128, 238);
+            this.btnPatient.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnPatient.Name = "btnPatient";
-            this.btnPatient.Size = new System.Drawing.Size(159, 23);
+            this.btnPatient.Size = new System.Drawing.Size(238, 35);
             this.btnPatient.TabIndex = 2;
             this.btnPatient.Text = "Listar Pacientes";
             this.btnPatient.UseVisualStyleBackColor = true;
             // 
             // btnDoctors
             // 
-            this.btnDoctors.Location = new System.Drawing.Point(85, 112);
+            this.btnDoctors.Location = new System.Drawing.Point(128, 172);
+            this.btnDoctors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDoctors.Name = "btnDoctors";
-            this.btnDoctors.Size = new System.Drawing.Size(159, 23);
+            this.btnDoctors.Size = new System.Drawing.Size(238, 35);
             this.btnDoctors.TabIndex = 1;
             this.btnDoctors.Text = "Listar Doctores";
             this.btnDoctors.UseVisualStyleBackColor = true;
             // 
             // btnNurses
             // 
-            this.btnNurses.Location = new System.Drawing.Point(85, 69);
+            this.btnNurses.Location = new System.Drawing.Point(128, 106);
+            this.btnNurses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNurses.Name = "btnNurses";
-            this.btnNurses.Size = new System.Drawing.Size(159, 23);
+            this.btnNurses.Size = new System.Drawing.Size(238, 35);
             this.btnNurses.TabIndex = 0;
             this.btnNurses.Text = "Listar enfermeras";
             this.btnNurses.UseVisualStyleBackColor = true;
@@ -125,9 +132,11 @@
             // 
             this.groupBox2.Controls.Add(this.dataGridView1);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 218);
+            this.groupBox2.Location = new System.Drawing.Point(0, 335);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1182, 410);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(1773, 631);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lista";
@@ -149,27 +158,12 @@
             this.nationalityDataGridViewTextBoxColumn,
             this.Delete});
             this.dataGridView1.DataSource = this.personBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 29);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1152, 378);
+            this.dataGridView1.Size = new System.Drawing.Size(1728, 582);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // personBindingSource
-            // 
-            this.personBindingSource.DataSource = typeof(Entities.person);
-            // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataSource = typeof(Entities.doctor);
-            // 
-            // nurseBindingSource
-            // 
-            this.nurseBindingSource.DataSource = typeof(Entities.nurse);
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataSource = typeof(Entities.patient);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -238,14 +232,34 @@
             this.Delete.Text = "Delete";
             this.Delete.UseColumnTextForButtonValue = true;
             // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataSource = typeof(Entities.person);
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataSource = typeof(Entities.doctor);
+            // 
+            // nurseBindingSource
+            // 
+            this.nurseBindingSource.DataSource = typeof(Entities.nurse);
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataSource = typeof(Entities.patient);
+            // 
             // frmList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1182, 628);
+            this.ClientSize = new System.Drawing.Size(1773, 966);
+            this.ControlBox = false;
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmList";
+            this.ShowIcon = false;
             this.Text = "frmList";
             this.Load += new System.EventHandler(this.frmList_Load);
             this.groupBox1.ResumeLayout(false);
