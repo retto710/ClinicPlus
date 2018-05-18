@@ -11,5 +11,6 @@ namespace DataAccess.ClinicHistory
     {
         void CreateClinicHistory(clinicHistory objClinicHistory);
         clinicHistory GetClinicHistoryByPatientId(int patientid);
+        void UpdateClinicHistory(clinicHistory objClinicHistory);
     }
 }

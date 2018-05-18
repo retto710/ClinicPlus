@@ -12,18 +12,18 @@ namespace Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class speciality
+    public partial class alergy
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public speciality()
+        public alergy()
         {
-            this.doctor_speciality = new HashSet<doctor_speciality>();
+            this.clinicHistory_Alergie = new HashSet<clinicHistory_Alergie>();
         }
     
         public int ID { get; set; }
-        public string description { get; set; }
+        public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<doctor_speciality> doctor_speciality { get; set; }
+        public virtual ICollection<clinicHistory_Alergie> clinicHistory_Alergie { get; set; }
     }
 }

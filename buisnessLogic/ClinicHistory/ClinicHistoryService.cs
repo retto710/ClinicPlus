@@ -21,5 +21,11 @@ namespace buisnessLogic.ClinicHistory
             IClinicHistoryRepository repo = new ClinicHistoryRepository();
             return repo.GetClinicHistoryByPatientId(patientid);
         }
+
+        public void UpdateClinicHistory(clinicHistory objClinicHistory)
+        {
+            IClinicHistoryRepository repo = new ClinicHistoryRepository();
+            repo.UpdateClinicHistory(objClinicHistory);
+        }
     }
 }

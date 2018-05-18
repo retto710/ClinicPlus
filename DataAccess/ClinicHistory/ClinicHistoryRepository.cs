@@ -28,5 +28,22 @@ namespace DataAccess.ClinicHistory
                 return objCH;
             }
         }
+
+        public void UpdateClinicHistory(clinicHistory objClinicHistory)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var trs = from t in dataContext.clinicHistories
+                          where t.id == objClinicHistory.id
+                          select t;
+                clinicHistory transaction = trs.FirstOrDefault();
+                //Update field by field
+                transaction.date = objClinicHistory.date;
+                transaction.weight = objClinicHistory.weight;
+                transaction.height = objClinicHistory.height;
+                transaction.description = objClinicHistory.description;
+                dataContext.SaveChanges();
+            }
+        }
     }
 }

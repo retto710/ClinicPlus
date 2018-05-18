@@ -14,6 +14,8 @@ using buisnessLogic.User;
 using buisnessLogic.Admin;
 using buisnessLogic.Patient;
 using Entities;
+using buisnessLogic.ClinicHistory;
+
 namespace TrabajoFinalWeb.frmsNurses
 {
       public partial class frmRandU : Form
@@ -24,9 +26,12 @@ namespace TrabajoFinalWeb.frmsNurses
         IDoctorService docService = new DoctorService();
         INurseService nurService = new NurseService();
         IAdminService adminService = new AdminService();
+        IClinicHistoryService clinicHistoryService = new ClinicHistoryService(); 
         bool isANewPerson;
+        bool isANewHistory;
         string username;
         person objPerson=new person();
+        clinicHistory objClinicHistory = new clinicHistory();
         user objUser= new user();
         private void enableTextbox(bool enable)
         {
@@ -54,6 +59,8 @@ namespace TrabajoFinalWeb.frmsNurses
             txtEmail.Text = "";
             txtAddress.Text = "";
             txtNationality.Text = "";
+
+            txtDateOfCreation.Enabled = false;
         }
         public frmRandU()
         {
@@ -104,7 +111,23 @@ namespace TrabajoFinalWeb.frmsNurses
                     txtEmail.Text = objPerson.email;
                     txtAddress.Text = objPerson.address;
                     txtNationality.Text = objPerson.nationality;
-                   
+
+                    //Para ver si ya tinte i¿un clinic History
+                    patient objPatient = patientServ.GetPatientByPersonId(objPerson.ID);
+                    objClinicHistory = clinicHistoryService.GetClinicHistoryByPatientId(objPatient.id);
+
+                    if (objPatient == null || objUser == null || objClinicHistory == null)
+                    {
+                        isANewHistory = true;
+                        txtDateOfCreation.Text = DateTime.Today.ToString();
+                        objClinicHistory.date = DateTime.Today;
+                    }
+                    else {
+                        isANewHistory = false;
+                        txtDateOfCreation.Text = objClinicHistory.date.ToString();
+                        ckAlergias.Enabled = false;
+                    }
+
                 }
                 else
                 {
@@ -139,6 +162,28 @@ namespace TrabajoFinalWeb.frmsNurses
                 objPerson.dateOfBith = dateOfBirth.Value.Date;
                 personServ.CreatePerson(objPerson);
             }
+            else {
+                //No es una perosna nueva esto es poara el UPDATE
+                if (!isANewPerson)
+                {
+                    objPerson = new person();
+                    objPerson.name = txtName.Text.ToString();
+                    objPerson.lastName = txtLastName.Text.ToString();
+                    objPerson.age = Decimal.ToInt32(numericAge.Value);
+                    objPerson.email = txtEmail.Text.ToString();
+                    objPerson.address = txtAddress.Text.ToString();
+                    objPerson.phone = Decimal.ToInt32(numericPhoneNumber.Value);
+                    objPerson.nationality = txtNationality.Text.ToString();
+                    objPerson.DNI = Decimal.Parse(txtDNI2.Text.ToString());
+                    objPerson.gender = cmbGender.SelectedItem.ToString();
+                    objPerson.dateOfBith = dateOfBirth.Value.Date;
+                    personServ.UpdatePerson(objPerson);
+
+
+
+                }
+            }
+
             //Verifico si tiene usuario y si no es estoy creando paciente
             if (userService.GetUserByUsername(username) == null)
             {
@@ -169,6 +214,30 @@ namespace TrabajoFinalWeb.frmsNurses
                     initialize();
                 }
                 
+        }
+
+        private void btnCreateClinicHistory_Click(object sender, EventArgs e)
+        {
+            if (isANewHistory)
+            {
+                objClinicHistory.weight = Convert.ToDecimal(txtWeigth.Text);
+                objClinicHistory.height = Convert.ToDecimal(txtHeigth.Text);
+                objClinicHistory.description = txtDateOfCreation.Text.ToString();
+                if (ckAlergias.Checked) { objClinicHistory.alergies = "si"; } else { objClinicHistory.alergies = "no"; }
+
+                clinicHistoryService.CreateClinicHistory(objClinicHistory);
+
+            }
+            else {
+                if (!isANewHistory) {
+                    clinicHistoryService.UpdateClinicHistory(objClinicHistory);
+                }
+            }
+            
+        }
+
+        private void btnAddAlergi_Click(object sender, EventArgs e)
+        {
         }
     }
 }

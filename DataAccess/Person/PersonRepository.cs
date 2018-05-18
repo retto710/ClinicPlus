@@ -70,7 +70,25 @@ namespace DataAccess.Person
 
         public void UpdatePerson(person objPerson)
         {
-            throw new NotImplementedException();
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //Get object from database
+                var trs = from t in dataContext.people
+                          where t.ID == objPerson.ID
+                          select t;
+                person transaction = trs.FirstOrDefault();
+                //Update field by field
+                transaction.name = objPerson.name;
+                transaction.lastName = objPerson.lastName;
+                transaction.gender = objPerson.gender;
+                transaction.age = objPerson.age;
+                transaction.phone = objPerson.phone;
+                transaction.email = objPerson.email;
+                transaction.dateOfBith = objPerson.dateOfBith;
+                transaction.address = objPerson.address;
+                transaction.nationality = objPerson.nationality;
+                dataContext.SaveChanges();
+            }
         }
     }
 }

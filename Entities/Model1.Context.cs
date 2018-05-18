@@ -26,8 +26,10 @@ namespace Entities
         }
     
         public virtual DbSet<admin> admins { get; set; }
+        public virtual DbSet<alergy> alergies { get; set; }
         public virtual DbSet<clinicDate> clinicDates { get; set; }
         public virtual DbSet<clinicHistory> clinicHistories { get; set; }
+        public virtual DbSet<clinicHistory_Alergie> clinicHistory_Alergie { get; set; }
         public virtual DbSet<doctor> doctors { get; set; }
         public virtual DbSet<doctor_speciality> doctor_speciality { get; set; }
         public virtual DbSet<nurse> nurses { get; set; }
@@ -35,6 +37,7 @@ namespace Entities
         public virtual DbSet<person> people { get; set; }
         public virtual DbSet<service> services { get; set; }
         public virtual DbSet<speciality> specialities { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<user> users { get; set; }
     }
 }

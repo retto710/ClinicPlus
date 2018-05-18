@@ -58,18 +58,21 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lblClinicHistoryDateCretion = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDateOfCreation = new System.Windows.Forms.TextBox();
             this.lblInfoDateHistoryClinic = new System.Windows.Forms.Label();
             this.lblWeigth = new System.Windows.Forms.Label();
             this.lblHeigth = new System.Windows.Forms.Label();
             this.txtWeigth = new System.Windows.Forms.TextBox();
             this.txtHeigth = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblAlergias = new System.Windows.Forms.Label();
             this.ckAlergias = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblAlergiasPaciente = new System.Windows.Forms.Label();
+            this.btnCreateClinicHistory = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.btnAddAlergi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -390,18 +393,21 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnAddAlergi);
+            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.btnCreateClinicHistory);
             this.groupBox3.Controls.Add(this.lblAlergiasPaciente);
             this.groupBox3.Controls.Add(this.dataGridView1);
             this.groupBox3.Controls.Add(this.ckAlergias);
             this.groupBox3.Controls.Add(this.lblAlergias);
             this.groupBox3.Controls.Add(this.lblDescripcion);
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtDescription);
             this.groupBox3.Controls.Add(this.txtHeigth);
             this.groupBox3.Controls.Add(this.txtWeigth);
             this.groupBox3.Controls.Add(this.lblHeigth);
             this.groupBox3.Controls.Add(this.lblWeigth);
             this.groupBox3.Controls.Add(this.lblInfoDateHistoryClinic);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtDateOfCreation);
             this.groupBox3.Controls.Add(this.lblClinicHistoryDateCretion);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox3.Location = new System.Drawing.Point(0, 468);
@@ -420,12 +426,12 @@
             this.lblClinicHistoryDateCretion.TabIndex = 0;
             this.lblClinicHistoryDateCretion.Text = "fecha de creacion o ultima actualziacion";
             // 
-            // textBox1
+            // txtDateOfCreation
             // 
-            this.textBox1.Location = new System.Drawing.Point(235, 37);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 20);
-            this.textBox1.TabIndex = 1;
+            this.txtDateOfCreation.Location = new System.Drawing.Point(235, 37);
+            this.txtDateOfCreation.Name = "txtDateOfCreation";
+            this.txtDateOfCreation.Size = new System.Drawing.Size(160, 20);
+            this.txtDateOfCreation.TabIndex = 1;
             // 
             // lblInfoDateHistoryClinic
             // 
@@ -467,12 +473,12 @@
             this.txtHeigth.Size = new System.Drawing.Size(160, 20);
             this.txtHeigth.TabIndex = 6;
             // 
-            // textBox2
+            // txtDescription
             // 
-            this.textBox2.Location = new System.Drawing.Point(235, 200);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(160, 20);
-            this.textBox2.TabIndex = 7;
+            this.txtDescription.Location = new System.Drawing.Point(235, 200);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(160, 20);
+            this.txtDescription.TabIndex = 7;
             // 
             // lblDescripcion
             // 
@@ -517,6 +523,34 @@
             this.lblAlergiasPaciente.Size = new System.Drawing.Size(42, 13);
             this.lblAlergiasPaciente.TabIndex = 13;
             this.lblAlergiasPaciente.Text = "Alergia:";
+            // 
+            // btnCreateClinicHistory
+            // 
+            this.btnCreateClinicHistory.Location = new System.Drawing.Point(248, 252);
+            this.btnCreateClinicHistory.Name = "btnCreateClinicHistory";
+            this.btnCreateClinicHistory.Size = new System.Drawing.Size(147, 23);
+            this.btnCreateClinicHistory.TabIndex = 14;
+            this.btnCreateClinicHistory.Text = "crear/actualziar historia";
+            this.btnCreateClinicHistory.UseVisualStyleBackColor = true;
+            this.btnCreateClinicHistory.Click += new System.EventHandler(this.btnCreateClinicHistory_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(467, 237);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(134, 21);
+            this.comboBox1.TabIndex = 15;
+            // 
+            // btnAddAlergi
+            // 
+            this.btnAddAlergi.Location = new System.Drawing.Point(617, 237);
+            this.btnAddAlergi.Name = "btnAddAlergi";
+            this.btnAddAlergi.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAlergi.TabIndex = 16;
+            this.btnAddAlergi.Text = "Agregar alergia";
+            this.btnAddAlergi.UseVisualStyleBackColor = true;
+            this.btnAddAlergi.Click += new System.EventHandler(this.btnAddAlergi_Click);
             // 
             // frmRandU
             // 
@@ -581,12 +615,15 @@
         private System.Windows.Forms.CheckBox ckAlergias;
         private System.Windows.Forms.Label lblAlergias;
         private System.Windows.Forms.Label lblDescripcion;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.TextBox txtHeigth;
         private System.Windows.Forms.TextBox txtWeigth;
         private System.Windows.Forms.Label lblHeigth;
         private System.Windows.Forms.Label lblWeigth;
         private System.Windows.Forms.Label lblInfoDateHistoryClinic;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDateOfCreation;
+        private System.Windows.Forms.Button btnCreateClinicHistory;
+        private System.Windows.Forms.Button btnAddAlergi;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

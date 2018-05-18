@@ -18,6 +18,7 @@ namespace Entities
         public clinicHistory()
         {
             this.clinicDates = new HashSet<clinicDate>();
+            this.clinicHistory_Alergie = new HashSet<clinicHistory_Alergie>();
         }
     
         public int id { get; set; }
@@ -30,6 +31,8 @@ namespace Entities
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<clinicDate> clinicDates { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<clinicHistory_Alergie> clinicHistory_Alergie { get; set; }
         public virtual patient patient { get; set; }
     }
 }

@@ -76,23 +76,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalAppWebDataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="frmAdd.cs">
+    <Compile Include="frmsAdmin\frmAdd.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdd.Designer.cs">
+    <Compile Include="frmsAdmin\frmAdd.Designer.cs">
       <DependentUpon>frmAdd.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAddSpeciality.cs">
+    <Compile Include="frmsAdmin\frmAddSpeciality.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAddSpeciality.Designer.cs">
+    <Compile Include="frmsAdmin\frmAddSpeciality.Designer.cs">
       <DependentUpon>frmAddSpeciality.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAdmin.cs">
+    <Compile Include="frmsAdmin\frmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAdmin.Designer.cs">
+    <Compile Include="frmsAdmin\frmAdmin.Designer.cs">
       <DependentUpon>frmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsAdmin\frmServiceStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsAdmin\frmServiceStatus.Designer.cs">
+      <DependentUpon>frmServiceStatus.cs</DependentUpon>
     </Compile>
     <Compile Include="frmsDoctor\frmDoc.cs">
       <SubType>Form</SubType>
@@ -100,16 +106,16 @@
     <Compile Include="frmsDoctor\frmDoc.Designer.cs">
       <DependentUpon>frmDoc.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDoctorSpeciality.cs">
+    <Compile Include="frmsAdmin\frmDoctorSpeciality.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDoctorSpeciality.Designer.cs">
+    <Compile Include="frmsAdmin\frmDoctorSpeciality.Designer.cs">
       <DependentUpon>frmDoctorSpeciality.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmList.cs">
+    <Compile Include="frmsAdmin\frmList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmList.Designer.cs">
+    <Compile Include="frmsAdmin\frmList.Designer.cs">
       <DependentUpon>frmList.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
@@ -129,6 +135,18 @@
     </Compile>
     <Compile Include="frmsDoctor\FrmPacientes.Designer.cs">
       <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsDoctor\frmRequestService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsDoctor\frmRequestService.Designer.cs">
+      <DependentUpon>frmRequestService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsNurses\frmCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsNurses\frmCita.Designer.cs">
+      <DependentUpon>frmCita.cs</DependentUpon>
     </Compile>
     <Compile Include="frmsNurses\frmPatientDate.cs">
       <SubType>Form</SubType>
@@ -150,29 +168,38 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAdd.resx">
+    <EmbeddedResource Include="frmsAdmin\frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAddSpeciality.resx">
+    <EmbeddedResource Include="frmsAdmin\frmAddSpeciality.resx">
       <DependentUpon>frmAddSpeciality.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAdmin.resx">
+    <EmbeddedResource Include="frmsAdmin\frmAdmin.resx">
       <DependentUpon>frmAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDoctorSpeciality.resx">
+    <EmbeddedResource Include="frmsAdmin\frmDoctorSpeciality.resx">
       <DependentUpon>frmDoctorSpeciality.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmList.resx">
+    <EmbeddedResource Include="frmsAdmin\frmList.resx">
       <DependentUpon>frmList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsAdmin\frmServiceStatus.resx">
+      <DependentUpon>frmServiceStatus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsDoctor\frmDoc.resx">
       <DependentUpon>frmDoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsDoctor\FrmPacientes.resx">
       <DependentUpon>FrmPacientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsDoctor\frmRequestService.resx">
+      <DependentUpon>frmRequestService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsNurses\frmCita.resx">
+      <DependentUpon>frmCita.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsNurses\frmPatientDate.resx">
       <DependentUpon>frmPatientDate.cs</DependentUpon>
@@ -252,6 +279,7 @@
     <None Include="Properties\DataSources\Entities.nurse.datasource" />
     <None Include="Properties\DataSources\Entities.patient.datasource" />
     <None Include="Properties\DataSources\Entities.person.datasource" />
+    <None Include="Properties\DataSources\Entities.service.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -272,5 +300,6 @@
       <Name>Entities</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

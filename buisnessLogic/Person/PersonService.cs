@@ -29,7 +29,8 @@ namespace buisnessLogic.Person
 
         public void UpdatePerson(person objPerson)
         {
-            throw new NotImplementedException();
+            IPersonRepository repo = new PersonRepository();
+            repo.UpdatePerson(objPerson);
         }
 
         public List<person> GetPersons()

@@ -13,6 +13,13 @@
           <Property Name="userId" Type="int" Nullable="false" />
           <Property Name="personId" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="alergies">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="clinicDate">
           <Key>
             <PropertyRef Name="id" />
@@ -40,6 +47,14 @@
           <Property Name="height" Type="decimal" Precision="3" Scale="2" />
           <Property Name="alergies" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="clinicHistory_Alergie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="clinicHistoryId" Type="int" Nullable="false" />
+          <Property Name="AlergieId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="doctor">
           <Key>
@@ -110,6 +125,16 @@
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="id" />
@@ -176,6 +201,30 @@
             </Principal>
             <Dependent Role="clinicDate">
               <PropertyRef Name="clinicHistorytId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_clinicHistory_Alergie_alergies">
+          <End Role="alergies" Type="Self.alergies" Multiplicity="1" />
+          <End Role="clinicHistory_Alergie" Type="Self.clinicHistory_Alergie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alergies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="clinicHistory_Alergie">
+              <PropertyRef Name="AlergieId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_clinicHistory_Alergie_clinicHistory_Alergie">
+          <End Role="clinicHistory" Type="Self.clinicHistory" Multiplicity="1" />
+          <End Role="clinicHistory_Alergie" Type="Self.clinicHistory_Alergie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clinicHistory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="clinicHistory_Alergie">
+              <PropertyRef Name="clinicHistoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -301,8 +350,10 @@
         </Association>
         <EntityContainer Name="FinalAppWebModelStoreContainer">
           <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="alergies" EntityType="Self.alergies" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="clinicDate" EntityType="Self.clinicDate" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="clinicHistory" EntityType="Self.clinicHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="clinicHistory_Alergie" EntityType="Self.clinicHistory_Alergie" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="doctor" EntityType="Self.doctor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="doctor_speciality" EntityType="Self.doctor_speciality" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="nurse" EntityType="Self.nurse" Schema="dbo" store:Type="Tables" />
@@ -310,6 +361,7 @@
           <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="speciality" EntityType="Self.speciality" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_admin_person" Association="Self.FK_admin_person">
             <End Role="person" EntitySet="person" />
@@ -330,6 +382,14 @@
           <AssociationSet Name="FK_clinicDate_patient" Association="Self.FK_clinicDate_patient">
             <End Role="clinicHistory" EntitySet="clinicHistory" />
             <End Role="clinicDate" EntitySet="clinicDate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_clinicHistory_Alergie_alergies" Association="Self.FK_clinicHistory_Alergie_alergies">
+            <End Role="alergies" EntitySet="alergies" />
+            <End Role="clinicHistory_Alergie" EntitySet="clinicHistory_Alergie" />
+          </AssociationSet>
+          <AssociationSet Name="FK_clinicHistory_Alergie_clinicHistory_Alergie" Association="Self.FK_clinicHistory_Alergie_clinicHistory_Alergie">
+            <End Role="clinicHistory" EntitySet="clinicHistory" />
+            <End Role="clinicHistory_Alergie" EntitySet="clinicHistory_Alergie" />
           </AssociationSet>
           <AssociationSet Name="FK_clinicHistory_patient" Association="Self.FK_clinicHistory_patient">
             <End Role="patient" EntitySet="patient" />
@@ -387,6 +447,14 @@
           <NavigationProperty Name="person" Relationship="Self.FK_admin_person" FromRole="admin" ToRole="person" />
           <NavigationProperty Name="user" Relationship="Self.FK_admin_user" FromRole="admin" ToRole="user" />
         </EntityType>
+        <EntityType Name="alergy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="clinicHistory_Alergie" Relationship="Self.FK_clinicHistory_Alergie_alergies" FromRole="alergies" ToRole="clinicHistory_Alergie" />
+        </EntityType>
         <EntityType Name="clinicDate">
           <Key>
             <PropertyRef Name="id" />
@@ -419,7 +487,18 @@
           <Property Name="alergies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="clinicDates" Relationship="Self.FK_clinicDate_patient" FromRole="clinicHistory" ToRole="clinicDate" />
+          <NavigationProperty Name="clinicHistory_Alergie" Relationship="Self.FK_clinicHistory_Alergie_clinicHistory_Alergie" FromRole="clinicHistory" ToRole="clinicHistory_Alergie" />
           <NavigationProperty Name="patient" Relationship="Self.FK_clinicHistory_patient" FromRole="clinicHistory" ToRole="patient" />
+        </EntityType>
+        <EntityType Name="clinicHistory_Alergie">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="clinicHistoryId" Type="Int32" Nullable="false" />
+          <Property Name="AlergieId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="alergy" Relationship="Self.FK_clinicHistory_Alergie_alergies" FromRole="clinicHistory_Alergie" ToRole="alergies" />
+          <NavigationProperty Name="clinicHistory" Relationship="Self.FK_clinicHistory_Alergie_clinicHistory_Alergie" FromRole="clinicHistory_Alergie" ToRole="clinicHistory" />
         </EntityType>
         <EntityType Name="doctor">
           <Key>
@@ -509,6 +588,16 @@
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="doctor_speciality" Relationship="Self.FK_doctor_speciality_specialties" FromRole="speciality" ToRole="doctor_speciality" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="id" />
@@ -542,6 +631,18 @@
             </Principal>
             <Dependent Role="admin">
               <PropertyRef Name="userId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_clinicHistory_Alergie_alergies">
+          <End Role="alergies" Type="Self.alergy" Multiplicity="1" />
+          <End Role="clinicHistory_Alergie" Type="Self.clinicHistory_Alergie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="alergies">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="clinicHistory_Alergie">
+              <PropertyRef Name="AlergieId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -590,6 +691,18 @@
             </Principal>
             <Dependent Role="services">
               <PropertyRef Name="ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_clinicHistory_Alergie_clinicHistory_Alergie">
+          <End Role="clinicHistory" Type="Self.clinicHistory" Multiplicity="1" />
+          <End Role="clinicHistory_Alergie" Type="Self.clinicHistory_Alergie" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="clinicHistory">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="clinicHistory_Alergie">
+              <PropertyRef Name="clinicHistoryId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -701,10 +814,12 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FinalAppWebEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FinalAppWebEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admins" EntityType="Self.admin" />
+          <EntitySet Name="alergies" EntityType="Self.alergy" />
           <EntitySet Name="clinicDates" EntityType="Self.clinicDate" />
           <EntitySet Name="clinicHistories" EntityType="Self.clinicHistory" />
+          <EntitySet Name="clinicHistory_Alergie" EntityType="Self.clinicHistory_Alergie" />
           <EntitySet Name="doctors" EntityType="Self.doctor" />
           <EntitySet Name="doctor_speciality" EntityType="Self.doctor_speciality" />
           <EntitySet Name="nurses" EntityType="Self.nurse" />
@@ -712,6 +827,7 @@
           <EntitySet Name="people" EntityType="Self.person" />
           <EntitySet Name="services" EntityType="Self.service" />
           <EntitySet Name="specialities" EntityType="Self.speciality" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="users" EntityType="Self.user" />
           <AssociationSet Name="FK_admin_person" Association="Self.FK_admin_person">
             <End Role="person" EntitySet="people" />
@@ -720,6 +836,10 @@
           <AssociationSet Name="FK_admin_user" Association="Self.FK_admin_user">
             <End Role="user" EntitySet="users" />
             <End Role="admin" EntitySet="admins" />
+          </AssociationSet>
+          <AssociationSet Name="FK_clinicHistory_Alergie_alergies" Association="Self.FK_clinicHistory_Alergie_alergies">
+            <End Role="alergies" EntitySet="alergies" />
+            <End Role="clinicHistory_Alergie" EntitySet="clinicHistory_Alergie" />
           </AssociationSet>
           <AssociationSet Name="FK_clinicDate_doctor" Association="Self.FK_clinicDate_doctor">
             <End Role="doctor" EntitySet="doctors" />
@@ -736,6 +856,10 @@
           <AssociationSet Name="FK_services_clinicDate" Association="Self.FK_services_clinicDate">
             <End Role="clinicDate" EntitySet="clinicDates" />
             <End Role="services" EntitySet="services" />
+          </AssociationSet>
+          <AssociationSet Name="FK_clinicHistory_Alergie_clinicHistory_Alergie" Association="Self.FK_clinicHistory_Alergie_clinicHistory_Alergie">
+            <End Role="clinicHistory" EntitySet="clinicHistories" />
+            <End Role="clinicHistory_Alergie" EntitySet="clinicHistory_Alergie" />
           </AssociationSet>
           <AssociationSet Name="FK_clinicHistory_patient" Association="Self.FK_clinicHistory_patient">
             <End Role="patient" EntitySet="patients" />
@@ -779,13 +903,21 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FinalAppWebModelStoreContainer" CdmEntityContainer="FinalAppWebEntities">
+        <EntityContainerMapping StorageEntityContainer="FinalAppWebModelStoreContainer" CdmEntityContainer="FinalAppWebEntities1">
           <EntitySetMapping Name="admins">
             <EntityTypeMapping TypeName="FinalAppWebModel.admin">
               <MappingFragment StoreEntitySet="admin">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="personId" ColumnName="personId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="alergies">
+            <EntityTypeMapping TypeName="FinalAppWebModel.alergy">
+              <MappingFragment StoreEntitySet="alergies">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -816,6 +948,15 @@
                 <ScalarProperty Name="height" ColumnName="height" />
                 <ScalarProperty Name="alergies" ColumnName="alergies" />
                 <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="clinicHistory_Alergie">
+            <EntityTypeMapping TypeName="FinalAppWebModel.clinicHistory_Alergie">
+              <MappingFragment StoreEntitySet="clinicHistory_Alergie">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="clinicHistoryId" ColumnName="clinicHistoryId" />
+                <ScalarProperty Name="AlergieId" ColumnName="AlergieId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -892,6 +1033,17 @@
               <MappingFragment StoreEntitySet="speciality">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="FinalAppWebModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
