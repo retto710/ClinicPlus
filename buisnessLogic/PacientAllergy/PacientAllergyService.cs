@@ -16,6 +16,12 @@ namespace buisnessLogic.PacientAllergy
             repo.CreateClinicHistory_Allergy(objDoctor_Speciality);
         }
 
+        public void deleteClinicHistoryAllergy(int id)
+        {
+            IClinicHistory_AlergieRepository repo = new ClinicHistory_AlergieRepository();
+            repo.deleteClinicHistoryAllergy(id);
+        }
+
         public List<clinicHistory_Alergie> GetClinicHistory_Allergies(int doctorid)
         {
             IClinicHistory_AlergieRepository repo = new ClinicHistory_AlergieRepository();

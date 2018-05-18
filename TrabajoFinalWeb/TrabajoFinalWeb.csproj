@@ -275,6 +275,7 @@
     <None Include="FinalAppWebDataSet4.xss">
       <DependentUpon>FinalAppWebDataSet4.xsd</DependentUpon>
     </None>
+    <None Include="Properties\DataSources\Entities.clinicHistory_Alergie.datasource" />
     <None Include="Properties\DataSources\Entities.doctor.datasource" />
     <None Include="Properties\DataSources\Entities.nurse.datasource" />
     <None Include="Properties\DataSources\Entities.patient.datasource" />

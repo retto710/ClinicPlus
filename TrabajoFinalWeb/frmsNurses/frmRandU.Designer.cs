@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
@@ -62,6 +63,9 @@
             this.btnCreateClinicHistory = new System.Windows.Forms.Button();
             this.lblAlergiasPaciente = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.alergyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clinicHistoryAlergieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ckAlergias = new System.Windows.Forms.CheckBox();
             this.lblAlergias = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -81,6 +85,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericPhoneNumber)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicHistoryAlergieBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -460,11 +465,34 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.alergyDataGridViewTextBoxColumn,
+            this.delete});
+            this.dataGridView1.DataSource = this.clinicHistoryAlergieBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(467, 70);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(272, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(244, 150);
             this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // alergyDataGridViewTextBoxColumn
+            // 
+            this.alergyDataGridViewTextBoxColumn.DataPropertyName = "alergyName";
+            this.alergyDataGridViewTextBoxColumn.HeaderText = "alergy";
+            this.alergyDataGridViewTextBoxColumn.Name = "alergyDataGridViewTextBoxColumn";
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "Delete";
+            this.delete.Name = "delete";
+            this.delete.Text = "delete";
+            this.delete.UseColumnTextForButtonValue = true;
+            // 
+            // clinicHistoryAlergieBindingSource
+            // 
+            this.clinicHistoryAlergieBindingSource.DataSource = typeof(Entities.clinicHistory_Alergie);
             // 
             // ckAlergias
             // 
@@ -584,6 +612,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicHistoryAlergieBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,5 +664,8 @@
         private System.Windows.Forms.Button btnCreateClinicHistory;
         private System.Windows.Forms.Button btnAddAlergi;
         private System.Windows.Forms.ComboBox cbAllergies;
+        private System.Windows.Forms.BindingSource clinicHistoryAlergieBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alergyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
     }
 }

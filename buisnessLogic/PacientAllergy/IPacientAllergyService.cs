@@ -12,5 +12,7 @@ namespace buisnessLogic.PacientAllergy
         void CreateClinicHistory_Allergy(clinicHistory_Alergie objDoctor_Speciality);
         clinicHistory_Alergie GetClinicHistory_Allergy(int id);
         List<clinicHistory_Alergie> GetClinicHistory_Allergies(int doctorid);
+
+        void deleteClinicHistoryAllergy(int id);
     }
 }

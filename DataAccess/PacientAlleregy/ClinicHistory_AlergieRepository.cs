@@ -18,11 +18,29 @@ namespace DataAccess.PacientAlleregy
             }
         }
 
+        public void deleteClinicHistoryAllergy(int id)
+        {
+            using (var dataContext =
+                new FinalAppWebEntities())
+            {
+                //Load customer object
+                var cust = from c in dataContext.clinicHistory_Alergie
+                           where c.id == id
+                           select c;
+                clinicHistory_Alergie objCustomer = cust.FirstOrDefault();
+                //Remove
+                dataContext.clinicHistory_Alergie.Remove(objCustomer);
+                //Save
+                dataContext.SaveChanges();
+            }
+
+        }
+
         List<clinicHistory_Alergie> IClinicHistory_AlergieRepository.GetClinicHistory_Allergies(int doctorid)
         {
             using (var dataContext = new FinalAppWebEntities())
             {
-                var custs = from c in dataContext.clinicHistory_Alergie
+                var custs = from c in dataContext.clinicHistory_Alergie.Include("alergy")
                             where c.clinicHistoryId == doctorid
                             select c;
                 List<clinicHistory_Alergie> objDoctor_Speciality = custs.ToList();
