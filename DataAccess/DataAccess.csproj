@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Admin\AdminRepository.cs" />
     <Compile Include="Admin\IAdminRepository.cs" />
+    <Compile Include="Allergy\AllergyRepository.cs" />
+    <Compile Include="Allergy\IAllergyRepository.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="ClinicHistory\ClinicHistoryRepository.cs" />
     <Compile Include="ClinicHistory\IClinicHistoryRepository.cs" />
@@ -58,6 +60,8 @@
     <Compile Include="Doctor\IDoctorRepository.cs" />
     <Compile Include="Nurse\INurseRepository.cs" />
     <Compile Include="Nurse\NurseRepository.cs" />
+    <Compile Include="PacientAlleregy\ClinicHistory_AlergieRepository.cs" />
+    <Compile Include="PacientAlleregy\IClinicHistory_AlergieRepository.cs" />
     <Compile Include="Patient\IPatientRepository.cs" />
     <Compile Include="Patient\PatientRepository.cs" />
     <Compile Include="Person\IPersonRepository.cs" />

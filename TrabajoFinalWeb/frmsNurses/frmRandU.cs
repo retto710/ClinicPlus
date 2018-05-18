@@ -13,6 +13,7 @@ using buisnessLogic.Person;
 using buisnessLogic.User;
 using buisnessLogic.Admin;
 using buisnessLogic.Patient;
+using buisnessLogic.Allergy;
 using Entities;
 using buisnessLogic.ClinicHistory;
 
@@ -26,11 +27,12 @@ namespace TrabajoFinalWeb.frmsNurses
         IDoctorService docService = new DoctorService();
         INurseService nurService = new NurseService();
         IAdminService adminService = new AdminService();
-        IClinicHistoryService clinicHistoryService = new ClinicHistoryService(); 
+        IClinicHistoryService clinicHistoryService = new ClinicHistoryService();
+        IAllergySerivce AllergyService = new AllergyService();
         bool isANewPerson;
         bool isANewHistory;
         string username;
-        person objPerson=new person();
+        person objPerson = new person();
         clinicHistory objClinicHistory = new clinicHistory();
         user objUser= new user();
         private void enableTextbox(bool enable)
@@ -47,6 +49,28 @@ namespace TrabajoFinalWeb.frmsNurses
             txtAddress.Enabled = enable;
             txtNationality.Enabled = enable;
 
+        }
+        private void enableTextboxUpdate(bool enable)
+        {
+            txtName.Enabled = enable;
+            txtLastName.Enabled = enable;
+            txtDNI2.Enabled = enable;
+            txtDNI2.Text = txtDNI.Text;
+            cmbGender.Enabled = enable;
+            numericAge.Enabled = enable;
+            numericPhoneNumber.Enabled = enable;
+            dateOfBirth.Enabled = enable;
+            txtEmail.Enabled = enable;
+            txtAddress.Enabled = enable;
+            txtNationality.Enabled = enable;
+        }
+        private void enableTextboxCreateUpdateClinicHistory(bool enable) {
+            btnCreateClinicHistory.Enabled = enable;
+            btnAddAlergi.Enabled = enable;
+            ckAlergias.Enabled = enable;
+            txtDescription.Enabled = enable;
+            txtHeigth.Enabled = enable;
+            txtWeigth.Enabled = enable;
         }
         private void initialize()
         {
@@ -70,29 +94,38 @@ namespace TrabajoFinalWeb.frmsNurses
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            
-            
             if (txtDNI.Text.ToString().Length!=8)
             {
                 MessageBox.Show("Invalid DNI. Try Again");
             }
             else
             {
+                //DNI validos
+
                 int dni = Int32.Parse(txtDNI.Text.ToString());
+
                 //Guradmos persona
+
                 objPerson = personServ.GetPersonByDni(dni);
-                //SI existe
+                
+                //SI existe (Perosna ya registrasa)(Update)
                 if (objPerson != null)
                 {
+                    MessageBox.Show("Person: "+objPerson.name + " "+ objPerson.lastName);
+
+                    btnAdd.Text = "Update";
                     //Obtengo el usuario
                     String name = objPerson.name;
+
                     char firstletter = name[0];
                     int dniValue=Decimal.ToInt32(objPerson.DNI);
                     username = firstletter + dniValue.ToString();
                     //guardamos usuario
                     objUser = userService.GetUserByUsername(username);
-                    enableTextbox(false);
+                    enableTextboxUpdate(true);
+
                     isANewPerson = false;
+
                     //Coloco los datos en los textboxs
                     txtName.Text = objPerson.name;
                     txtLastName.Text = objPerson.lastName;
@@ -100,9 +133,7 @@ namespace TrabajoFinalWeb.frmsNurses
                     if (objPerson.gender.Equals("Male"))
                     {
                         cmbGender.SelectedIndex = 1;
-                    }
-                    else
-                    {
+                    }else{
                         cmbGender.SelectedIndex = 0;
                     }
                     numericAge.Value = objPerson.age;
@@ -116,13 +147,21 @@ namespace TrabajoFinalWeb.frmsNurses
                     patient objPatient = patientServ.GetPatientByPersonId(objPerson.ID);
                     objClinicHistory = clinicHistoryService.GetClinicHistoryByPatientId(objPatient.id);
 
+                    
+
                     if (objPatient == null || objUser == null || objClinicHistory == null)
                     {
+                        enableTextboxCreateUpdateClinicHistory(true);
+                        btnCreateClinicHistory.Text = "create clinic history";
+                        MessageBox.Show("Person: " + objPerson.name + " " + objPerson.lastName + " no cuenta con una historia clinica");
                         isANewHistory = true;
                         txtDateOfCreation.Text = DateTime.Today.ToString();
-                        objClinicHistory.date = DateTime.Today;
                     }
-                    else {
+                    else
+                    {
+                        enableTextboxCreateUpdateClinicHistory(false);
+                        btnCreateClinicHistory.Text = "update clinic history";
+                        MessageBox.Show("Person: " + objPerson.name + " " + objPerson.lastName + " cuenta con una historia clinica");
                         isANewHistory = false;
                         txtDateOfCreation.Text = objClinicHistory.date.ToString();
                         ckAlergias.Enabled = false;
@@ -161,12 +200,14 @@ namespace TrabajoFinalWeb.frmsNurses
                 objPerson.gender = cmbGender.SelectedItem.ToString();
                 objPerson.dateOfBith = dateOfBirth.Value.Date;
                 personServ.CreatePerson(objPerson);
+                enableTextboxCreateUpdateClinicHistory(true);
             }
             else {
                 //No es una perosna nueva esto es poara el UPDATE
                 if (!isANewPerson)
                 {
                     objPerson = new person();
+                    
                     objPerson.name = txtName.Text.ToString();
                     objPerson.lastName = txtLastName.Text.ToString();
                     objPerson.age = Decimal.ToInt32(numericAge.Value);
@@ -177,6 +218,7 @@ namespace TrabajoFinalWeb.frmsNurses
                     objPerson.DNI = Decimal.Parse(txtDNI2.Text.ToString());
                     objPerson.gender = cmbGender.SelectedItem.ToString();
                     objPerson.dateOfBith = dateOfBirth.Value.Date;
+
                     personServ.UpdatePerson(objPerson);
 
 
@@ -239,5 +281,17 @@ namespace TrabajoFinalWeb.frmsNurses
         private void btnAddAlergi_Click(object sender, EventArgs e)
         {
         }
+
+
+        private void frmRandU_Load(object sender, EventArgs e)
+        {
+            List<alergy> alergiasDisponibles = AllergyService.getAlergies();
+            
+            cbAllergies.DataSource = alergiasDisponibles;
+            cbAllergies.SelectedIndex = 0;
+
+        }
+
+        
     }
 }

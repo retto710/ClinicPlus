@@ -76,18 +76,28 @@ namespace DataAccess.Person
                 var trs = from t in dataContext.people
                           where t.ID == objPerson.ID
                           select t;
-                person transaction = trs.FirstOrDefault();
-                //Update field by field
-                transaction.name = objPerson.name;
-                transaction.lastName = objPerson.lastName;
-                transaction.gender = objPerson.gender;
-                transaction.age = objPerson.age;
-                transaction.phone = objPerson.phone;
-                transaction.email = objPerson.email;
-                transaction.dateOfBith = objPerson.dateOfBith;
-                transaction.address = objPerson.address;
-                transaction.nationality = objPerson.nationality;
-                dataContext.SaveChanges();
+                person transaction = new person();
+                transaction = trs.FirstOrDefault();
+
+                try
+                {
+
+                    //Update field by field
+                    transaction.name = objPerson.name;
+                    transaction.lastName = objPerson.lastName;
+                    transaction.gender = objPerson.gender;
+                    transaction.age = objPerson.age;
+                    transaction.phone = objPerson.phone;
+                    transaction.email = objPerson.email;
+                    transaction.dateOfBith = objPerson.dateOfBith;
+                    transaction.address = objPerson.address;
+                    transaction.nationality = objPerson.nationality;
+                    dataContext.SaveChanges();
+                }
+                catch (Exception) {
+
+                    Console.WriteLine("enviado   == " + objPerson.name + " id   " + objPerson.ID );
+                }
             }
         }
     }

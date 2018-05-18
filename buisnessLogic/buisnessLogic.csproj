@@ -48,6 +48,8 @@
   <ItemGroup>
     <Compile Include="Admin\AdminService.cs" />
     <Compile Include="Admin\IAdminService.cs" />
+    <Compile Include="Allergy\AllergyService.cs" />
+    <Compile Include="Allergy\IAllergySerivce.cs" />
     <Compile Include="ClinicHistory\ClinicHistoryService.cs" />
     <Compile Include="ClinicHistory\IClinicHistoryService.cs" />
     <Compile Include="DoctorSpeciality\DoctorSpecialityService.cs" />
@@ -56,6 +58,8 @@
     <Compile Include="Doctor\IDoctorService.cs" />
     <Compile Include="Nurse\INurseService.cs" />
     <Compile Include="Nurse\NurseService.cs" />
+    <Compile Include="PacientAllergy\IPacientAllergyService.cs" />
+    <Compile Include="PacientAllergy\PacientAllergyService.cs" />
     <Compile Include="Patient\IPatientService.cs" />
     <Compile Include="Patient\PatientService.cs" />
     <Compile Include="Person\IPersonService.cs" />

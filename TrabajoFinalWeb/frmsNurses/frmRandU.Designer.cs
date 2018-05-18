@@ -57,22 +57,22 @@
             this.numericPhoneNumber = new System.Windows.Forms.NumericUpDown();
             this.btnAdd = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.lblClinicHistoryDateCretion = new System.Windows.Forms.Label();
-            this.txtDateOfCreation = new System.Windows.Forms.TextBox();
-            this.lblInfoDateHistoryClinic = new System.Windows.Forms.Label();
-            this.lblWeigth = new System.Windows.Forms.Label();
-            this.lblHeigth = new System.Windows.Forms.Label();
-            this.txtWeigth = new System.Windows.Forms.TextBox();
-            this.txtHeigth = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
-            this.lblAlergias = new System.Windows.Forms.Label();
-            this.ckAlergias = new System.Windows.Forms.CheckBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.lblAlergiasPaciente = new System.Windows.Forms.Label();
-            this.btnCreateClinicHistory = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.btnAddAlergi = new System.Windows.Forms.Button();
+            this.cbAllergies = new System.Windows.Forms.ComboBox();
+            this.btnCreateClinicHistory = new System.Windows.Forms.Button();
+            this.lblAlergiasPaciente = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ckAlergias = new System.Windows.Forms.CheckBox();
+            this.lblAlergias = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtHeigth = new System.Windows.Forms.TextBox();
+            this.txtWeigth = new System.Windows.Forms.TextBox();
+            this.lblHeigth = new System.Windows.Forms.Label();
+            this.lblWeigth = new System.Windows.Forms.Label();
+            this.lblInfoDateHistoryClinic = new System.Windows.Forms.Label();
+            this.txtDateOfCreation = new System.Windows.Forms.TextBox();
+            this.lblClinicHistoryDateCretion = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -143,7 +143,7 @@
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox2.Location = new System.Drawing.Point(0, 100);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(800, 362);
+            this.groupBox2.Size = new System.Drawing.Size(800, 343);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
@@ -394,7 +394,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnAddAlergi);
-            this.groupBox3.Controls.Add(this.comboBox1);
+            this.groupBox3.Controls.Add(this.cbAllergies);
             this.groupBox3.Controls.Add(this.btnCreateClinicHistory);
             this.groupBox3.Controls.Add(this.lblAlergiasPaciente);
             this.groupBox3.Controls.Add(this.dataGridView1);
@@ -417,103 +417,37 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Historia Clinica";
             // 
-            // lblClinicHistoryDateCretion
+            // btnAddAlergi
             // 
-            this.lblClinicHistoryDateCretion.AutoSize = true;
-            this.lblClinicHistoryDateCretion.Location = new System.Drawing.Point(15, 40);
-            this.lblClinicHistoryDateCretion.Name = "lblClinicHistoryDateCretion";
-            this.lblClinicHistoryDateCretion.Size = new System.Drawing.Size(197, 13);
-            this.lblClinicHistoryDateCretion.TabIndex = 0;
-            this.lblClinicHistoryDateCretion.Text = "fecha de creacion o ultima actualziacion";
+            this.btnAddAlergi.Enabled = false;
+            this.btnAddAlergi.Location = new System.Drawing.Point(617, 237);
+            this.btnAddAlergi.Name = "btnAddAlergi";
+            this.btnAddAlergi.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAlergi.TabIndex = 16;
+            this.btnAddAlergi.Text = "Agregar alergia";
+            this.btnAddAlergi.UseVisualStyleBackColor = true;
+            this.btnAddAlergi.Click += new System.EventHandler(this.btnAddAlergi_Click);
             // 
-            // txtDateOfCreation
+            // cbAllergies
             // 
-            this.txtDateOfCreation.Location = new System.Drawing.Point(235, 37);
-            this.txtDateOfCreation.Name = "txtDateOfCreation";
-            this.txtDateOfCreation.Size = new System.Drawing.Size(160, 20);
-            this.txtDateOfCreation.TabIndex = 1;
+            this.cbAllergies.DisplayMember = "descripcion";
+            this.cbAllergies.FormattingEnabled = true;
+            this.cbAllergies.Location = new System.Drawing.Point(467, 237);
+            this.cbAllergies.Name = "cbAllergies";
+            this.cbAllergies.Size = new System.Drawing.Size(134, 21);
+            this.cbAllergies.TabIndex = 15;
+            this.cbAllergies.ValueMember = "ID";
             // 
-            // lblInfoDateHistoryClinic
+            // btnCreateClinicHistory
             // 
-            this.lblInfoDateHistoryClinic.AutoSize = true;
-            this.lblInfoDateHistoryClinic.Location = new System.Drawing.Point(433, 40);
-            this.lblInfoDateHistoryClinic.Name = "lblInfoDateHistoryClinic";
-            this.lblInfoDateHistoryClinic.Size = new System.Drawing.Size(0, 13);
-            this.lblInfoDateHistoryClinic.TabIndex = 2;
-            // 
-            // lblWeigth
-            // 
-            this.lblWeigth.AutoSize = true;
-            this.lblWeigth.Location = new System.Drawing.Point(18, 77);
-            this.lblWeigth.Name = "lblWeigth";
-            this.lblWeigth.Size = new System.Drawing.Size(31, 13);
-            this.lblWeigth.TabIndex = 3;
-            this.lblWeigth.Text = "Peso";
-            // 
-            // lblHeigth
-            // 
-            this.lblHeigth.AutoSize = true;
-            this.lblHeigth.Location = new System.Drawing.Point(21, 114);
-            this.lblHeigth.Name = "lblHeigth";
-            this.lblHeigth.Size = new System.Drawing.Size(34, 13);
-            this.lblHeigth.TabIndex = 4;
-            this.lblHeigth.Text = "Altura";
-            // 
-            // txtWeigth
-            // 
-            this.txtWeigth.Location = new System.Drawing.Point(235, 70);
-            this.txtWeigth.Name = "txtWeigth";
-            this.txtWeigth.Size = new System.Drawing.Size(160, 20);
-            this.txtWeigth.TabIndex = 5;
-            // 
-            // txtHeigth
-            // 
-            this.txtHeigth.Location = new System.Drawing.Point(235, 111);
-            this.txtHeigth.Name = "txtHeigth";
-            this.txtHeigth.Size = new System.Drawing.Size(160, 20);
-            this.txtHeigth.TabIndex = 6;
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(235, 200);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(160, 20);
-            this.txtDescription.TabIndex = 7;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Location = new System.Drawing.Point(21, 203);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
-            this.lblDescripcion.TabIndex = 8;
-            this.lblDescripcion.Text = "Descripcion";
-            // 
-            // lblAlergias
-            // 
-            this.lblAlergias.AutoSize = true;
-            this.lblAlergias.Location = new System.Drawing.Point(21, 160);
-            this.lblAlergias.Name = "lblAlergias";
-            this.lblAlergias.Size = new System.Drawing.Size(44, 13);
-            this.lblAlergias.TabIndex = 10;
-            this.lblAlergias.Text = "Alergias";
-            // 
-            // ckAlergias
-            // 
-            this.ckAlergias.AutoSize = true;
-            this.ckAlergias.Location = new System.Drawing.Point(235, 159);
-            this.ckAlergias.Name = "ckAlergias";
-            this.ckAlergias.Size = new System.Drawing.Size(15, 14);
-            this.ckAlergias.TabIndex = 11;
-            this.ckAlergias.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(467, 70);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(272, 150);
-            this.dataGridView1.TabIndex = 12;
+            this.btnCreateClinicHistory.Enabled = false;
+            this.btnCreateClinicHistory.Location = new System.Drawing.Point(248, 252);
+            this.btnCreateClinicHistory.Name = "btnCreateClinicHistory";
+            this.btnCreateClinicHistory.Size = new System.Drawing.Size(147, 23);
+            this.btnCreateClinicHistory.TabIndex = 14;
+            this.btnCreateClinicHistory.Text = "crear/actualziar historia";
+            this.btnCreateClinicHistory.UseVisualStyleBackColor = true;
+            this.btnCreateClinicHistory.Click += new System.EventHandler(this.btnCreateClinicHistory_Click);
             // 
             // lblAlergiasPaciente
             // 
@@ -524,33 +458,108 @@
             this.lblAlergiasPaciente.TabIndex = 13;
             this.lblAlergiasPaciente.Text = "Alergia:";
             // 
-            // btnCreateClinicHistory
+            // dataGridView1
             // 
-            this.btnCreateClinicHistory.Location = new System.Drawing.Point(248, 252);
-            this.btnCreateClinicHistory.Name = "btnCreateClinicHistory";
-            this.btnCreateClinicHistory.Size = new System.Drawing.Size(147, 23);
-            this.btnCreateClinicHistory.TabIndex = 14;
-            this.btnCreateClinicHistory.Text = "crear/actualziar historia";
-            this.btnCreateClinicHistory.UseVisualStyleBackColor = true;
-            this.btnCreateClinicHistory.Click += new System.EventHandler(this.btnCreateClinicHistory_Click);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(467, 70);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(272, 150);
+            this.dataGridView1.TabIndex = 12;
             // 
-            // comboBox1
+            // ckAlergias
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(467, 237);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(134, 21);
-            this.comboBox1.TabIndex = 15;
+            this.ckAlergias.AutoSize = true;
+            this.ckAlergias.Enabled = false;
+            this.ckAlergias.Location = new System.Drawing.Point(235, 159);
+            this.ckAlergias.Name = "ckAlergias";
+            this.ckAlergias.Size = new System.Drawing.Size(15, 14);
+            this.ckAlergias.TabIndex = 11;
+            this.ckAlergias.UseVisualStyleBackColor = true;
             // 
-            // btnAddAlergi
+            // lblAlergias
             // 
-            this.btnAddAlergi.Location = new System.Drawing.Point(617, 237);
-            this.btnAddAlergi.Name = "btnAddAlergi";
-            this.btnAddAlergi.Size = new System.Drawing.Size(75, 23);
-            this.btnAddAlergi.TabIndex = 16;
-            this.btnAddAlergi.Text = "Agregar alergia";
-            this.btnAddAlergi.UseVisualStyleBackColor = true;
-            this.btnAddAlergi.Click += new System.EventHandler(this.btnAddAlergi_Click);
+            this.lblAlergias.AutoSize = true;
+            this.lblAlergias.Location = new System.Drawing.Point(21, 160);
+            this.lblAlergias.Name = "lblAlergias";
+            this.lblAlergias.Size = new System.Drawing.Size(44, 13);
+            this.lblAlergias.TabIndex = 10;
+            this.lblAlergias.Text = "Alergias";
+            // 
+            // lblDescripcion
+            // 
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(21, 203);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(63, 13);
+            this.lblDescripcion.TabIndex = 8;
+            this.lblDescripcion.Text = "Descripcion";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Enabled = false;
+            this.txtDescription.Location = new System.Drawing.Point(235, 200);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(160, 20);
+            this.txtDescription.TabIndex = 7;
+            // 
+            // txtHeigth
+            // 
+            this.txtHeigth.Enabled = false;
+            this.txtHeigth.Location = new System.Drawing.Point(235, 111);
+            this.txtHeigth.Name = "txtHeigth";
+            this.txtHeigth.Size = new System.Drawing.Size(160, 20);
+            this.txtHeigth.TabIndex = 6;
+            // 
+            // txtWeigth
+            // 
+            this.txtWeigth.Enabled = false;
+            this.txtWeigth.Location = new System.Drawing.Point(235, 70);
+            this.txtWeigth.Name = "txtWeigth";
+            this.txtWeigth.Size = new System.Drawing.Size(160, 20);
+            this.txtWeigth.TabIndex = 5;
+            // 
+            // lblHeigth
+            // 
+            this.lblHeigth.AutoSize = true;
+            this.lblHeigth.Location = new System.Drawing.Point(21, 114);
+            this.lblHeigth.Name = "lblHeigth";
+            this.lblHeigth.Size = new System.Drawing.Size(34, 13);
+            this.lblHeigth.TabIndex = 4;
+            this.lblHeigth.Text = "Altura";
+            // 
+            // lblWeigth
+            // 
+            this.lblWeigth.AutoSize = true;
+            this.lblWeigth.Location = new System.Drawing.Point(18, 77);
+            this.lblWeigth.Name = "lblWeigth";
+            this.lblWeigth.Size = new System.Drawing.Size(31, 13);
+            this.lblWeigth.TabIndex = 3;
+            this.lblWeigth.Text = "Peso";
+            // 
+            // lblInfoDateHistoryClinic
+            // 
+            this.lblInfoDateHistoryClinic.AutoSize = true;
+            this.lblInfoDateHistoryClinic.Location = new System.Drawing.Point(433, 40);
+            this.lblInfoDateHistoryClinic.Name = "lblInfoDateHistoryClinic";
+            this.lblInfoDateHistoryClinic.Size = new System.Drawing.Size(0, 13);
+            this.lblInfoDateHistoryClinic.TabIndex = 2;
+            // 
+            // txtDateOfCreation
+            // 
+            this.txtDateOfCreation.Enabled = false;
+            this.txtDateOfCreation.Location = new System.Drawing.Point(235, 37);
+            this.txtDateOfCreation.Name = "txtDateOfCreation";
+            this.txtDateOfCreation.Size = new System.Drawing.Size(160, 20);
+            this.txtDateOfCreation.TabIndex = 1;
+            // 
+            // lblClinicHistoryDateCretion
+            // 
+            this.lblClinicHistoryDateCretion.AutoSize = true;
+            this.lblClinicHistoryDateCretion.Location = new System.Drawing.Point(15, 40);
+            this.lblClinicHistoryDateCretion.Name = "lblClinicHistoryDateCretion";
+            this.lblClinicHistoryDateCretion.Size = new System.Drawing.Size(197, 13);
+            this.lblClinicHistoryDateCretion.TabIndex = 0;
+            this.lblClinicHistoryDateCretion.Text = "fecha de creacion o ultima actualziacion";
             // 
             // frmRandU
             // 
@@ -563,6 +572,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmRandU";
             this.Text = "frmAddDoctor";
+            this.Load += new System.EventHandler(this.frmRandU_Load);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -624,6 +634,6 @@
         private System.Windows.Forms.TextBox txtDateOfCreation;
         private System.Windows.Forms.Button btnCreateClinicHistory;
         private System.Windows.Forms.Button btnAddAlergi;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbAllergies;
     }
 }
