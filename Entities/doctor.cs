@@ -19,6 +19,7 @@ namespace Entities
         {
             this.clinicDates = new HashSet<clinicDate>();
             this.doctor_speciality = new HashSet<doctor_speciality>();
+            this.services = new HashSet<service>();
         }
     
         public int id { get; set; }
@@ -33,6 +34,7 @@ namespace Entities
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<doctor_speciality> doctor_speciality { get; set; }
         public virtual user user { get; set; }
-        public virtual service service { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<service> services { get; set; }
     }
 }

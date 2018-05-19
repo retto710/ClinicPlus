@@ -156,5 +156,10 @@ namespace TrabajoFinalWeb.frmsNurses
             }
 
         }
+
+        private void lblEspecialidad_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

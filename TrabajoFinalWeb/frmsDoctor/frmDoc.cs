@@ -20,6 +20,7 @@ namespace TrabajoFinalWeb
         IUserService userService = new UserService();
         frmDate frmDate;
         public int doctorid;
+        public int clinicDateid;
         public frmDate MyfrmDate {
             get
             {

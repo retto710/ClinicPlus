@@ -37,7 +37,6 @@ namespace Entities
         public virtual DbSet<person> people { get; set; }
         public virtual DbSet<service> services { get; set; }
         public virtual DbSet<speciality> specialities { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<user> users { get; set; }
     }
 }

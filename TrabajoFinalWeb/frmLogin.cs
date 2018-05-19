@@ -14,6 +14,7 @@ using buisnessLogic.Doctor;
 using buisnessLogic.Nurse;
 using buisnessLogic.Admin;
 using TrabajoFinalWeb.frmsNurses;
+using System.IO;
 
 namespace TrabajoFinalWeb
 {
@@ -72,6 +73,8 @@ namespace TrabajoFinalWeb
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            string url = "https://image.freepik.com/free-photo/blurred-background-abstract-blur-beautiful-luxury-hospital-and-clinic-interior-for-background-vintage-effect-style-pictures_1253-1358.jpg";
+            pictureBack.Load(url);
             AutoCompleteStringCollection source = new AutoCompleteStringCollection();
             List<user> suggestions = userService.GetUsers();
             while (contador<suggestions.Count)
@@ -119,10 +122,25 @@ namespace TrabajoFinalWeb
                 int dni = Int32.Parse(userString.Substring(1));
                 String name = personService.GetPersonByDni(dni).name;
                 MessageBox.Show("Welcome " + name);
-               
+                String path = @"C:\Users\anthony\source\repos\ClinicPlus\Logs.txt";
                 int userid = objUser.id;
                 idUsuario = userid;
                 String type = cmbTypeOfUser.SelectedItem.ToString();
+                if (!File.Exists(path))
+                {
+                    File.Create(path);
+                    TextWriter tw = new StreamWriter(path);
+                    tw.WriteLine(type +" " +  username + " " + DateTime.Now);
+                    tw.WriteLine();
+                    tw.Close();
+                }
+                else if (File.Exists(path))
+                {
+                    using (var tw = new StreamWriter(path, true))
+                    {
+                        tw.WriteLine(type + " " + username + " " + DateTime.Now);
+                    }
+                }
                 if (type.Equals("Admin"))
                 {
                     IAdminService adminService = new AdminService();
@@ -180,6 +198,10 @@ namespace TrabajoFinalWeb
             //this.Hide();
             frmForgotPassword.Show();
         }
-        
+
+        private void lblTitle_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -58,5 +58,10 @@ namespace TrabajoFinalWeb.frmsNurses
             }
 
         }
+
+        private void cbDoctor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

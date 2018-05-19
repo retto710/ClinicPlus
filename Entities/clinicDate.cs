@@ -14,6 +14,12 @@ namespace Entities
     
     public partial class clinicDate
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public clinicDate()
+        {
+            this.services = new HashSet<service>();
+        }
+    
         public int id { get; set; }
         public int clinicHistorytId { get; set; }
         public int doctorId { get; set; }
@@ -29,6 +35,7 @@ namespace Entities
         public virtual doctor doctor { get; set; }
         public virtual nurse nurse { get; set; }
         public virtual clinicHistory clinicHistory { get; set; }
-        public virtual service service { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<service> services { get; set; }
     }
 }

@@ -27,7 +27,9 @@ namespace TrabajoFinalWeb.frmsDoctor
             objService.clinicDateId = dateID;
             objService.description = txtServiceDescription.Text.ToString();
             objService.dateOfService = dtServices.Value;
+            objService.doctorId = 1;
             objService.dateOfRequest = DateTime.Today;
+            objService.status = false;
             servicesService.createService(objService);
             MessageBox.Show("Servicio created. Wait for confirmation.");
             this.Close();

@@ -32,8 +32,8 @@
           <Property Name="dateOfAppointment" Type="date" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="status" Type="bit" Nullable="false" />
-          <Property Name="weight" Type="decimal" Precision="3" Scale="1" />
-          <Property Name="height" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="weight" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="height" Type="decimal" Precision="5" Scale="2" />
           <Property Name="alergies" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="clinicHistory">
@@ -43,8 +43,8 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="patientId" Type="int" Nullable="false" />
           <Property Name="date" Type="date" Nullable="false" />
-          <Property Name="weight" Type="decimal" Precision="3" Scale="1" />
-          <Property Name="height" Type="decimal" Precision="3" Scale="2" />
+          <Property Name="weight" Type="decimal" Precision="5" Scale="2" />
+          <Property Name="height" Type="decimal" Precision="5" Scale="2" />
           <Property Name="alergies" Type="nvarchar" MaxLength="50" />
           <Property Name="description" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -124,16 +124,6 @@
           </Key>
           <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="description" Type="nvarchar" MaxLength="50" Nullable="false" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -326,25 +316,25 @@
         </Association>
         <Association Name="FK_services_clinicDate">
           <End Role="clinicDate" Type="Self.clinicDate" Multiplicity="1" />
-          <End Role="services" Type="Self.services" Multiplicity="0..1" />
+          <End Role="services" Type="Self.services" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="clinicDate">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="services">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="clinicDateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_services_doctor">
           <End Role="doctor" Type="Self.doctor" Multiplicity="1" />
-          <End Role="services" Type="Self.services" Multiplicity="0..1" />
+          <End Role="services" Type="Self.services" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="doctor">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="services">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="doctorId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -361,7 +351,6 @@
           <EntitySet Name="person" EntityType="Self.person" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="services" EntityType="Self.services" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="speciality" EntityType="Self.speciality" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_admin_person" Association="Self.FK_admin_person">
             <End Role="person" EntitySet="person" />
@@ -467,13 +456,13 @@
           <Property Name="dateOfAppointment" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="status" Type="Boolean" Nullable="false" />
-          <Property Name="weight" Type="Decimal" Precision="3" Scale="1" />
-          <Property Name="height" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="weight" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="height" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="alergies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="doctor" Relationship="Self.FK_clinicDate_doctor" FromRole="clinicDate" ToRole="doctor" />
           <NavigationProperty Name="nurse" Relationship="Self.FK_clinicDate_nurse" FromRole="clinicDate" ToRole="nurse" />
           <NavigationProperty Name="clinicHistory" Relationship="Self.FK_clinicDate_patient" FromRole="clinicDate" ToRole="clinicHistory" />
-          <NavigationProperty Name="service" Relationship="Self.FK_services_clinicDate" FromRole="clinicDate" ToRole="services" />
+          <NavigationProperty Name="services" Relationship="Self.FK_services_clinicDate" FromRole="clinicDate" ToRole="services" />
         </EntityType>
         <EntityType Name="clinicHistory">
           <Key>
@@ -482,8 +471,8 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="patientId" Type="Int32" Nullable="false" />
           <Property Name="date" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="weight" Type="Decimal" Precision="3" Scale="1" />
-          <Property Name="height" Type="Decimal" Precision="3" Scale="2" />
+          <Property Name="weight" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="height" Type="Decimal" Precision="5" Scale="2" />
           <Property Name="alergies" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="clinicDates" Relationship="Self.FK_clinicDate_patient" FromRole="clinicHistory" ToRole="clinicDate" />
@@ -513,7 +502,7 @@
           <NavigationProperty Name="person" Relationship="Self.FK_doctor_person" FromRole="doctor" ToRole="person" />
           <NavigationProperty Name="doctor_speciality" Relationship="Self.FK_doctor_speciality_doctor" FromRole="doctor" ToRole="doctor_speciality" />
           <NavigationProperty Name="user" Relationship="Self.FK_doctor_user" FromRole="doctor" ToRole="user" />
-          <NavigationProperty Name="service" Relationship="Self.FK_services_doctor" FromRole="doctor" ToRole="services" />
+          <NavigationProperty Name="services" Relationship="Self.FK_services_doctor" FromRole="doctor" ToRole="services" />
         </EntityType>
         <EntityType Name="doctor_speciality">
           <Key>
@@ -587,16 +576,6 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="description" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="doctor_speciality" Relationship="Self.FK_doctor_speciality_specialties" FromRole="speciality" ToRole="doctor_speciality" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -684,13 +663,13 @@
         </Association>
         <Association Name="FK_services_clinicDate">
           <End Role="clinicDate" Type="Self.clinicDate" Multiplicity="1" />
-          <End Role="services" Type="Self.service" Multiplicity="0..1" />
+          <End Role="services" Type="Self.service" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="clinicDate">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="services">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="clinicDateId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -756,13 +735,13 @@
         </Association>
         <Association Name="FK_services_doctor">
           <End Role="doctor" Type="Self.doctor" Multiplicity="1" />
-          <End Role="services" Type="Self.service" Multiplicity="0..1" />
+          <End Role="services" Type="Self.service" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="doctor">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="services">
-              <PropertyRef Name="ID" />
+              <PropertyRef Name="doctorId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -814,7 +793,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FinalAppWebEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FinalAppWebEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="admins" EntityType="Self.admin" />
           <EntitySet Name="alergies" EntityType="Self.alergy" />
           <EntitySet Name="clinicDates" EntityType="Self.clinicDate" />
@@ -827,7 +806,6 @@
           <EntitySet Name="people" EntityType="Self.person" />
           <EntitySet Name="services" EntityType="Self.service" />
           <EntitySet Name="specialities" EntityType="Self.speciality" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="users" EntityType="Self.user" />
           <AssociationSet Name="FK_admin_person" Association="Self.FK_admin_person">
             <End Role="person" EntitySet="people" />
@@ -903,7 +881,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FinalAppWebModelStoreContainer" CdmEntityContainer="FinalAppWebEntities1">
+        <EntityContainerMapping StorageEntityContainer="FinalAppWebModelStoreContainer" CdmEntityContainer="FinalAppWebEntities">
           <EntitySetMapping Name="admins">
             <EntityTypeMapping TypeName="FinalAppWebModel.admin">
               <MappingFragment StoreEntitySet="admin">
@@ -1033,17 +1011,6 @@
               <MappingFragment StoreEntitySet="speciality">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="description" ColumnName="description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="FinalAppWebModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

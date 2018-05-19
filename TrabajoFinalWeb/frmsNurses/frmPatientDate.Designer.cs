@@ -31,27 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnLook4Doctors = new System.Windows.Forms.Button();
-            this.dtDate4Date = new System.Windows.Forms.DateTimePicker();
-            this.cbDoctor = new System.Windows.Forms.ComboBox();
-            this.cbSpeciality = new System.Windows.Forms.ComboBox();
-            this.btnCreateDeate = new System.Windows.Forms.Button();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtWiegth = new System.Windows.Forms.TextBox();
-            this.txtHeigth = new System.Windows.Forms.TextBox();
-            this.Descripcion = new System.Windows.Forms.Label();
-            this.lblAltura = new System.Windows.Forms.Label();
-            this.lblPeso = new System.Windows.Forms.Label();
-            this.lblDateForDate = new System.Windows.Forms.Label();
-            this.lbldoctor = new System.Windows.Forms.Label();
-            this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateOfRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,22 +53,43 @@
             this.doctorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nurseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clinicHistoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLook4Doctors = new System.Windows.Forms.Button();
+            this.dtDate4Date = new System.Windows.Forms.DateTimePicker();
+            this.cbDoctor = new System.Windows.Forms.ComboBox();
+            this.cbSpeciality = new System.Windows.Forms.ComboBox();
+            this.btnCreateDeate = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtWiegth = new System.Windows.Forms.TextBox();
+            this.txtHeigth = new System.Windows.Forms.TextBox();
+            this.Descripcion = new System.Windows.Forms.Label();
+            this.lblAltura = new System.Windows.Forms.Label();
+            this.lblPeso = new System.Windows.Forms.Label();
+            this.lblDateForDate = new System.Windows.Forms.Label();
+            this.lbldoctor = new System.Windows.Forms.Label();
+            this.lblEspecialidad = new System.Windows.Forms.Label();
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(0, 494);
+            this.groupBox1.Location = new System.Drawing.Point(0, 676);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1098, 262);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Size = new System.Drawing.Size(1647, 487);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Lista pacientes";
@@ -120,207 +120,14 @@
             this.alergiesDataGridViewTextBoxColumn,
             this.doctorDataGridViewTextBoxColumn,
             this.nurseDataGridViewTextBoxColumn,
-            this.clinicHistoryDataGridViewTextBoxColumn,
-            this.serviceDataGridViewTextBoxColumn});
+            this.clinicHistoryDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.clinicDateBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(10, 29);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 231);
+            this.dataGridView1.Size = new System.Drawing.Size(1264, 355);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.btnBuscar);
-            this.groupBox3.Controls.Add(this.txtDNI);
-            this.groupBox3.Controls.Add(this.lblDNI);
-            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox3.Location = new System.Drawing.Point(0, 0);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1098, 110);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "DNI";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(920, 44);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 11;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(136, 44);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(100, 20);
-            this.txtDNI.TabIndex = 10;
-            // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(56, 44);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(29, 13);
-            this.lblDNI.TabIndex = 0;
-            this.lblDNI.Text = "DNI:";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnLook4Doctors);
-            this.groupBox2.Controls.Add(this.dtDate4Date);
-            this.groupBox2.Controls.Add(this.cbDoctor);
-            this.groupBox2.Controls.Add(this.cbSpeciality);
-            this.groupBox2.Controls.Add(this.btnCreateDeate);
-            this.groupBox2.Controls.Add(this.txtDescription);
-            this.groupBox2.Controls.Add(this.txtWiegth);
-            this.groupBox2.Controls.Add(this.txtHeigth);
-            this.groupBox2.Controls.Add(this.Descripcion);
-            this.groupBox2.Controls.Add(this.lblAltura);
-            this.groupBox2.Controls.Add(this.lblPeso);
-            this.groupBox2.Controls.Add(this.lblDateForDate);
-            this.groupBox2.Controls.Add(this.lbldoctor);
-            this.groupBox2.Controls.Add(this.lblEspecialidad);
-            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(0, 110);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1098, 384);
-            this.groupBox2.TabIndex = 3;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Datos nueva cita";
-            // 
-            // btnLook4Doctors
-            // 
-            this.btnLook4Doctors.Location = new System.Drawing.Point(304, 56);
-            this.btnLook4Doctors.Name = "btnLook4Doctors";
-            this.btnLook4Doctors.Size = new System.Drawing.Size(123, 23);
-            this.btnLook4Doctors.TabIndex = 16;
-            this.btnLook4Doctors.Text = "buscar doctores";
-            this.btnLook4Doctors.UseVisualStyleBackColor = true;
-            this.btnLook4Doctors.Click += new System.EventHandler(this.btnLook4Doctors_Click);
-            // 
-            // dtDate4Date
-            // 
-            this.dtDate4Date.Location = new System.Drawing.Point(136, 165);
-            this.dtDate4Date.Name = "dtDate4Date";
-            this.dtDate4Date.Size = new System.Drawing.Size(200, 20);
-            this.dtDate4Date.TabIndex = 15;
-            // 
-            // cbDoctor
-            // 
-            this.cbDoctor.DisplayMember = "doctorId";
-            this.cbDoctor.FormattingEnabled = true;
-            this.cbDoctor.Location = new System.Drawing.Point(136, 105);
-            this.cbDoctor.Name = "cbDoctor";
-            this.cbDoctor.Size = new System.Drawing.Size(121, 21);
-            this.cbDoctor.TabIndex = 14;
-            this.cbDoctor.ValueMember = "doctorId";
-            // 
-            // cbSpeciality
-            // 
-            this.cbSpeciality.DisplayMember = "description";
-            this.cbSpeciality.FormattingEnabled = true;
-            this.cbSpeciality.Location = new System.Drawing.Point(136, 61);
-            this.cbSpeciality.Name = "cbSpeciality";
-            this.cbSpeciality.Size = new System.Drawing.Size(121, 21);
-            this.cbSpeciality.TabIndex = 13;
-            this.cbSpeciality.ValueMember = "ID";
-            // 
-            // btnCreateDeate
-            // 
-            this.btnCreateDeate.Location = new System.Drawing.Point(503, 257);
-            this.btnCreateDeate.Name = "btnCreateDeate";
-            this.btnCreateDeate.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateDeate.TabIndex = 12;
-            this.btnCreateDeate.Text = "Crear cita";
-            this.btnCreateDeate.UseVisualStyleBackColor = true;
-            this.btnCreateDeate.Click += new System.EventHandler(this.btnCreateDeate_Click);
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(611, 56);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(100, 20);
-            this.txtDescription.TabIndex = 9;
-            // 
-            // txtWiegth
-            // 
-            this.txtWiegth.Location = new System.Drawing.Point(136, 221);
-            this.txtWiegth.Name = "txtWiegth";
-            this.txtWiegth.Size = new System.Drawing.Size(100, 20);
-            this.txtWiegth.TabIndex = 8;
-            // 
-            // txtHeigth
-            // 
-            this.txtHeigth.Location = new System.Drawing.Point(136, 291);
-            this.txtHeigth.Name = "txtHeigth";
-            this.txtHeigth.Size = new System.Drawing.Size(100, 20);
-            this.txtHeigth.TabIndex = 7;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.AutoSize = true;
-            this.Descripcion.Location = new System.Drawing.Point(474, 56);
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Size = new System.Drawing.Size(63, 13);
-            this.Descripcion.TabIndex = 6;
-            this.Descripcion.Text = "Descripcion";
-            // 
-            // lblAltura
-            // 
-            this.lblAltura.AutoSize = true;
-            this.lblAltura.Location = new System.Drawing.Point(38, 291);
-            this.lblAltura.Name = "lblAltura";
-            this.lblAltura.Size = new System.Drawing.Size(34, 13);
-            this.lblAltura.TabIndex = 5;
-            this.lblAltura.Text = "Altura";
-            // 
-            // lblPeso
-            // 
-            this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(38, 221);
-            this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Size = new System.Drawing.Size(31, 13);
-            this.lblPeso.TabIndex = 4;
-            this.lblPeso.Text = "Peso";
-            // 
-            // lblDateForDate
-            // 
-            this.lblDateForDate.AutoSize = true;
-            this.lblDateForDate.Location = new System.Drawing.Point(38, 165);
-            this.lblDateForDate.Name = "lblDateForDate";
-            this.lblDateForDate.Size = new System.Drawing.Size(65, 13);
-            this.lblDateForDate.TabIndex = 3;
-            this.lblDateForDate.Text = "dia para cita";
-            // 
-            // lbldoctor
-            // 
-            this.lbldoctor.AutoSize = true;
-            this.lbldoctor.Location = new System.Drawing.Point(38, 108);
-            this.lbldoctor.Name = "lbldoctor";
-            this.lbldoctor.Size = new System.Drawing.Size(37, 13);
-            this.lbldoctor.TabIndex = 2;
-            this.lbldoctor.Text = "doctor";
-            // 
-            // lblEspecialidad
-            // 
-            this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(38, 63);
-            this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(66, 13);
-            this.lblEspecialidad.TabIndex = 1;
-            this.lblEspecialidad.Text = "especialidad";
-            // 
-            // clinicDateBindingSource
-            // 
-            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataSource = typeof(Entities.patient);
             // 
             // dateOfRequest
             // 
@@ -469,32 +276,240 @@
             this.clinicHistoryDataGridViewTextBoxColumn.Name = "clinicHistoryDataGridViewTextBoxColumn";
             this.clinicHistoryDataGridViewTextBoxColumn.Visible = false;
             // 
-            // serviceDataGridViewTextBoxColumn
+            // clinicDateBindingSource
             // 
-            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "service";
-            this.serviceDataGridViewTextBoxColumn.HeaderText = "service";
-            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
-            this.serviceDataGridViewTextBoxColumn.Visible = false;
+            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.btnBuscar);
+            this.groupBox3.Controls.Add(this.txtDNI);
+            this.groupBox3.Controls.Add(this.lblDNI);
+            this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox3.Location = new System.Drawing.Point(0, 0);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox3.Size = new System.Drawing.Size(1647, 169);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DNI";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(1380, 68);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(112, 35);
+            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(204, 68);
+            this.txtDNI.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(148, 26);
+            this.txtDNI.TabIndex = 10;
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(84, 66);
+            this.lblDNI.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(41, 20);
+            this.lblDNI.TabIndex = 0;
+            this.lblDNI.Text = "DNI:";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnLook4Doctors);
+            this.groupBox2.Controls.Add(this.dtDate4Date);
+            this.groupBox2.Controls.Add(this.cbDoctor);
+            this.groupBox2.Controls.Add(this.cbSpeciality);
+            this.groupBox2.Controls.Add(this.btnCreateDeate);
+            this.groupBox2.Controls.Add(this.txtDescription);
+            this.groupBox2.Controls.Add(this.txtWiegth);
+            this.groupBox2.Controls.Add(this.txtHeigth);
+            this.groupBox2.Controls.Add(this.Descripcion);
+            this.groupBox2.Controls.Add(this.lblAltura);
+            this.groupBox2.Controls.Add(this.lblPeso);
+            this.groupBox2.Controls.Add(this.lblDateForDate);
+            this.groupBox2.Controls.Add(this.lbldoctor);
+            this.groupBox2.Controls.Add(this.lblEspecialidad);
+            this.groupBox2.Location = new System.Drawing.Point(0, 169);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox2.Size = new System.Drawing.Size(1647, 497);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Datos nueva cita";
+            // 
+            // btnLook4Doctors
+            // 
+            this.btnLook4Doctors.Location = new System.Drawing.Point(456, 86);
+            this.btnLook4Doctors.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnLook4Doctors.Name = "btnLook4Doctors";
+            this.btnLook4Doctors.Size = new System.Drawing.Size(184, 35);
+            this.btnLook4Doctors.TabIndex = 16;
+            this.btnLook4Doctors.Text = "buscar doctores";
+            this.btnLook4Doctors.UseVisualStyleBackColor = true;
+            this.btnLook4Doctors.Click += new System.EventHandler(this.btnLook4Doctors_Click);
+            // 
+            // dtDate4Date
+            // 
+            this.dtDate4Date.Location = new System.Drawing.Point(204, 254);
+            this.dtDate4Date.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dtDate4Date.Name = "dtDate4Date";
+            this.dtDate4Date.Size = new System.Drawing.Size(298, 26);
+            this.dtDate4Date.TabIndex = 15;
+            // 
+            // cbDoctor
+            // 
+            this.cbDoctor.DisplayMember = "doctorNames";
+            this.cbDoctor.FormattingEnabled = true;
+            this.cbDoctor.Location = new System.Drawing.Point(204, 162);
+            this.cbDoctor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbDoctor.Name = "cbDoctor";
+            this.cbDoctor.Size = new System.Drawing.Size(180, 28);
+            this.cbDoctor.TabIndex = 14;
+            this.cbDoctor.ValueMember = "doctorId";
+            // 
+            // cbSpeciality
+            // 
+            this.cbSpeciality.DisplayMember = "description";
+            this.cbSpeciality.FormattingEnabled = true;
+            this.cbSpeciality.Location = new System.Drawing.Point(204, 94);
+            this.cbSpeciality.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbSpeciality.Name = "cbSpeciality";
+            this.cbSpeciality.Size = new System.Drawing.Size(180, 28);
+            this.cbSpeciality.TabIndex = 13;
+            this.cbSpeciality.ValueMember = "ID";
+            // 
+            // btnCreateDeate
+            // 
+            this.btnCreateDeate.Location = new System.Drawing.Point(528, 397);
+            this.btnCreateDeate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCreateDeate.Name = "btnCreateDeate";
+            this.btnCreateDeate.Size = new System.Drawing.Size(112, 35);
+            this.btnCreateDeate.TabIndex = 12;
+            this.btnCreateDeate.Text = "Crear cita";
+            this.btnCreateDeate.UseVisualStyleBackColor = true;
+            this.btnCreateDeate.Click += new System.EventHandler(this.btnCreateDeate_Click);
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(916, 86);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(148, 26);
+            this.txtDescription.TabIndex = 9;
+            // 
+            // txtWiegth
+            // 
+            this.txtWiegth.Location = new System.Drawing.Point(204, 340);
+            this.txtWiegth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtWiegth.Name = "txtWiegth";
+            this.txtWiegth.Size = new System.Drawing.Size(148, 26);
+            this.txtWiegth.TabIndex = 8;
+            // 
+            // txtHeigth
+            // 
+            this.txtHeigth.Location = new System.Drawing.Point(204, 448);
+            this.txtHeigth.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtHeigth.Name = "txtHeigth";
+            this.txtHeigth.Size = new System.Drawing.Size(148, 26);
+            this.txtHeigth.TabIndex = 7;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSize = true;
+            this.Descripcion.Location = new System.Drawing.Point(711, 86);
+            this.Descripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Size = new System.Drawing.Size(92, 20);
+            this.Descripcion.TabIndex = 6;
+            this.Descripcion.Text = "Descripcion";
+            // 
+            // lblAltura
+            // 
+            this.lblAltura.AutoSize = true;
+            this.lblAltura.Location = new System.Drawing.Point(57, 448);
+            this.lblAltura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblAltura.Name = "lblAltura";
+            this.lblAltura.Size = new System.Drawing.Size(51, 20);
+            this.lblAltura.TabIndex = 5;
+            this.lblAltura.Text = "Altura";
+            // 
+            // lblPeso
+            // 
+            this.lblPeso.AutoSize = true;
+            this.lblPeso.Location = new System.Drawing.Point(57, 340);
+            this.lblPeso.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPeso.Name = "lblPeso";
+            this.lblPeso.Size = new System.Drawing.Size(45, 20);
+            this.lblPeso.TabIndex = 4;
+            this.lblPeso.Text = "Peso";
+            // 
+            // lblDateForDate
+            // 
+            this.lblDateForDate.AutoSize = true;
+            this.lblDateForDate.Location = new System.Drawing.Point(57, 254);
+            this.lblDateForDate.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDateForDate.Name = "lblDateForDate";
+            this.lblDateForDate.Size = new System.Drawing.Size(95, 20);
+            this.lblDateForDate.TabIndex = 3;
+            this.lblDateForDate.Text = "dia para cita";
+            // 
+            // lbldoctor
+            // 
+            this.lbldoctor.AutoSize = true;
+            this.lbldoctor.Location = new System.Drawing.Point(57, 166);
+            this.lbldoctor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbldoctor.Name = "lbldoctor";
+            this.lbldoctor.Size = new System.Drawing.Size(54, 20);
+            this.lbldoctor.TabIndex = 2;
+            this.lbldoctor.Text = "doctor";
+            // 
+            // lblEspecialidad
+            // 
+            this.lblEspecialidad.AutoSize = true;
+            this.lblEspecialidad.Location = new System.Drawing.Point(57, 97);
+            this.lblEspecialidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.Size = new System.Drawing.Size(97, 20);
+            this.lblEspecialidad.TabIndex = 1;
+            this.lblEspecialidad.Text = "especialidad";
+            this.lblEspecialidad.Click += new System.EventHandler(this.lblEspecialidad_Click);
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataSource = typeof(Entities.patient);
             // 
             // frmPatientDate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1098, 756);
+            this.ClientSize = new System.Drawing.Size(1647, 1050);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPatientDate";
             this.Text = "frmPatientDate";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPatientDate_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.ResumeLayout(false);
 

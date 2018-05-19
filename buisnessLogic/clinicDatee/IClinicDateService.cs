@@ -23,5 +23,7 @@ namespace buisnessLogic.clinicDatee
         List<clinicDate> GetClinicDatesByDoctor(int id);
         
         List<clinicDate> GetClinicDatesByDoctorAndStatus(int id, bool status);
+
+        void updateClinicDate(clinicDate obj);
     }
 }

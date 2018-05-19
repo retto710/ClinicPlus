@@ -57,5 +57,11 @@ namespace buisnessLogic.clinicDatee
             IClinicDateRepository repo = new ClinicDateRepository();
             return repo.GetClinicDatesNotAprove();
         }
+
+        public void updateClinicDate(clinicDate obj)
+        {
+            IClinicDateRepository repo = new ClinicDateRepository();
+            repo.updateClinicDate(obj);
+        }
     }
 }

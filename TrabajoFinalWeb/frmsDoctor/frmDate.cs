@@ -19,7 +19,9 @@ namespace TrabajoFinalWeb.frmsDoctor
 
         private void btnAddService_Click(object sender, EventArgs e)
         {
-            frmRequestService services = new frmRequestService(0);
+            frmDoc frm = (frmDoc) this.MdiParent;
+
+            frmRequestService services = new frmRequestService(frm.clinicDateid);
             services.Show();
         }
     }

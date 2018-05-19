@@ -38,6 +38,8 @@
             this.lblForgotPassword = new System.Windows.Forms.LinkLabel();
             this.cmbTypeOfUser = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBack = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).BeginInit();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -64,6 +66,7 @@
             this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.SystemColors.Control;
             this.lblTitle.Font = new System.Drawing.Font("Modern No. 20", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.Location = new System.Drawing.Point(225, 48);
             this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
@@ -71,6 +74,7 @@
             this.lblTitle.Size = new System.Drawing.Size(367, 75);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "ClinicPLus";
+            this.lblTitle.Click += new System.EventHandler(this.lblTitle_Click);
             // 
             // lblUser
             // 
@@ -150,6 +154,15 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Type Of User";
             // 
+            // pictureBack
+            // 
+            this.pictureBack.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBack.Location = new System.Drawing.Point(0, 0);
+            this.pictureBack.Name = "pictureBack";
+            this.pictureBack.Size = new System.Drawing.Size(816, 555);
+            this.pictureBack.TabIndex = 10;
+            this.pictureBack.TabStop = false;
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -165,11 +178,13 @@
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.Controls.Add(this.pictureBack);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -187,6 +202,7 @@
         private System.Windows.Forms.LinkLabel lblForgotPassword;
         private System.Windows.Forms.ComboBox cmbTypeOfUser;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBack;
     }
 }
 

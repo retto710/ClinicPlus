@@ -33,9 +33,10 @@
             // 
             // btnAddService
             // 
-            this.btnAddService.Location = new System.Drawing.Point(361, 174);
+            this.btnAddService.Location = new System.Drawing.Point(24, 38);
+            this.btnAddService.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAddService.Name = "btnAddService";
-            this.btnAddService.Size = new System.Drawing.Size(75, 23);
+            this.btnAddService.Size = new System.Drawing.Size(112, 35);
             this.btnAddService.TabIndex = 0;
             this.btnAddService.Text = "Add Service";
             this.btnAddService.UseVisualStyleBackColor = true;
@@ -43,11 +44,12 @@
             // 
             // frmDate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1200, 692);
             this.Controls.Add(this.btnAddService);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmDate";
             this.Text = "frmDate";
             this.ResumeLayout(false);

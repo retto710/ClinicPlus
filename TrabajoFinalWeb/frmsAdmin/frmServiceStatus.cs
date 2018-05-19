@@ -22,6 +22,7 @@ namespace TrabajoFinalWeb.frmsAdmin
 
         private void load() {
             List<service> services = servicesService.getServices();
+            dataGridView1.DataSource = services;
         }
 
         private void frmServiceStatus_Load(object sender, EventArgs e)

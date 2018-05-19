@@ -188,8 +188,8 @@ namespace TrabajoFinalWeb.frmsNurses
                             isANewHistory = false;
                             txtDateOfCreation.Text = objClinicHistory.date.ToString();
                             txtDescription.Text = objClinicHistory.description;
-                            txtHeigth.Text = objClinicHistory.height.ToString();
-                            txtWeigth.Text = objClinicHistory.weight.ToString();
+                            txtHeigth.Value = objClinicHistory.height.Value;
+                            txtWeigth.Value = objClinicHistory.weight.Value;
                             enableTextboxCreateUpdateClinicHistory(true);
                             if (objClinicHistory.alergies.Equals("si"))
                             {
@@ -219,10 +219,7 @@ namespace TrabajoFinalWeb.frmsNurses
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            String name = objPerson.name;
-            char firstletter = name[0];
-            int dniValue = Decimal.ToInt32(objPerson.DNI);
-            username = firstletter + dniValue.ToString();
+            
             if (isANewPerson)
             {
                 objPerson = new person();
@@ -238,9 +235,10 @@ namespace TrabajoFinalWeb.frmsNurses
                 objPerson.dateOfBith = dateOfBirth.Value.Date;
 
                 personServ.CreatePerson(objPerson);
-
+                isANewHistory = true;
                 enableTextboxCreateUpdateClinicHistory(true);
             }
+            
             else {
                 //No es una perosna nueva esto es poara el UPDATE
                 if (!isANewPerson)
@@ -261,7 +259,10 @@ namespace TrabajoFinalWeb.frmsNurses
                     personServ.UpdatePerson(objPerson);
                 }
             }
-
+            String name = objPerson.name;
+            char firstletter = name[0];
+            int dniValue = Decimal.ToInt32(objPerson.DNI);
+            username = firstletter + dniValue.ToString();
             //Verifico si tiene usuario y si no es estoy creando paciente
             if (userService.GetUserByUsername(username) == null)
             {
@@ -301,8 +302,8 @@ namespace TrabajoFinalWeb.frmsNurses
             {
                 clinicHistory objClinicHistory = new clinicHistory();
                 objClinicHistory.patientId = idPatient;
-                objClinicHistory.weight = Convert.ToDecimal(txtWeigth.Text);
-                objClinicHistory.height = Convert.ToDecimal(txtHeigth.Text);
+                objClinicHistory.weight = txtWeigth.Value;
+                objClinicHistory.height = txtHeigth.Value;
                 objClinicHistory.date = DateTime.Today.Date;
                 objClinicHistory.description = txtDescription.Text.ToString();
                 if (ckAlergias.Checked) { objClinicHistory.alergies = "si"; } else { objClinicHistory.alergies = "no"; }
@@ -320,8 +321,8 @@ namespace TrabajoFinalWeb.frmsNurses
                     clinicHistory objClinicHistory = clinicHistoryService.GetClinicHistoryByPatientId(idPatient);
                     idPClinicHsitory = objClinicHistory.id;
                     objClinicHistory.date = DateTime.Today;
-                    objClinicHistory.weight = Convert.ToDecimal(txtWeigth.Text);
-                    objClinicHistory.height = Convert.ToDecimal(txtHeigth.Text);
+                    objClinicHistory.weight = txtWeigth.Value;
+                    objClinicHistory.height = txtHeigth.Value;
                     objClinicHistory.description = txtDateOfCreation.Text.ToString();
                     if (ckAlergias.Checked) { objClinicHistory.alergies = "si"; } else { objClinicHistory.alergies = "no"; }
 
@@ -381,6 +382,11 @@ namespace TrabajoFinalWeb.frmsNurses
                     this.load();
                 }
             }
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

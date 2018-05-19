@@ -97,5 +97,19 @@ namespace DataAccess.clinicDatee
                 return tnts.ToList();
             }
         }
+
+        public void updateClinicDate(clinicDate obj)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var trs = from t in dataContext.clinicDates
+                          where t.id == obj.id
+                          select t;
+                clinicDate transaction = trs.FirstOrDefault();
+                //Update field by field
+                transaction.status = obj.status;
+                dataContext.SaveChanges();
+            }
+        }
     }
 }

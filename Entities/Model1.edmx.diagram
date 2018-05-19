@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="52fe24ab053344e7b6a8d50fd85dc265" Name="Diagram1">
+      <Diagram DiagramId="80ae3a7b00984b9da0329de131e95d86" Name="Diagram1">
         <EntityTypeShape EntityType="FinalAppWebModel.admin" Width="1.5" PointX="3" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FinalAppWebModel.alergy" Width="1.5" PointX="5.25" PointY="14.5" IsExpanded="true" />
         <EntityTypeShape EntityType="FinalAppWebModel.clinicDate" Width="1.5" PointX="8.25" PointY="11.125" IsExpanded="true" />
@@ -17,7 +17,6 @@
         <EntityTypeShape EntityType="FinalAppWebModel.person" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FinalAppWebModel.service" Width="1.5" PointX="10.5" PointY="10.25" IsExpanded="true" />
         <EntityTypeShape EntityType="FinalAppWebModel.speciality" Width="1.5" PointX="6" PointY="4.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="FinalAppWebModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="FinalAppWebModel.user" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
         <AssociationConnector Association="FinalAppWebModel.FK_admin_person" ManuallyRouted="false" />
         <AssociationConnector Association="FinalAppWebModel.FK_admin_user" ManuallyRouted="false" />

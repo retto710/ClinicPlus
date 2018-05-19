@@ -15,9 +15,11 @@ namespace TrabajoFinalWeb.frmsDoctor
     public partial class FrmPacientes : Form
     {
         IClinicDateService clinicDateService = new ClinicDateService();
+        
         public FrmPacientes()
         {
             InitializeComponent();
+           
         }
 
         private void FrmPacientes_Load(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace TrabajoFinalWeb.frmsDoctor
         }
         private void load()
         {
-            frmDoc frm = (frmDoc) this.MdiParent;
+            frmDoc frm = (frmDoc)this.MdiParent;
             int doctorID = frm.doctorid;
             List<clinicDate> citas = clinicDateService.GetClinicDatesByDoctorAndStatus(doctorID,false);
             dataGridView1.DataSource = citas;
@@ -52,7 +54,14 @@ namespace TrabajoFinalWeb.frmsDoctor
                         (clinicDate)dataGridView1.
                         Rows[e.RowIndex].
                         DataBoundItem;
-                    this.SendToBack();
+                    frmDoc frm = (frmDoc)this.MdiParent;
+                    objCustomer.status = true;
+                    clinicDateService.updateClinicDate(objCustomer);
+                    frm.clinicDateid = objCustomer.id;
+                   this.SendToBack();
+                    
+                   
+                        
                 }
             }
             else if(dataGridView1.

@@ -18,6 +18,7 @@ namespace Entities
             {
                 //return "alergia";
                 return this.doctor.id.ToString();
+                
             }
         }
 

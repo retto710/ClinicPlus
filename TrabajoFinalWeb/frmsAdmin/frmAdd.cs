@@ -125,10 +125,7 @@ namespace TrabajoFinalWeb
         private void btnAdd_Click(object sender, EventArgs e)
         {
             String type = txtType.SelectedItem.ToString();
-            String name = objPerson.name;
-            char firstletter = name[0];
-            int dniValue = Decimal.ToInt32(objPerson.DNI);
-            username = firstletter + dniValue.ToString();
+          
             if (isANewPerson)
             {
                 objPerson = new person();
@@ -144,6 +141,10 @@ namespace TrabajoFinalWeb
                 objPerson.dateOfBith = dateOfBirth.Value.Date;
                 personServ.CreatePerson(objPerson);
             }
+            String name = objPerson.name;
+            char firstletter = name[0];
+            int dniValue = Decimal.ToInt32(objPerson.DNI);
+            username = firstletter + dniValue.ToString();
             //Verifico si tiene usuario y si no es estoy creando paciente
             if (userService.GetUserByUsername(username) == null&&type!="Patient")
             {
