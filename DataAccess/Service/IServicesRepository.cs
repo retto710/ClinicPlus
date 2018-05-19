@@ -14,5 +14,7 @@ namespace DataAccess.Service
         List<service> getServices();
 
         void deleteService(service objService);
+
+        void updateService(service objService);
     }
 }

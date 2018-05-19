@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TrabajoFinalWeb.frmsAdmin;
 
 namespace TrabajoFinalWeb
 {
@@ -14,8 +15,24 @@ namespace TrabajoFinalWeb
     {
         frmAdd frmAddPerson;
         frmList frmListPerson;
+        frmServiceStatus frmServiceStatus;
         frmAddSpeciality frmSpeciality;
         frmDoctorSpeciality frmAddDoctorSpeciality;
+        public frmServiceStatus FrmServiceStatus
+        {
+            get
+            {
+                if (frmServiceStatus == null ||
+                    frmServiceStatus.IsDisposed)
+                {
+                    frmServiceStatus =
+                        new frmServiceStatus();
+                    frmServiceStatus.MdiParent = this;
+                    frmServiceStatus.Dock = DockStyle.Fill;
+                }
+                return frmServiceStatus;
+            }
+        }
         public frmDoctorSpeciality FrmDoctorSpeciality
         {
             get
@@ -104,6 +121,7 @@ namespace TrabajoFinalWeb
             this.FrmList.Show();
             this.FrmDoctorSpeciality.Show();
             this.FrmAddSpeciality.Show();
+            this.FrmServiceStatus.Show();
             this.FrmAdd.BringToFront();
         }
 
@@ -120,6 +138,11 @@ namespace TrabajoFinalWeb
         private void doctorSpecialitiesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.FrmDoctorSpeciality.BringToFront();
+        }
+
+        private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.FrmServiceStatus.BringToFront();
         }
     }
 }

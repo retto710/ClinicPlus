@@ -14,5 +14,6 @@ namespace buisnessLogic.Service
         List<service> getServices();
 
         void deleteService(service objService);
+        void updateService(service objService);
     }
 }

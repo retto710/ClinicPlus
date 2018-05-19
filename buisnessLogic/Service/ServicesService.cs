@@ -27,5 +27,11 @@ namespace buisnessLogic.Service
             IServicesRepository repository = new ServicesRepository();
             return repository.getServices();
         }
+
+        public void updateService(service objService)
+        {
+            IServicesRepository repository = new ServicesRepository();
+            repository.updateService(objService);
+        }
     }
 }

@@ -40,5 +40,20 @@ namespace DataAccess.Service
                 return tnts.ToList();
             }
         }
+
+        public void updateService(service objService)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var trs = from t in dataContext.services
+                          where t.ID == objService.ID
+                          select t;
+                service transaction = trs.FirstOrDefault();
+                //Update field by field
+                objService.status = true;
+                dataContext.SaveChanges();
+            }
+
+        }
     }
 }
