@@ -63,9 +63,7 @@
             this.btnCreateClinicHistory = new System.Windows.Forms.Button();
             this.lblAlergiasPaciente = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.alergyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.clinicHistoryAlergieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ckAlergias = new System.Windows.Forms.CheckBox();
             this.lblAlergias = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -77,6 +75,8 @@
             this.lblInfoDateHistoryClinic = new System.Windows.Forms.Label();
             this.txtDateOfCreation = new System.Windows.Forms.TextBox();
             this.lblClinicHistoryDateCretion = new System.Windows.Forms.Label();
+            this.alergyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clinicHistoryAlergieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -477,22 +477,12 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // alergyDataGridViewTextBoxColumn
-            // 
-            this.alergyDataGridViewTextBoxColumn.DataPropertyName = "alergyName";
-            this.alergyDataGridViewTextBoxColumn.HeaderText = "alergy";
-            this.alergyDataGridViewTextBoxColumn.Name = "alergyDataGridViewTextBoxColumn";
-            // 
             // delete
             // 
             this.delete.HeaderText = "Delete";
             this.delete.Name = "delete";
             this.delete.Text = "delete";
             this.delete.UseColumnTextForButtonValue = true;
-            // 
-            // clinicHistoryAlergieBindingSource
-            // 
-            this.clinicHistoryAlergieBindingSource.DataSource = typeof(Entities.clinicHistory_Alergie);
             // 
             // ckAlergias
             // 
@@ -588,6 +578,16 @@
             this.lblClinicHistoryDateCretion.Size = new System.Drawing.Size(197, 13);
             this.lblClinicHistoryDateCretion.TabIndex = 0;
             this.lblClinicHistoryDateCretion.Text = "fecha de creacion o ultima actualziacion";
+            // 
+            // alergyDataGridViewTextBoxColumn
+            // 
+            this.alergyDataGridViewTextBoxColumn.DataPropertyName = "alergyName";
+            this.alergyDataGridViewTextBoxColumn.HeaderText = "alergy";
+            this.alergyDataGridViewTextBoxColumn.Name = "alergyDataGridViewTextBoxColumn";
+            // 
+            // clinicHistoryAlergieBindingSource
+            // 
+            this.clinicHistoryAlergieBindingSource.DataSource = typeof(Entities.clinicHistory_Alergie);
             // 
             // frmRandU
             // 

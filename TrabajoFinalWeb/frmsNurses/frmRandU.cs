@@ -176,7 +176,7 @@ namespace TrabajoFinalWeb.frmsNurses
                             MessageBox.Show("Person: " + objPerson.name + " " + objPerson.lastName + " no cuenta con una historia clinica");
                             isANewHistory = true;
                             txtDateOfCreation.Text = DateTime.Today.ToString();
-                            btnAddAlergi.Enabled = true;
+                            btnAddAlergi.Enabled = false;
                         }
                         else
                         {
@@ -317,7 +317,6 @@ namespace TrabajoFinalWeb.frmsNurses
             else {
                 if (!isANewHistory)
                 {
-                    //falta
                     clinicHistory objClinicHistory = clinicHistoryService.GetClinicHistoryByPatientId(idPatient);
                     idPClinicHsitory = objClinicHistory.id;
                     objClinicHistory.date = DateTime.Today;
