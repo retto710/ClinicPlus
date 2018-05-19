@@ -34,12 +34,65 @@ namespace DataAccess.clinicDatee
             }
         }
 
+        public List<clinicDate> GetClinicDates()
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var tnts = from t in dataContext.clinicDates
+                           select t;
+                return tnts.ToList();
+            }
+        }
+
+        public List<clinicDate> GetClinicDatesAprove()
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var tnts = from t in dataContext.clinicDates
+                           where t.status == true
+                           select t;
+                return tnts.ToList();
+            }
+        }
         public List<clinicDate> GetClinicDatesByClinicHistory(int id)
         {
             using (var dataContext = new FinalAppWebEntities())
             {
                 var tnts = from t in dataContext.clinicDates
                            where t.clinicHistorytId == id
+                           select t;
+                return tnts.ToList();
+            }
+        }
+
+        public List<clinicDate> GetClinicDatesByDoctor(int id)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var tnts = from t in dataContext.clinicDates
+                           where t.doctorId == id
+                           select t;
+                return tnts.ToList();
+            }
+        }
+
+        public List<clinicDate> GetClinicDatesByDoctorAndStatus(int id, bool status)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var tnts = from t in dataContext.clinicDates
+                           where t.status == status && t.doctorId == id
+                           select t;
+                return tnts.ToList();
+            }
+        }
+
+        public List<clinicDate> GetClinicDatesNotAprove()
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                var tnts = from t in dataContext.clinicDates
+                           where t.status == false
                            select t;
                 return tnts.ToList();
             }

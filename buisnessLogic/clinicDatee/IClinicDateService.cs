@@ -13,5 +13,15 @@ namespace buisnessLogic.clinicDatee
         List<clinicDate> GetClinicDatesByClinicHistory(int id);
 
         void deleteCLnicDate(clinicDate obj);
+
+        List<clinicDate> GetClinicDates();
+
+        List<clinicDate> GetClinicDatesNotAprove();
+
+        List<clinicDate> GetClinicDatesAprove();
+
+        List<clinicDate> GetClinicDatesByDoctor(int id);
+        
+        List<clinicDate> GetClinicDatesByDoctorAndStatus(int id, bool status);
     }
 }

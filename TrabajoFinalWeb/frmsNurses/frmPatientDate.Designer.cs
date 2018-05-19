@@ -31,17 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateOfAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nurseId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.service = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -49,6 +38,7 @@
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnLook4Doctors = new System.Windows.Forms.Button();
             this.dtDate4Date = new System.Windows.Forms.DateTimePicker();
             this.cbDoctor = new System.Windows.Forms.ComboBox();
             this.cbSpeciality = new System.Windows.Forms.ComboBox();
@@ -62,7 +52,14 @@
             this.lblDateForDate = new System.Windows.Forms.Label();
             this.lbldoctor = new System.Windows.Forms.Label();
             this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.btnLook4Doctors = new System.Windows.Forms.Button();
+            this.dateOfRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.weight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).BeginInit();
@@ -87,88 +84,20 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
             this.dateOfRequest,
             this.dateOfAppointment,
-            this.nurseId,
-            this.doctorId,
             this.description,
             this.status,
             this.weight,
             this.height,
             this.alergies,
-            this.service});
+            this.delete});
             this.dataGridView1.DataSource = this.clinicDateBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(1091, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(853, 230);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            // 
-            // dateOfRequest
-            // 
-            this.dateOfRequest.DataPropertyName = "dateOfRequest";
-            this.dateOfRequest.HeaderText = "dateOfRequest";
-            this.dateOfRequest.Name = "dateOfRequest";
-            // 
-            // dateOfAppointment
-            // 
-            this.dateOfAppointment.DataPropertyName = "dateOfAppointment";
-            this.dateOfAppointment.HeaderText = "dateOfAppointment";
-            this.dateOfAppointment.Name = "dateOfAppointment";
-            // 
-            // nurseId
-            // 
-            this.nurseId.DataPropertyName = "nurseId";
-            this.nurseId.HeaderText = "nurseId";
-            this.nurseId.Name = "nurseId";
-            // 
-            // doctorId
-            // 
-            this.doctorId.DataPropertyName = "doctorId";
-            this.doctorId.HeaderText = "doctorId";
-            this.doctorId.Name = "doctorId";
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "description";
-            this.description.Name = "description";
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "status";
-            this.status.HeaderText = "status";
-            this.status.Name = "status";
-            // 
-            // weight
-            // 
-            this.weight.DataPropertyName = "weight";
-            this.weight.HeaderText = "weight";
-            this.weight.Name = "weight";
-            // 
-            // height
-            // 
-            this.height.DataPropertyName = "height";
-            this.height.HeaderText = "height";
-            this.height.Name = "height";
-            // 
-            // alergies
-            // 
-            this.alergies.DataPropertyName = "alergies";
-            this.alergies.HeaderText = "alergies";
-            this.alergies.Name = "alergies";
-            // 
-            // service
-            // 
-            this.service.DataPropertyName = "service";
-            this.service.HeaderText = "service";
-            this.service.Name = "service";
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // clinicDateBindingSource
             // 
@@ -241,6 +170,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos nueva cita";
             // 
+            // btnLook4Doctors
+            // 
+            this.btnLook4Doctors.Location = new System.Drawing.Point(304, 56);
+            this.btnLook4Doctors.Name = "btnLook4Doctors";
+            this.btnLook4Doctors.Size = new System.Drawing.Size(123, 23);
+            this.btnLook4Doctors.TabIndex = 16;
+            this.btnLook4Doctors.Text = "buscar doctores";
+            this.btnLook4Doctors.UseVisualStyleBackColor = true;
+            this.btnLook4Doctors.Click += new System.EventHandler(this.btnLook4Doctors_Click);
+            // 
             // dtDate4Date
             // 
             this.dtDate4Date.Location = new System.Drawing.Point(136, 165);
@@ -250,19 +189,23 @@
             // 
             // cbDoctor
             // 
+            this.cbDoctor.DisplayMember = "doctorId";
             this.cbDoctor.FormattingEnabled = true;
             this.cbDoctor.Location = new System.Drawing.Point(136, 105);
             this.cbDoctor.Name = "cbDoctor";
             this.cbDoctor.Size = new System.Drawing.Size(121, 21);
             this.cbDoctor.TabIndex = 14;
+            this.cbDoctor.ValueMember = "doctorId";
             // 
             // cbSpeciality
             // 
+            this.cbSpeciality.DisplayMember = "description";
             this.cbSpeciality.FormattingEnabled = true;
             this.cbSpeciality.Location = new System.Drawing.Point(136, 61);
             this.cbSpeciality.Name = "cbSpeciality";
             this.cbSpeciality.Size = new System.Drawing.Size(121, 21);
             this.cbSpeciality.TabIndex = 13;
+            this.cbSpeciality.ValueMember = "ID";
             // 
             // btnCreateDeate
             // 
@@ -349,15 +292,54 @@
             this.lblEspecialidad.TabIndex = 1;
             this.lblEspecialidad.Text = "especialidad";
             // 
-            // btnLook4Doctors
+            // dateOfRequest
             // 
-            this.btnLook4Doctors.Location = new System.Drawing.Point(304, 56);
-            this.btnLook4Doctors.Name = "btnLook4Doctors";
-            this.btnLook4Doctors.Size = new System.Drawing.Size(123, 23);
-            this.btnLook4Doctors.TabIndex = 16;
-            this.btnLook4Doctors.Text = "buscar doctores";
-            this.btnLook4Doctors.UseVisualStyleBackColor = true;
-            this.btnLook4Doctors.Click += new System.EventHandler(this.btnLook4Doctors_Click);
+            this.dateOfRequest.DataPropertyName = "dateOfRequest";
+            this.dateOfRequest.HeaderText = "dateOfRequest";
+            this.dateOfRequest.Name = "dateOfRequest";
+            // 
+            // dateOfAppointment
+            // 
+            this.dateOfAppointment.DataPropertyName = "dateOfAppointment";
+            this.dateOfAppointment.HeaderText = "dateOfAppointment";
+            this.dateOfAppointment.Name = "dateOfAppointment";
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "description";
+            this.description.Name = "description";
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "status";
+            this.status.HeaderText = "status";
+            this.status.Name = "status";
+            // 
+            // weight
+            // 
+            this.weight.DataPropertyName = "weight";
+            this.weight.HeaderText = "weight";
+            this.weight.Name = "weight";
+            // 
+            // height
+            // 
+            this.height.DataPropertyName = "height";
+            this.height.HeaderText = "height";
+            this.height.Name = "height";
+            // 
+            // alergies
+            // 
+            this.alergies.DataPropertyName = "alergies";
+            this.alergies.HeaderText = "alergies";
+            this.alergies.Name = "alergies";
+            // 
+            // delete
+            // 
+            this.delete.HeaderText = "delete";
+            this.delete.Name = "delete";
+            this.delete.Text = "delete";
+            this.delete.UseColumnTextForButtonValue = true;
             // 
             // frmPatientDate
             // 
@@ -387,17 +369,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource patientBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRequest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfAppointment;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nurseId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn description;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn weight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn height;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alergies;
-        private System.Windows.Forms.DataGridViewTextBoxColumn service;
         private System.Windows.Forms.BindingSource clinicDateBindingSource;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button btnBuscar;
@@ -418,5 +389,13 @@
         private System.Windows.Forms.Label lbldoctor;
         private System.Windows.Forms.Label lblEspecialidad;
         private System.Windows.Forms.Button btnLook4Doctors;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRequest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfAppointment;
+        private System.Windows.Forms.DataGridViewTextBoxColumn description;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn height;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alergies;
+        private System.Windows.Forms.DataGridViewButtonColumn delete;
     }
 }

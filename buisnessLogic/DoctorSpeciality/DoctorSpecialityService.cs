@@ -26,5 +26,11 @@ namespace buisnessLogic.DoctorSpeciality
             IDoctorSpecialityRepository repo = new DoctorSpecialityRepository();
             return repo.GetDoctor_Speciality(id);
         }
+
+        public List<doctor_speciality> GetDoctorsBySpeciality(int id)
+        {
+            IDoctorSpecialityRepository repo = new DoctorSpecialityRepository();
+            return repo.GetDoctorsBySpeciality(id);
+        }
     }
 }

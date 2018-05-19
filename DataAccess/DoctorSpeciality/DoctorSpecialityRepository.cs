@@ -47,5 +47,19 @@ namespace DataAccess.DoctorSpeciality
                 return objDoctor_Speciality;
             }
         }
+
+        public List<doctor_speciality> GetDoctorsBySpeciality(int id)
+        {
+            using (var dataContext = new FinalAppWebEntities())
+            {
+                //LINQ
+                //return dataContext.Customers.ToList();
+                var custs = from c in dataContext.doctor_speciality
+                            where c.specialityId == id
+                            select c;
+                List<doctor_speciality> objDoctor = custs.ToList();
+                return objDoctor;
+            }
+        }
     }
 }

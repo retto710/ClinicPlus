@@ -142,11 +142,11 @@
     <Compile Include="frmsDoctor\frmRequestService.Designer.cs">
       <DependentUpon>frmRequestService.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmsNurses\frmCita.cs">
+    <Compile Include="frmsNurses\frmReporte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmsNurses\frmCita.Designer.cs">
-      <DependentUpon>frmCita.cs</DependentUpon>
+    <Compile Include="frmsNurses\frmReporte.Designer.cs">
+      <DependentUpon>frmReporte.cs</DependentUpon>
     </Compile>
     <Compile Include="frmsNurses\frmPatientDate.cs">
       <SubType>Form</SubType>
@@ -198,8 +198,8 @@
     <EmbeddedResource Include="frmsDoctor\frmRequestService.resx">
       <DependentUpon>frmRequestService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmsNurses\frmCita.resx">
-      <DependentUpon>frmCita.cs</DependentUpon>
+    <EmbeddedResource Include="frmsNurses\frmReporte.resx">
+      <DependentUpon>frmReporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsNurses\frmPatientDate.resx">
       <DependentUpon>frmPatientDate.cs</DependentUpon>

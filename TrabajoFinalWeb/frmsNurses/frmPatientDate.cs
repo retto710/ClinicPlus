@@ -1,5 +1,5 @@
 ﻿using buisnessLogic.ClinicHistory;
-using buisnessLogic.Doctor;
+using buisnessLogic.DoctorSpeciality;
 using buisnessLogic.PacientAllergy;
 using buisnessLogic.Patient;
 using buisnessLogic.Person;
@@ -23,7 +23,7 @@ namespace TrabajoFinalWeb.frmsNurses
         IPersonService personServ = new PersonService();
         IPacientAllergyService clinic_allergyService = new PacientAllergyService();
         IPatientService patientServ = new PatientService();
-        IDoctorService docService = new DoctorService();
+        IDoctorSpecialityService docSpecialityService = new DoctorSpecialityService();
         IClinicHistoryService clinicHistoryService = new ClinicHistoryService();
         IClinicDateService clinicDateService = new ClinicDateService();
         ISpecialityService SpecialityService = new SpecialityService();
@@ -38,6 +38,11 @@ namespace TrabajoFinalWeb.frmsNurses
             IDnurseLogOn = idNurse;
         }
 
+
+        private void load() {
+            List<clinicDate> citas = clinicDateService.GetClinicDatesByClinicHistory(IDclinicHistoy);
+            dataGridView1.DataSource = citas;
+        }
 
         private void enableItemsForCreation(bool enable)
         {
@@ -90,6 +95,9 @@ namespace TrabajoFinalWeb.frmsNurses
                         allergy = clinicHistory.alergies;
                         IDclinicHistoy = clinicHistory.id;
                         cbSpeciality.Enabled = true;
+                        txtHeigth.Text = clinicHistory.height.ToString();
+                        txtWiegth.Text = clinicHistory.weight.ToString();
+                        this.load();
                     }
                 }
 
@@ -115,13 +123,37 @@ namespace TrabajoFinalWeb.frmsNurses
 
         private void btnLook4Doctors_Click(object sender, EventArgs e)
         {
-            //int idSpeciality = 
+            int idSpeciality = Convert.ToInt32(cbSpeciality.SelectedValue);
 
-            //List<doctor> doctors = docService.GetDoctorsBySpeciality();
-            //cbDoctor.DataSource = doctors;
+            List<doctor_speciality> doctors = docSpecialityService.GetDoctorsBySpeciality(idSpeciality);
+            cbDoctor.DataSource = doctors;
             cbDoctor.SelectedIndex = 0;
+            enableItemsForCreation(true);
+        }
 
-            cbSpeciality.Enabled = true;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (dataGridView1.
+                Columns[e.ColumnIndex].
+                HeaderText.
+                ToLower() == "delete")
+            {
+                if (MessageBox.Show
+                    ("Are you sure you want to delete this date?",
+                    "Confirm",
+                    MessageBoxButtons.YesNo)
+                    == DialogResult.Yes)
+                {
+                    clinicDate objCustomer =
+                        (clinicDate)dataGridView1.
+                        Rows[e.RowIndex].
+                        DataBoundItem;
+                    this.clinicDateService.deleteCLnicDate(objCustomer);
+                    this.load();
+                }
+            }
+
         }
     }
 }
