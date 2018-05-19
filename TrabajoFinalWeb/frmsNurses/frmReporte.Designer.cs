@@ -38,7 +38,6 @@
             this.lblOpciones = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateOfRequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alergiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -79,7 +79,7 @@
             // 
             // cbDoctor
             // 
-            this.cbDoctor.DisplayMember = "id";
+            this.cbDoctor.DisplayMember = "doctorName";
             this.cbDoctor.FormattingEnabled = true;
             this.cbDoctor.Location = new System.Drawing.Point(569, 35);
             this.cbDoctor.Name = "cbDoctor";
@@ -152,12 +152,8 @@
             this.dataGridView1.DataSource = this.clinicDateBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(738, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 252);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // clinicDateBindingSource
-            // 
-            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
             // 
             // dateOfRequestDataGridViewTextBoxColumn
             // 
@@ -200,6 +196,10 @@
             this.alergiesDataGridViewTextBoxColumn.DataPropertyName = "alergies";
             this.alergiesDataGridViewTextBoxColumn.HeaderText = "alergies";
             this.alergiesDataGridViewTextBoxColumn.Name = "alergiesDataGridViewTextBoxColumn";
+            // 
+            // clinicDateBindingSource
+            // 
+            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
             // 
             // frmReporte
             // 

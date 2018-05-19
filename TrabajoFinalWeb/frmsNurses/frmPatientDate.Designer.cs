@@ -60,6 +60,21 @@
             this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clinicHistorytIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nurseIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfRequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateOfAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.alergiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nurseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clinicHistoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serviceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox3.SuspendLayout();
@@ -91,11 +106,26 @@
             this.weight,
             this.height,
             this.alergies,
-            this.delete});
+            this.delete,
+            this.idDataGridViewTextBoxColumn,
+            this.clinicHistorytIdDataGridViewTextBoxColumn,
+            this.doctorIdDataGridViewTextBoxColumn,
+            this.nurseIdDataGridViewTextBoxColumn,
+            this.dateOfRequestDataGridViewTextBoxColumn,
+            this.dateOfAppointmentDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.statusDataGridViewCheckBoxColumn,
+            this.weightDataGridViewTextBoxColumn,
+            this.heightDataGridViewTextBoxColumn,
+            this.alergiesDataGridViewTextBoxColumn,
+            this.doctorDataGridViewTextBoxColumn,
+            this.nurseDataGridViewTextBoxColumn,
+            this.clinicHistoryDataGridViewTextBoxColumn,
+            this.serviceDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.clinicDateBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 20);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(843, 230);
+            this.dataGridView1.Size = new System.Drawing.Size(843, 231);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -341,6 +371,111 @@
             this.delete.Text = "delete";
             this.delete.UseColumnTextForButtonValue = true;
             // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clinicHistorytIdDataGridViewTextBoxColumn
+            // 
+            this.clinicHistorytIdDataGridViewTextBoxColumn.DataPropertyName = "clinicHistorytId";
+            this.clinicHistorytIdDataGridViewTextBoxColumn.HeaderText = "clinicHistorytId";
+            this.clinicHistorytIdDataGridViewTextBoxColumn.Name = "clinicHistorytIdDataGridViewTextBoxColumn";
+            this.clinicHistorytIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // doctorIdDataGridViewTextBoxColumn
+            // 
+            this.doctorIdDataGridViewTextBoxColumn.DataPropertyName = "doctorId";
+            this.doctorIdDataGridViewTextBoxColumn.HeaderText = "doctorId";
+            this.doctorIdDataGridViewTextBoxColumn.Name = "doctorIdDataGridViewTextBoxColumn";
+            this.doctorIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nurseIdDataGridViewTextBoxColumn
+            // 
+            this.nurseIdDataGridViewTextBoxColumn.DataPropertyName = "nurseId";
+            this.nurseIdDataGridViewTextBoxColumn.HeaderText = "nurseId";
+            this.nurseIdDataGridViewTextBoxColumn.Name = "nurseIdDataGridViewTextBoxColumn";
+            this.nurseIdDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dateOfRequestDataGridViewTextBoxColumn
+            // 
+            this.dateOfRequestDataGridViewTextBoxColumn.DataPropertyName = "dateOfRequest";
+            this.dateOfRequestDataGridViewTextBoxColumn.HeaderText = "dateOfRequest";
+            this.dateOfRequestDataGridViewTextBoxColumn.Name = "dateOfRequestDataGridViewTextBoxColumn";
+            this.dateOfRequestDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // dateOfAppointmentDataGridViewTextBoxColumn
+            // 
+            this.dateOfAppointmentDataGridViewTextBoxColumn.DataPropertyName = "dateOfAppointment";
+            this.dateOfAppointmentDataGridViewTextBoxColumn.HeaderText = "dateOfAppointment";
+            this.dateOfAppointmentDataGridViewTextBoxColumn.Name = "dateOfAppointmentDataGridViewTextBoxColumn";
+            this.dateOfAppointmentDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // statusDataGridViewCheckBoxColumn
+            // 
+            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "status";
+            this.statusDataGridViewCheckBoxColumn.HeaderText = "status";
+            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
+            this.statusDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // weightDataGridViewTextBoxColumn
+            // 
+            this.weightDataGridViewTextBoxColumn.DataPropertyName = "weight";
+            this.weightDataGridViewTextBoxColumn.HeaderText = "weight";
+            this.weightDataGridViewTextBoxColumn.Name = "weightDataGridViewTextBoxColumn";
+            this.weightDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // heightDataGridViewTextBoxColumn
+            // 
+            this.heightDataGridViewTextBoxColumn.DataPropertyName = "height";
+            this.heightDataGridViewTextBoxColumn.HeaderText = "height";
+            this.heightDataGridViewTextBoxColumn.Name = "heightDataGridViewTextBoxColumn";
+            this.heightDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // alergiesDataGridViewTextBoxColumn
+            // 
+            this.alergiesDataGridViewTextBoxColumn.DataPropertyName = "alergies";
+            this.alergiesDataGridViewTextBoxColumn.HeaderText = "alergies";
+            this.alergiesDataGridViewTextBoxColumn.Name = "alergiesDataGridViewTextBoxColumn";
+            this.alergiesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // doctorDataGridViewTextBoxColumn
+            // 
+            this.doctorDataGridViewTextBoxColumn.DataPropertyName = "doctor";
+            this.doctorDataGridViewTextBoxColumn.HeaderText = "doctor";
+            this.doctorDataGridViewTextBoxColumn.Name = "doctorDataGridViewTextBoxColumn";
+            this.doctorDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nurseDataGridViewTextBoxColumn
+            // 
+            this.nurseDataGridViewTextBoxColumn.DataPropertyName = "nurse";
+            this.nurseDataGridViewTextBoxColumn.HeaderText = "nurse";
+            this.nurseDataGridViewTextBoxColumn.Name = "nurseDataGridViewTextBoxColumn";
+            this.nurseDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // clinicHistoryDataGridViewTextBoxColumn
+            // 
+            this.clinicHistoryDataGridViewTextBoxColumn.DataPropertyName = "clinicHistory";
+            this.clinicHistoryDataGridViewTextBoxColumn.HeaderText = "clinicHistory";
+            this.clinicHistoryDataGridViewTextBoxColumn.Name = "clinicHistoryDataGridViewTextBoxColumn";
+            this.clinicHistoryDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // serviceDataGridViewTextBoxColumn
+            // 
+            this.serviceDataGridViewTextBoxColumn.DataPropertyName = "service";
+            this.serviceDataGridViewTextBoxColumn.HeaderText = "service";
+            this.serviceDataGridViewTextBoxColumn.Name = "serviceDataGridViewTextBoxColumn";
+            this.serviceDataGridViewTextBoxColumn.Visible = false;
+            // 
             // frmPatientDate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -398,5 +533,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn height;
         private System.Windows.Forms.DataGridViewTextBoxColumn alergies;
         private System.Windows.Forms.DataGridViewButtonColumn delete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clinicHistorytIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctorIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nurseIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRequestDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateOfAppointmentDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn heightDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn alergiesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn doctorDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nurseDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clinicHistoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn serviceDataGridViewTextBoxColumn;
     }
 }
