@@ -31,14 +31,15 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.gestionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pacientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.misEspecialidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gestionarToolStripMenuItem});
+            this.gestionarToolStripMenuItem,
+            this.logOutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(877, 24);
@@ -48,8 +49,7 @@
             // gestionarToolStripMenuItem
             // 
             this.gestionarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pacientesToolStripMenuItem,
-            this.misEspecialidadesToolStripMenuItem});
+            this.pacientesToolStripMenuItem});
             this.gestionarToolStripMenuItem.Name = "gestionarToolStripMenuItem";
             this.gestionarToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
             this.gestionarToolStripMenuItem.Text = "Gestionar";
@@ -61,12 +61,13 @@
             this.pacientesToolStripMenuItem.Text = "Pacientes";
             this.pacientesToolStripMenuItem.Click += new System.EventHandler(this.pacientesToolStripMenuItem_Click);
             // 
-            // misEspecialidadesToolStripMenuItem
+            // logOutToolStripMenuItem
             // 
-            this.misEspecialidadesToolStripMenuItem.Name = "misEspecialidadesToolStripMenuItem";
-            this.misEspecialidadesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.misEspecialidadesToolStripMenuItem.Text = "Mis Especialidades";
-            this.misEspecialidadesToolStripMenuItem.Click += new System.EventHandler(this.misEspecialidadesToolStripMenuItem_Click);
+            this.logOutToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.logOutToolStripMenuItem.Text = "Log Out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // frmDoc
             // 
@@ -79,6 +80,7 @@
             this.Name = "frmDoc";
             this.Text = "frmDctor";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmDoc_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -91,6 +93,6 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gestionarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pacientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem misEspecialidadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
     }
 }

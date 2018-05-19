@@ -71,17 +71,33 @@ namespace TrabajoFinalWeb.frmsNurses
 
         private void registroYCitasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.MyFrmRandU.Show();
+            this.MyFrmRandU.BringToFront();
         }
 
         private void citasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.MyFrmPatientDate.Show();
+            this.MyFrmPatientDate.BringToFront();
         }
 
         private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.MyFrmReporte.BringToFront();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmLogin frm = new frmLogin();
+            this.Close();
+            frm.Show();
+        }
+
+        private void frmNurse_Load(object sender, EventArgs e)
+        {
+            this.MyFrmRandU.Show();
             this.MyFrmReporte.Show();
+            this.MyFrmPatientDate.Show();
+            this.MyFrmPatientDate.BringToFront();
         }
     }
 }

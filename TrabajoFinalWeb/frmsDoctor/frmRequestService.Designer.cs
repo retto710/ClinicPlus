@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblDateOfService = new System.Windows.Forms.Label();
-            this.dtServices = new System.Windows.Forms.DateTimePicker();
-            this.lblDescription = new System.Windows.Forms.Label();
-            this.txtServiceDescription = new System.Windows.Forms.TextBox();
             this.btnRequestService = new System.Windows.Forms.Button();
+            this.txtServiceDescription = new System.Windows.Forms.TextBox();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.dtServices = new System.Windows.Forms.DateTimePicker();
+            this.lblDateOfService = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,21 +52,22 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Solicitar servicio";
             // 
-            // lblDateOfService
+            // btnRequestService
             // 
-            this.lblDateOfService.AutoSize = true;
-            this.lblDateOfService.Location = new System.Drawing.Point(31, 35);
-            this.lblDateOfService.Name = "lblDateOfService";
-            this.lblDateOfService.Size = new System.Drawing.Size(121, 13);
-            this.lblDateOfService.TabIndex = 0;
-            this.lblDateOfService.Text = "Dia para uso de servicio";
+            this.btnRequestService.Location = new System.Drawing.Point(169, 110);
+            this.btnRequestService.Name = "btnRequestService";
+            this.btnRequestService.Size = new System.Drawing.Size(137, 23);
+            this.btnRequestService.TabIndex = 4;
+            this.btnRequestService.Text = "Solicitar servicio";
+            this.btnRequestService.UseVisualStyleBackColor = true;
+            this.btnRequestService.Click += new System.EventHandler(this.btnRequestService_Click);
             // 
-            // dtServices
+            // txtServiceDescription
             // 
-            this.dtServices.Location = new System.Drawing.Point(222, 35);
-            this.dtServices.Name = "dtServices";
-            this.dtServices.Size = new System.Drawing.Size(200, 20);
-            this.dtServices.TabIndex = 1;
+            this.txtServiceDescription.Location = new System.Drawing.Point(222, 63);
+            this.txtServiceDescription.Name = "txtServiceDescription";
+            this.txtServiceDescription.Size = new System.Drawing.Size(200, 20);
+            this.txtServiceDescription.TabIndex = 3;
             // 
             // lblDescription
             // 
@@ -77,21 +78,21 @@
             this.lblDescription.TabIndex = 2;
             this.lblDescription.Text = "Descripcion";
             // 
-            // txtServiceDescription
+            // dtServices
             // 
-            this.txtServiceDescription.Location = new System.Drawing.Point(222, 63);
-            this.txtServiceDescription.Name = "txtServiceDescription";
-            this.txtServiceDescription.Size = new System.Drawing.Size(200, 20);
-            this.txtServiceDescription.TabIndex = 3;
+            this.dtServices.Location = new System.Drawing.Point(222, 35);
+            this.dtServices.Name = "dtServices";
+            this.dtServices.Size = new System.Drawing.Size(200, 20);
+            this.dtServices.TabIndex = 1;
             // 
-            // btnRequestService
+            // lblDateOfService
             // 
-            this.btnRequestService.Location = new System.Drawing.Point(169, 110);
-            this.btnRequestService.Name = "btnRequestService";
-            this.btnRequestService.Size = new System.Drawing.Size(137, 23);
-            this.btnRequestService.TabIndex = 4;
-            this.btnRequestService.Text = "Solicitar servicio";
-            this.btnRequestService.UseVisualStyleBackColor = true;
+            this.lblDateOfService.AutoSize = true;
+            this.lblDateOfService.Location = new System.Drawing.Point(31, 35);
+            this.lblDateOfService.Name = "lblDateOfService";
+            this.lblDateOfService.Size = new System.Drawing.Size(121, 13);
+            this.lblDateOfService.TabIndex = 0;
+            this.lblDateOfService.Text = "Dia para uso de servicio";
             // 
             // frmRequestService
             // 

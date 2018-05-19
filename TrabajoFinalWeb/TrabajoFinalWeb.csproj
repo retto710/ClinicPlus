@@ -81,6 +81,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalAppWebDataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FinalAppWebDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalAppWebDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="frmChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmChangePassword.Designer.cs">
+      <DependentUpon>frmChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmForgotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmForgotPassword.Designer.cs">
+      <DependentUpon>frmForgotPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmsAdmin\frmAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +122,18 @@
     <Compile Include="frmsAdmin\frmServiceStatus.Designer.cs">
       <DependentUpon>frmServiceStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmsDoctor\frmAlergies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsDoctor\frmAlergies.Designer.cs">
+      <DependentUpon>frmAlergies.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmsDoctor\frmDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmsDoctor\frmDate.Designer.cs">
+      <DependentUpon>frmDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmsDoctor\frmDoc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,12 +157,6 @@
     </Compile>
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmsDoctor\FrmMySpecialities.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmsDoctor\FrmMySpecialities.Designer.cs">
-      <DependentUpon>FrmMySpecialities.cs</DependentUpon>
     </Compile>
     <Compile Include="frmsDoctor\FrmPacientes.cs">
       <SubType>Form</SubType>
@@ -173,6 +196,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmForgotPassword.resx">
+      <DependentUpon>frmForgotPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmsAdmin\frmAdd.resx">
       <DependentUpon>frmAdd.cs</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +219,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmsAdmin\frmServiceStatus.resx">
       <DependentUpon>frmServiceStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsDoctor\frmAlergies.resx">
+      <DependentUpon>frmAlergies.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmsDoctor\frmDate.resx">
+      <DependentUpon>frmDate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmsDoctor\frmDoc.resx">
       <DependentUpon>frmDoc.cs</DependentUpon>
@@ -290,6 +322,17 @@
     </None>
     <None Include="FinalAppWebDataSet5.xss">
       <DependentUpon>FinalAppWebDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet6.xsc">
+      <DependentUpon>FinalAppWebDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalAppWebDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalAppWebDataSet6.xss">
+      <DependentUpon>FinalAppWebDataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Entities.clinicDate.datasource" />
     <None Include="Properties\DataSources\Entities.clinicHistory_Alergie.datasource" />

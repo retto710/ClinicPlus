@@ -45,7 +45,7 @@ namespace TrabajoFinalWeb
                 {
                     btnAdd.Enabled = false;
                     DataTable dataTable = this.finalAppWebDataSet4.doctor_speciality;
-                    String datafilter = "doctorid <10000 ";
+                    String datafilter = "doctorid <1000000 ";
                     dataTable.DefaultView.RowFilter = datafilter;
                     dataGridView1.DataSource = dataTable;
                     MessageBox.Show("Doctor not found");
@@ -85,25 +85,33 @@ namespace TrabajoFinalWeb
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
-
+            doctor_speciality obj = new doctor_speciality();
+            obj.doctorId = doctorid;
+            obj.specialityId= Convert.ToInt32(cmbSpeciality.SelectedValue);
+            doctorSpecialityService.CreateDoctorSpeciality(obj);
+            List<doctor_speciality> dataTable = doctorSpecialityService.GetDoctor_Specialities(doctorid);
+            dataGridView1.DataSource = dataTable;
           
            
 
-           
+
         }
 
-        private void frmDoctorSpeciality_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'finalAppWebDataSet4.doctor_speciality' table. You can move, or remove it, as needed.
-            this.doctor_specialityTableAdapter.Fill(this.finalAppWebDataSet4.doctor_speciality);
-      
-            //Get customer types
+        private void load() {
             List<speciality> listSpecialities = specialityService.GetSpecialities();
 
             //Assign list to drop down list
             cmbSpeciality.DataSource = listSpecialities;
             cmbSpeciality.SelectedIndex = 0;
+        }
+    
+        private void frmDoctorSpeciality_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'finalAppWebDataSet4.doctor_speciality' table. You can move, or remove it, as needed.
+            this.doctor_specialityTableAdapter.Fill(this.finalAppWebDataSet4.doctor_speciality);
+
+            //Get customer types
+            load();
         }
     }
 }

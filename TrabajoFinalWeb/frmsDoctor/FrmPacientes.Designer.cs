@@ -31,23 +31,36 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.finalAppWebDataSet5 = new TrabajoFinalWeb.FinalAppWebDataSet5();
-            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clinicDateTableAdapter = new TrabajoFinalWeb.FinalAppWebDataSet5TableAdapters.clinicDateTableAdapter();
             this.clinicHistorytIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doctorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nurseIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfRequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alergies = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Confirm = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.finalAppWebDataSet5 = new TrabajoFinalWeb.FinalAppWebDataSet5();
+            this.clinicDateTableAdapter = new TrabajoFinalWeb.FinalAppWebDataSet5TableAdapters.clinicDateTableAdapter();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewButtonColumn1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalAppWebDataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalAppWebDataSet5)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -56,7 +69,7 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(965, 318);
+            this.groupBox1.Size = new System.Drawing.Size(965, 406);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Citas planificadas";
@@ -72,30 +85,17 @@
             this.dateOfRequestDataGridViewTextBoxColumn,
             this.dateOfAppointmentDataGridViewTextBoxColumn,
             this.descriptionDataGridViewTextBoxColumn,
-            this.statusDataGridViewCheckBoxColumn,
             this.weightDataGridViewTextBoxColumn,
             this.heightDataGridViewTextBoxColumn,
-            this.Alergies});
+            this.Alergies,
+            this.Confirm});
             this.dataGridView1.DataSource = this.clinicDateBindingSource;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
             this.dataGridView1.Location = new System.Drawing.Point(3, 16);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(959, 299);
+            this.dataGridView1.Size = new System.Drawing.Size(959, 464);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // finalAppWebDataSet5
-            // 
-            this.finalAppWebDataSet5.DataSetName = "FinalAppWebDataSet5";
-            this.finalAppWebDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // clinicDateBindingSource
-            // 
-            this.clinicDateBindingSource.DataMember = "clinicDate";
-            this.clinicDateBindingSource.DataSource = this.finalAppWebDataSet5;
-            // 
-            // clinicDateTableAdapter
-            // 
-            this.clinicDateTableAdapter.ClearBeforeFill = true;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // clinicHistorytIdDataGridViewTextBoxColumn
             // 
@@ -133,12 +133,6 @@
             this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
             this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
             // 
-            // statusDataGridViewCheckBoxColumn
-            // 
-            this.statusDataGridViewCheckBoxColumn.DataPropertyName = "status";
-            this.statusDataGridViewCheckBoxColumn.HeaderText = "status";
-            this.statusDataGridViewCheckBoxColumn.Name = "statusDataGridViewCheckBoxColumn";
-            // 
             // weightDataGridViewTextBoxColumn
             // 
             this.weightDataGridViewTextBoxColumn.DataPropertyName = "weight";
@@ -156,11 +150,119 @@
             this.Alergies.HeaderText = "View Alergies";
             this.Alergies.Name = "Alergies";
             // 
+            // Confirm
+            // 
+            this.Confirm.HeaderText = "Confirm";
+            this.Confirm.Name = "Confirm";
+            this.Confirm.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Confirm.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Confirm.Text = "Confirm";
+            // 
+            // clinicDateBindingSource
+            // 
+            this.clinicDateBindingSource.DataMember = "clinicDate";
+            this.clinicDateBindingSource.DataSource = this.finalAppWebDataSet5;
+            // 
+            // finalAppWebDataSet5
+            // 
+            this.finalAppWebDataSet5.DataSetName = "FinalAppWebDataSet5";
+            this.finalAppWebDataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // clinicDateTableAdapter
+            // 
+            this.clinicDateTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox2.Location = new System.Drawing.Point(0, 406);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(965, 406);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Citas planificadas";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewButtonColumn1});
+            this.dataGridView2.DataSource = this.clinicDateBindingSource;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dataGridView2.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(959, 464);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "clinicHistorytId";
+            this.dataGridViewTextBoxColumn1.HeaderText = "clinicHistorytId";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "doctorId";
+            this.dataGridViewTextBoxColumn2.HeaderText = "doctorId";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "nurseId";
+            this.dataGridViewTextBoxColumn3.HeaderText = "nurseId";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "dateOfRequest";
+            this.dataGridViewTextBoxColumn4.HeaderText = "dateOfRequest";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "dateOfAppointment";
+            this.dataGridViewTextBoxColumn5.HeaderText = "dateOfAppointment";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "description";
+            this.dataGridViewTextBoxColumn6.HeaderText = "description";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "weight";
+            this.dataGridViewTextBoxColumn7.HeaderText = "weight";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "height";
+            this.dataGridViewTextBoxColumn8.HeaderText = "height";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewButtonColumn1
+            // 
+            this.dataGridViewButtonColumn1.HeaderText = "View Alergies";
+            this.dataGridViewButtonColumn1.Name = "dataGridViewButtonColumn1";
+            // 
             // FrmPacientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(965, 588);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPacientes";
@@ -168,8 +270,10 @@
             this.Load += new System.EventHandler(this.FrmPacientes_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.finalAppWebDataSet5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.finalAppWebDataSet5)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -187,9 +291,20 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRequestDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfAppointmentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn statusDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn heightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Alergies;
+        private System.Windows.Forms.DataGridViewButtonColumn Confirm;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewButtonColumn dataGridViewButtonColumn1;
     }
 }

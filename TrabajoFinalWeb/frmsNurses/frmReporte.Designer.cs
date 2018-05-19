@@ -38,7 +38,6 @@
             this.lblOpciones = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateOfRequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +45,7 @@
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alergiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -155,10 +155,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(738, 252);
             this.dataGridView1.TabIndex = 1;
             // 
-            // clinicDateBindingSource
-            // 
-            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
-            // 
             // dateOfRequestDataGridViewTextBoxColumn
             // 
             this.dateOfRequestDataGridViewTextBoxColumn.DataPropertyName = "dateOfRequest";
@@ -201,6 +197,10 @@
             this.alergiesDataGridViewTextBoxColumn.HeaderText = "alergies";
             this.alergiesDataGridViewTextBoxColumn.Name = "alergiesDataGridViewTextBoxColumn";
             // 
+            // clinicDateBindingSource
+            // 
+            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
+            // 
             // frmReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -208,6 +208,7 @@
             this.ClientSize = new System.Drawing.Size(862, 382);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmReporte";
             this.Text = "frmCita";
             this.Load += new System.EventHandler(this.frmReporte_Load);

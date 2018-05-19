@@ -144,5 +144,13 @@ namespace TrabajoFinalWeb
         {
             this.FrmServiceStatus.BringToFront();
         }
+
+        private void lToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            frmLogin frm = new frmLogin();
+            this.Close();
+            frm.Show();
+        }
     }
 }

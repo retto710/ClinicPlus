@@ -22,6 +22,7 @@ namespace TrabajoFinalWeb
         frmAdmin frmAdministrador;
         frmDoc frmDoctor;
         frmNurse frmNurses;
+        string username;
         int idUsuario;
         int contador = 0;
         IUserService userService = new UserService();
@@ -43,7 +44,7 @@ namespace TrabajoFinalWeb
             {
                 if (frmDoctor == null || frmDoctor.IsDisposed)
                 {
-                    frmDoctor = new frmDoc();
+                    frmDoctor = new frmDoc(username);
 
                 }
                 return frmDoctor;
@@ -114,6 +115,7 @@ namespace TrabajoFinalWeb
             else if (objUser.password == txtPassword.Text)
             {
                 String userString = txtUsername.Text.ToString();
+                username = userString;
                 int dni = Int32.Parse(userString.Substring(1));
                 String name = personService.GetPersonByDni(dni).name;
                 MessageBox.Show("Welcome " + name);
@@ -174,7 +176,9 @@ namespace TrabajoFinalWeb
 
         private void lblForgotPassword_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            frmForgotPassword frmForgotPassword = new frmForgotPassword();
+            //this.Hide();
+            frmForgotPassword.Show();
         }
         
     }

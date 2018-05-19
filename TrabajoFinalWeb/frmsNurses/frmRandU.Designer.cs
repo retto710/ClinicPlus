@@ -63,7 +63,9 @@
             this.btnCreateClinicHistory = new System.Windows.Forms.Button();
             this.lblAlergiasPaciente = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.alergyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.delete = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clinicHistoryAlergieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ckAlergias = new System.Windows.Forms.CheckBox();
             this.lblAlergias = new System.Windows.Forms.Label();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -75,8 +77,6 @@
             this.lblInfoDateHistoryClinic = new System.Windows.Forms.Label();
             this.txtDateOfCreation = new System.Windows.Forms.TextBox();
             this.lblClinicHistoryDateCretion = new System.Windows.Forms.Label();
-            this.alergyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clinicHistoryAlergieBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -415,7 +415,7 @@
             this.groupBox3.Controls.Add(this.txtDateOfCreation);
             this.groupBox3.Controls.Add(this.lblClinicHistoryDateCretion);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox3.Location = new System.Drawing.Point(0, 468);
+            this.groupBox3.Location = new System.Drawing.Point(0, 402);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(800, 386);
             this.groupBox3.TabIndex = 2;
@@ -477,12 +477,22 @@
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // alergyDataGridViewTextBoxColumn
+            // 
+            this.alergyDataGridViewTextBoxColumn.DataPropertyName = "alergyName";
+            this.alergyDataGridViewTextBoxColumn.HeaderText = "alergy";
+            this.alergyDataGridViewTextBoxColumn.Name = "alergyDataGridViewTextBoxColumn";
+            // 
             // delete
             // 
             this.delete.HeaderText = "Delete";
             this.delete.Name = "delete";
             this.delete.Text = "delete";
             this.delete.UseColumnTextForButtonValue = true;
+            // 
+            // clinicHistoryAlergieBindingSource
+            // 
+            this.clinicHistoryAlergieBindingSource.DataSource = typeof(Entities.clinicHistory_Alergie);
             // 
             // ckAlergias
             // 
@@ -579,21 +589,11 @@
             this.lblClinicHistoryDateCretion.TabIndex = 0;
             this.lblClinicHistoryDateCretion.Text = "fecha de creacion o ultima actualziacion";
             // 
-            // alergyDataGridViewTextBoxColumn
-            // 
-            this.alergyDataGridViewTextBoxColumn.DataPropertyName = "alergyName";
-            this.alergyDataGridViewTextBoxColumn.HeaderText = "alergy";
-            this.alergyDataGridViewTextBoxColumn.Name = "alergyDataGridViewTextBoxColumn";
-            // 
-            // clinicHistoryAlergieBindingSource
-            // 
-            this.clinicHistoryAlergieBindingSource.DataSource = typeof(Entities.clinicHistory_Alergie);
-            // 
             // frmRandU
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 854);
+            this.ClientSize = new System.Drawing.Size(800, 788);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

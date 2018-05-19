@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TrabajoFinalWeb.frmsDoctor
+namespace TrabajoFinalWeb
 {
-    public partial class FrmMySpecialities : Form
+    public partial class frmChangePassword : Form
     {
-        public FrmMySpecialities()
+        public frmChangePassword()
         {
             InitializeComponent();
         }
