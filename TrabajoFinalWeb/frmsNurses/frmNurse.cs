@@ -16,6 +16,22 @@ namespace TrabajoFinalWeb.frmsNurses
 
         frmRandU frmRandU;
         frmPatientDate frmPatientDate;
+        frmReporte frmReporte;
+        public frmReporte MyFrmReporte
+        {
+            get
+            {
+                if (frmReporte == null ||
+                    frmReporte.IsDisposed)
+                {
+                    frmReporte =
+                        new frmReporte();
+                    frmReporte.MdiParent = this;
+                    frmReporte.Dock = DockStyle.Fill;
+                }
+                return frmReporte;
+            }
+        }
         public frmRandU MyFrmRandU
         {
             get
@@ -26,6 +42,7 @@ namespace TrabajoFinalWeb.frmsNurses
                     frmRandU =
                         new frmRandU();
                     frmRandU.MdiParent = this;
+                    frmRandU.Dock = DockStyle.Fill;
                 }
                 return frmRandU;
             }
@@ -40,6 +57,7 @@ namespace TrabajoFinalWeb.frmsNurses
                     frmPatientDate =
                         new frmPatientDate(IDnurseLogOn);
                     frmPatientDate.MdiParent = this;
+                    frmPatientDate.Dock = DockStyle.Fill;
                 }
                 return frmPatientDate;
             }
@@ -59,6 +77,11 @@ namespace TrabajoFinalWeb.frmsNurses
         private void citasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.MyFrmPatientDate.Show();
+        }
+
+        private void reportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.MyFrmReporte.Show();
         }
     }
 }

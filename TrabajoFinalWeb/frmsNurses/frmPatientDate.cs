@@ -119,6 +119,7 @@ namespace TrabajoFinalWeb.frmsNurses
             clinicDate.alergies = allergy;
 
             clinicDateService.CreateClinicDate(clinicDate);
+            this.load();
         }
 
         private void btnLook4Doctors_Click(object sender, EventArgs e)

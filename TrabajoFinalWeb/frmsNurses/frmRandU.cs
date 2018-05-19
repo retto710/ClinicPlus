@@ -159,40 +159,51 @@ namespace TrabajoFinalWeb.frmsNurses
                     objClinicHistory = clinicHistoryService.GetClinicHistoryByPatientId(objPatient.id);
                     idPatient = objPatient.id;
 
-
-
-                    if (objPatient == null || objUser == null || objClinicHistory == null)
+                    if (objPatient == null )
                     {
+                        MessageBox.Show("No es un paciente");
+
                         enableTextboxCreateUpdateClinicHistory(false);
-                        btnCreateClinicHistory.Text = "create clinic history";
-                        MessageBox.Show("Person: " + objPerson.name + " " + objPerson.lastName + " no cuenta con una historia clinica");
-                        isANewHistory = true;
-                        txtDateOfCreation.Text = DateTime.Today.ToString();
                         btnAddAlergi.Enabled = false;
                     }
                     else
                     {
-                        idPClinicHsitory = objClinicHistory.id;
 
-                        this.load();
-                        btnCreateClinicHistory.Text = "update clinic history";
-                        MessageBox.Show("Person: " + objPerson.name + " " + objPerson.lastName + " cuenta con una historia clinica");
-                        isANewHistory = false;
-                        txtDateOfCreation.Text = objClinicHistory.date.ToString();
-                        txtDescription.Text = objClinicHistory.description;
-                        txtHeigth.Text = objClinicHistory.height.ToString();
-                        txtWeigth.Text = objClinicHistory.weight.ToString();
-                        enableTextboxCreateUpdateClinicHistory(true);
-                        if (objClinicHistory.alergies.Equals("si"))
-                        { ckAlergias.Checked = true;
+                        if (objClinicHistory == null)
+                        {
+                            enableTextboxCreateUpdateClinicHistory(true);
+                            btnCreateClinicHistory.Text = "create clinic history";
+                            MessageBox.Show("Person: " + objPerson.name + " " + objPerson.lastName + " no cuenta con una historia clinica");
+                            isANewHistory = true;
+                            txtDateOfCreation.Text = DateTime.Today.ToString();
                             btnAddAlergi.Enabled = true;
                         }
-                        else { ckAlergias.Checked = false;
-                            btnAddAlergi.Enabled = false;
-                        }
-                        
-                    }
+                        else
+                        {
+                            idPClinicHsitory = objClinicHistory.id;
 
+                            this.load();
+                            btnCreateClinicHistory.Text = "update clinic history";
+                            MessageBox.Show("Person: " + objPerson.name + " " + objPerson.lastName + " cuenta con una historia clinica");
+                            isANewHistory = false;
+                            txtDateOfCreation.Text = objClinicHistory.date.ToString();
+                            txtDescription.Text = objClinicHistory.description;
+                            txtHeigth.Text = objClinicHistory.height.ToString();
+                            txtWeigth.Text = objClinicHistory.weight.ToString();
+                            enableTextboxCreateUpdateClinicHistory(true);
+                            if (objClinicHistory.alergies.Equals("si"))
+                            {
+                                ckAlergias.Checked = true;
+                                btnAddAlergi.Enabled = true;
+                            }
+                            else
+                            {
+                                ckAlergias.Checked = false;
+                                btnAddAlergi.Enabled = false;
+                            }
+
+                        }
+                    }
                 }
                 else
                 {
