@@ -12,6 +12,8 @@ namespace TrabajoFinalWeb.frmsNurses
 {
     public partial class frmNurse : Form
     {
+        int IDnurseLogOn;
+
         frmRandU frmRandU;
         frmPatientDate frmPatientDate;
         public frmRandU MyFrmRandU
@@ -36,15 +38,16 @@ namespace TrabajoFinalWeb.frmsNurses
                     frmPatientDate.IsDisposed)
                 {
                     frmPatientDate =
-                        new frmPatientDate();
+                        new frmPatientDate(IDnurseLogOn);
                     frmPatientDate.MdiParent = this;
                 }
                 return frmPatientDate;
             }
         }
 
-        public frmNurse()
+        public frmNurse(int idNurse)
         {
+            IDnurseLogOn = idNurse;
             InitializeComponent();
         }
 

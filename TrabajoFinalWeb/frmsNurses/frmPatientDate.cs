@@ -3,6 +3,7 @@ using buisnessLogic.Doctor;
 using buisnessLogic.PacientAllergy;
 using buisnessLogic.Patient;
 using buisnessLogic.Person;
+using buisnessLogic.clinicDatee;
 using Entities;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using buisnessLogic.Speciality;
 
 namespace TrabajoFinalWeb.frmsNurses
 {
@@ -23,10 +25,17 @@ namespace TrabajoFinalWeb.frmsNurses
         IPatientService patientServ = new PatientService();
         IDoctorService docService = new DoctorService();
         IClinicHistoryService clinicHistoryService = new ClinicHistoryService();
+        IClinicDateService clinicDateService = new ClinicDateService();
+        ISpecialityService SpecialityService = new SpecialityService();
 
-        public frmPatientDate()
+        int IDclinicHistoy;
+        String allergy;
+        int IDnurseLogOn;
+
+        public frmPatientDate(int idNurse)
         {
             InitializeComponent();
+            IDnurseLogOn = idNurse;
         }
 
 
@@ -44,6 +53,10 @@ namespace TrabajoFinalWeb.frmsNurses
         private void frmPatientDate_Load(object sender, EventArgs e)
         {
             enableItemsForCreation(false);
+
+            List<speciality> specialities = SpecialityService.GetSpecialities();
+            cbSpeciality.DataSource = specialities;
+            cbSpeciality.SelectedIndex = 0;
         }
 
         //BUSCA DNI 
@@ -53,9 +66,62 @@ namespace TrabajoFinalWeb.frmsNurses
             int dni = Convert.ToInt32(txtDNI.Text);
             person person =  personServ.GetPersonByDni(dni);
 
+            //Validaicon de existencia de persona
+            if (person == null)
+            {
+                MessageBox.Show("La persona " + dni + " no se encutra registrada en el sistema");
+            }
+            else
+            {
+                patient patient = patientServ.GetPatientByPersonId(person.ID);
+                //validaicon es un paciente
+                if (patient == null)
+                {
+                    MessageBox.Show("EL usuairo no es un paciente");
+                }
+                else {
+                    clinicHistory clinicHistory = clinicHistoryService.GetClinicHistoryByPatientId(patient.id);
+                    //validaicon es un paciente
+                    if (clinicHistory == null)
+                    {
+                        MessageBox.Show("EL paciente no tienie un historial clinico ");
+                    }
+                    else {
+                        allergy = clinicHistory.alergies;
+                        IDclinicHistoy = clinicHistory.id;
+                        cbSpeciality.Enabled = true;
+                    }
+                }
 
+            }
+        }
 
+        private void btnCreateDeate_Click(object sender, EventArgs e)
+        {
+            clinicDate clinicDate = new clinicDate();
+            clinicDate.clinicHistorytId = IDclinicHistoy;
+            clinicDate.doctorId = Convert.ToInt32(cbDoctor.SelectedValue); 
+            clinicDate.nurseId = IDnurseLogOn; 
+            clinicDate.dateOfRequest = DateTime.Today.Date;
+            clinicDate.dateOfAppointment = dtDate4Date.Value;
+            clinicDate.description = txtDescription.Text;
+            clinicDate.status = false;
+            clinicDate.weight = Convert.ToDecimal(txtWiegth.Text);
+            clinicDate.height = Convert.ToDecimal(txtHeigth.Text);
+            clinicDate.alergies = allergy;
 
+            clinicDateService.CreateClinicDate(clinicDate);
+        }
+
+        private void btnLook4Doctors_Click(object sender, EventArgs e)
+        {
+            //int idSpeciality = 
+
+            //List<doctor> doctors = docService.GetDoctorsBySpeciality();
+            //cbDoctor.DataSource = doctors;
+            cbDoctor.SelectedIndex = 0;
+
+            cbSpeciality.Enabled = true;
         }
     }
 }

@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfRequest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfAppointment = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,28 +42,31 @@
             this.height = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alergies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.service = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.lblEspecialidad = new System.Windows.Forms.Label();
-            this.lbldoctor = new System.Windows.Forms.Label();
-            this.lblDateForDate = new System.Windows.Forms.Label();
-            this.lblPeso = new System.Windows.Forms.Label();
-            this.lblAltura = new System.Windows.Forms.Label();
-            this.Descripcion = new System.Windows.Forms.Label();
-            this.txtHeigth = new System.Windows.Forms.TextBox();
-            this.txtWiegth = new System.Windows.Forms.TextBox();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.txtDNI = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnCreateDeate = new System.Windows.Forms.Button();
-            this.cbSpeciality = new System.Windows.Forms.ComboBox();
-            this.cbDoctor = new System.Windows.Forms.ComboBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtDate4Date = new System.Windows.Forms.DateTimePicker();
+            this.cbDoctor = new System.Windows.Forms.ComboBox();
+            this.cbSpeciality = new System.Windows.Forms.ComboBox();
+            this.btnCreateDeate = new System.Windows.Forms.Button();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.txtWiegth = new System.Windows.Forms.TextBox();
+            this.txtHeigth = new System.Windows.Forms.TextBox();
+            this.Descripcion = new System.Windows.Forms.Label();
+            this.lblAltura = new System.Windows.Forms.Label();
+            this.lblPeso = new System.Windows.Forms.Label();
+            this.lblDateForDate = new System.Windows.Forms.Label();
+            this.lbldoctor = new System.Windows.Forms.Label();
+            this.lblEspecialidad = new System.Windows.Forms.Label();
+            this.btnLook4Doctors = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -102,14 +103,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1091, 230);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // patientBindingSource
-            // 
-            this.patientBindingSource.DataSource = typeof(Entities.patient);
-            // 
-            // clinicDateBindingSource
-            // 
-            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -177,6 +170,14 @@
             this.service.HeaderText = "service";
             this.service.Name = "service";
             // 
+            // clinicDateBindingSource
+            // 
+            this.clinicDateBindingSource.DataSource = typeof(Entities.clinicDate);
+            // 
+            // patientBindingSource
+            // 
+            this.patientBindingSource.DataSource = typeof(Entities.patient);
+            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnBuscar);
@@ -190,8 +191,35 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DNI";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(920, 44);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 11;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Location = new System.Drawing.Point(136, 44);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(100, 20);
+            this.txtDNI.TabIndex = 10;
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Location = new System.Drawing.Point(56, 44);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(29, 13);
+            this.lblDNI.TabIndex = 0;
+            this.lblDNI.Text = "DNI:";
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnLook4Doctors);
             this.groupBox2.Controls.Add(this.dtDate4Date);
             this.groupBox2.Controls.Add(this.cbDoctor);
             this.groupBox2.Controls.Add(this.cbSpeciality);
@@ -213,50 +241,68 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos nueva cita";
             // 
-            // lblDNI
+            // dtDate4Date
             // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Location = new System.Drawing.Point(56, 44);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(29, 13);
-            this.lblDNI.TabIndex = 0;
-            this.lblDNI.Text = "DNI:";
+            this.dtDate4Date.Location = new System.Drawing.Point(136, 165);
+            this.dtDate4Date.Name = "dtDate4Date";
+            this.dtDate4Date.Size = new System.Drawing.Size(200, 20);
+            this.dtDate4Date.TabIndex = 15;
             // 
-            // lblEspecialidad
+            // cbDoctor
             // 
-            this.lblEspecialidad.AutoSize = true;
-            this.lblEspecialidad.Location = new System.Drawing.Point(38, 63);
-            this.lblEspecialidad.Name = "lblEspecialidad";
-            this.lblEspecialidad.Size = new System.Drawing.Size(66, 13);
-            this.lblEspecialidad.TabIndex = 1;
-            this.lblEspecialidad.Text = "especialidad";
+            this.cbDoctor.FormattingEnabled = true;
+            this.cbDoctor.Location = new System.Drawing.Point(136, 105);
+            this.cbDoctor.Name = "cbDoctor";
+            this.cbDoctor.Size = new System.Drawing.Size(121, 21);
+            this.cbDoctor.TabIndex = 14;
             // 
-            // lbldoctor
+            // cbSpeciality
             // 
-            this.lbldoctor.AutoSize = true;
-            this.lbldoctor.Location = new System.Drawing.Point(38, 108);
-            this.lbldoctor.Name = "lbldoctor";
-            this.lbldoctor.Size = new System.Drawing.Size(37, 13);
-            this.lbldoctor.TabIndex = 2;
-            this.lbldoctor.Text = "doctor";
+            this.cbSpeciality.FormattingEnabled = true;
+            this.cbSpeciality.Location = new System.Drawing.Point(136, 61);
+            this.cbSpeciality.Name = "cbSpeciality";
+            this.cbSpeciality.Size = new System.Drawing.Size(121, 21);
+            this.cbSpeciality.TabIndex = 13;
             // 
-            // lblDateForDate
+            // btnCreateDeate
             // 
-            this.lblDateForDate.AutoSize = true;
-            this.lblDateForDate.Location = new System.Drawing.Point(38, 165);
-            this.lblDateForDate.Name = "lblDateForDate";
-            this.lblDateForDate.Size = new System.Drawing.Size(65, 13);
-            this.lblDateForDate.TabIndex = 3;
-            this.lblDateForDate.Text = "dia para cita";
+            this.btnCreateDeate.Location = new System.Drawing.Point(503, 257);
+            this.btnCreateDeate.Name = "btnCreateDeate";
+            this.btnCreateDeate.Size = new System.Drawing.Size(75, 23);
+            this.btnCreateDeate.TabIndex = 12;
+            this.btnCreateDeate.Text = "Crear cita";
+            this.btnCreateDeate.UseVisualStyleBackColor = true;
+            this.btnCreateDeate.Click += new System.EventHandler(this.btnCreateDeate_Click);
             // 
-            // lblPeso
+            // txtDescription
             // 
-            this.lblPeso.AutoSize = true;
-            this.lblPeso.Location = new System.Drawing.Point(38, 221);
-            this.lblPeso.Name = "lblPeso";
-            this.lblPeso.Size = new System.Drawing.Size(31, 13);
-            this.lblPeso.TabIndex = 4;
-            this.lblPeso.Text = "Peso";
+            this.txtDescription.Location = new System.Drawing.Point(611, 56);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(100, 20);
+            this.txtDescription.TabIndex = 9;
+            // 
+            // txtWiegth
+            // 
+            this.txtWiegth.Location = new System.Drawing.Point(136, 221);
+            this.txtWiegth.Name = "txtWiegth";
+            this.txtWiegth.Size = new System.Drawing.Size(100, 20);
+            this.txtWiegth.TabIndex = 8;
+            // 
+            // txtHeigth
+            // 
+            this.txtHeigth.Location = new System.Drawing.Point(136, 291);
+            this.txtHeigth.Name = "txtHeigth";
+            this.txtHeigth.Size = new System.Drawing.Size(100, 20);
+            this.txtHeigth.TabIndex = 7;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSize = true;
+            this.Descripcion.Location = new System.Drawing.Point(474, 56);
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.Size = new System.Drawing.Size(63, 13);
+            this.Descripcion.TabIndex = 6;
+            this.Descripcion.Text = "Descripcion";
             // 
             // lblAltura
             // 
@@ -267,84 +313,51 @@
             this.lblAltura.TabIndex = 5;
             this.lblAltura.Text = "Altura";
             // 
-            // Descripcion
+            // lblPeso
             // 
-            this.Descripcion.AutoSize = true;
-            this.Descripcion.Location = new System.Drawing.Point(362, 63);
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.Size = new System.Drawing.Size(63, 13);
-            this.Descripcion.TabIndex = 6;
-            this.Descripcion.Text = "Descripcion";
+            this.lblPeso.AutoSize = true;
+            this.lblPeso.Location = new System.Drawing.Point(38, 221);
+            this.lblPeso.Name = "lblPeso";
+            this.lblPeso.Size = new System.Drawing.Size(31, 13);
+            this.lblPeso.TabIndex = 4;
+            this.lblPeso.Text = "Peso";
             // 
-            // txtHeigth
+            // lblDateForDate
             // 
-            this.txtHeigth.Location = new System.Drawing.Point(136, 291);
-            this.txtHeigth.Name = "txtHeigth";
-            this.txtHeigth.Size = new System.Drawing.Size(100, 20);
-            this.txtHeigth.TabIndex = 7;
+            this.lblDateForDate.AutoSize = true;
+            this.lblDateForDate.Location = new System.Drawing.Point(38, 165);
+            this.lblDateForDate.Name = "lblDateForDate";
+            this.lblDateForDate.Size = new System.Drawing.Size(65, 13);
+            this.lblDateForDate.TabIndex = 3;
+            this.lblDateForDate.Text = "dia para cita";
             // 
-            // txtWiegth
+            // lbldoctor
             // 
-            this.txtWiegth.Location = new System.Drawing.Point(136, 221);
-            this.txtWiegth.Name = "txtWiegth";
-            this.txtWiegth.Size = new System.Drawing.Size(100, 20);
-            this.txtWiegth.TabIndex = 8;
+            this.lbldoctor.AutoSize = true;
+            this.lbldoctor.Location = new System.Drawing.Point(38, 108);
+            this.lbldoctor.Name = "lbldoctor";
+            this.lbldoctor.Size = new System.Drawing.Size(37, 13);
+            this.lbldoctor.TabIndex = 2;
+            this.lbldoctor.Text = "doctor";
             // 
-            // txtDescription
+            // lblEspecialidad
             // 
-            this.txtDescription.Location = new System.Drawing.Point(490, 63);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(100, 20);
-            this.txtDescription.TabIndex = 9;
+            this.lblEspecialidad.AutoSize = true;
+            this.lblEspecialidad.Location = new System.Drawing.Point(38, 63);
+            this.lblEspecialidad.Name = "lblEspecialidad";
+            this.lblEspecialidad.Size = new System.Drawing.Size(66, 13);
+            this.lblEspecialidad.TabIndex = 1;
+            this.lblEspecialidad.Text = "especialidad";
             // 
-            // txtDNI
+            // btnLook4Doctors
             // 
-            this.txtDNI.Location = new System.Drawing.Point(136, 37);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(100, 20);
-            this.txtDNI.TabIndex = 10;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(920, 44);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 11;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // btnCreateDeate
-            // 
-            this.btnCreateDeate.Location = new System.Drawing.Point(503, 257);
-            this.btnCreateDeate.Name = "btnCreateDeate";
-            this.btnCreateDeate.Size = new System.Drawing.Size(75, 23);
-            this.btnCreateDeate.TabIndex = 12;
-            this.btnCreateDeate.Text = "Crear cita";
-            this.btnCreateDeate.UseVisualStyleBackColor = true;
-            // 
-            // cbSpeciality
-            // 
-            this.cbSpeciality.FormattingEnabled = true;
-            this.cbSpeciality.Location = new System.Drawing.Point(136, 61);
-            this.cbSpeciality.Name = "cbSpeciality";
-            this.cbSpeciality.Size = new System.Drawing.Size(121, 21);
-            this.cbSpeciality.TabIndex = 13;
-            // 
-            // cbDoctor
-            // 
-            this.cbDoctor.FormattingEnabled = true;
-            this.cbDoctor.Location = new System.Drawing.Point(136, 105);
-            this.cbDoctor.Name = "cbDoctor";
-            this.cbDoctor.Size = new System.Drawing.Size(121, 21);
-            this.cbDoctor.TabIndex = 14;
-            // 
-            // dtDate4Date
-            // 
-            this.dtDate4Date.Location = new System.Drawing.Point(136, 165);
-            this.dtDate4Date.Name = "dtDate4Date";
-            this.dtDate4Date.Size = new System.Drawing.Size(200, 20);
-            this.dtDate4Date.TabIndex = 15;
+            this.btnLook4Doctors.Location = new System.Drawing.Point(304, 56);
+            this.btnLook4Doctors.Name = "btnLook4Doctors";
+            this.btnLook4Doctors.Size = new System.Drawing.Size(123, 23);
+            this.btnLook4Doctors.TabIndex = 16;
+            this.btnLook4Doctors.Text = "buscar doctores";
+            this.btnLook4Doctors.UseVisualStyleBackColor = true;
+            this.btnLook4Doctors.Click += new System.EventHandler(this.btnLook4Doctors_Click);
             // 
             // frmPatientDate
             // 
@@ -359,8 +372,8 @@
             this.Load += new System.EventHandler(this.frmPatientDate_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clinicDateBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -404,5 +417,6 @@
         private System.Windows.Forms.Label lblDateForDate;
         private System.Windows.Forms.Label lbldoctor;
         private System.Windows.Forms.Label lblEspecialidad;
+        private System.Windows.Forms.Button btnLook4Doctors;
     }
 }

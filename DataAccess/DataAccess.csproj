@@ -52,6 +52,8 @@
     <Compile Include="Allergy\AllergyRepository.cs" />
     <Compile Include="Allergy\IAllergyRepository.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="clinicDatee\ClinicDateRepository.cs" />
+    <Compile Include="clinicDatee\IClinicDateRepository.cs" />
     <Compile Include="ClinicHistory\ClinicHistoryRepository.cs" />
     <Compile Include="ClinicHistory\IClinicHistoryRepository.cs" />
     <Compile Include="DoctorSpeciality\DoctorSpecialityRepository.cs" />

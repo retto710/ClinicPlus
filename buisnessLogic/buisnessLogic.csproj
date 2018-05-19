@@ -50,6 +50,8 @@
     <Compile Include="Admin\IAdminService.cs" />
     <Compile Include="Allergy\AllergyService.cs" />
     <Compile Include="Allergy\IAllergySerivce.cs" />
+    <Compile Include="clinicDatee\ClinicDateService.cs" />
+    <Compile Include="clinicDatee\IClinicDateService.cs" />
     <Compile Include="ClinicHistory\ClinicHistoryService.cs" />
     <Compile Include="ClinicHistory\IClinicHistoryService.cs" />
     <Compile Include="DoctorSpeciality\DoctorSpecialityService.cs" />

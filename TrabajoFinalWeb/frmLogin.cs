@@ -22,6 +22,7 @@ namespace TrabajoFinalWeb
         frmAdmin frmAdministrador;
         frmDoc frmDoctor;
         frmNurse frmNurses;
+        int idUsuario;
         int contador = 0;
         IUserService userService = new UserService();
         IPersonService personService = new PersonService();
@@ -54,7 +55,7 @@ namespace TrabajoFinalWeb
             {
                 if (frmNurses == null || frmNurses.IsDisposed)
                 {
-                    frmNurses = new frmNurse();
+                    frmNurses = new frmNurse(idUsuario);
 
                 }
                 return frmNurses;
@@ -118,6 +119,7 @@ namespace TrabajoFinalWeb
                 MessageBox.Show("Welcome " + name);
                
                 int userid = objUser.id;
+                idUsuario = userid;
                 String type = cmbTypeOfUser.SelectedItem.ToString();
                 if (type.Equals("Admin"))
                 {
@@ -174,5 +176,6 @@ namespace TrabajoFinalWeb
         {
 
         }
+        
     }
 }
