@@ -76,6 +76,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FinalAppWebDataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FinalAppWebDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FinalAppWebDataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmsAdmin\frmAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +279,17 @@
     </None>
     <None Include="FinalAppWebDataSet4.xss">
       <DependentUpon>FinalAppWebDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet5.xsc">
+      <DependentUpon>FinalAppWebDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="FinalAppWebDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FinalAppWebDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FinalAppWebDataSet5.xss">
+      <DependentUpon>FinalAppWebDataSet5.xsd</DependentUpon>
     </None>
     <None Include="Properties\DataSources\Entities.clinicDate.datasource" />
     <None Include="Properties\DataSources\Entities.clinicHistory_Alergie.datasource" />

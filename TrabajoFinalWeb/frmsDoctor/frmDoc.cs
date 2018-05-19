@@ -26,26 +26,13 @@ namespace TrabajoFinalWeb
                     frmPacientes =
                         new FrmPacientes();
                     frmPacientes.MdiParent = this;
+                    frmPacientes.Dock = DockStyle.Fill;
                 }
                 return frmPacientes;
             }
         }
 
-        public FrmMySpecialities MyFrmMySpecialities
-        {
-            get
-            {
-                if (frmMySpecialities == null ||
-                    frmMySpecialities.IsDisposed)
-                {
-                    frmMySpecialities =
-                        new FrmMySpecialities();
-                    frmMySpecialities.MdiParent = this;
-                }
-                return frmMySpecialities;
-            }
-        }
-
+       
         public frmDoc()
         {
             InitializeComponent();
@@ -58,7 +45,7 @@ namespace TrabajoFinalWeb
 
         private void misEspecialidadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.MyFrmMySpecialities.Show();
+           
         }
     }
 }

@@ -13,5 +13,6 @@ namespace DataAccess.Patient
         void CreatePatient(patient objPatient);
         patient GetPatientByPersonId(int personid);
         List<patient> GetPatients();
+        void DeletePatient(int id);
     }
 }

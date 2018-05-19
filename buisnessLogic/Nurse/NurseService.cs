@@ -24,7 +24,7 @@ namespace buisnessLogic.Nurse
         public nurse GetNurseByPersonId(int personid)
         {
             INurseRepository repo = new NurseRepository();
-            return repo.GetNurseByUserId(personid);
+            return repo.GetNurseByPersonId(personid);
         }
 
         public nurse GetNurseByUserId(int userid)
