@@ -30,11 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblInfoBtn = new System.Windows.Forms.Label();
+            this.cbDoctor = new System.Windows.Forms.ComboBox();
+            this.btnDateByDoctor = new System.Windows.Forms.Button();
+            this.btnDatesTrue = new System.Windows.Forms.Button();
             this.btnDatesFalse = new System.Windows.Forms.Button();
             this.lblOpciones = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnDatesTrue = new System.Windows.Forms.Button();
             this.clinicDateBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dateOfRequestDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfAppointmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,10 +46,6 @@
             this.weightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.heightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.alergiesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paciente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnDateByDoctor = new System.Windows.Forms.Button();
-            this.cbDoctor = new System.Windows.Forms.ComboBox();
-            this.lblInfoBtn = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -68,6 +67,45 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Reportes";
+            // 
+            // lblInfoBtn
+            // 
+            this.lblInfoBtn.AutoSize = true;
+            this.lblInfoBtn.Location = new System.Drawing.Point(569, 13);
+            this.lblInfoBtn.Name = "lblInfoBtn";
+            this.lblInfoBtn.Size = new System.Drawing.Size(81, 13);
+            this.lblInfoBtn.TabIndex = 6;
+            this.lblInfoBtn.Text = "Citas por doctor";
+            // 
+            // cbDoctor
+            // 
+            this.cbDoctor.DisplayMember = "id";
+            this.cbDoctor.FormattingEnabled = true;
+            this.cbDoctor.Location = new System.Drawing.Point(569, 35);
+            this.cbDoctor.Name = "cbDoctor";
+            this.cbDoctor.Size = new System.Drawing.Size(121, 21);
+            this.cbDoctor.TabIndex = 5;
+            this.cbDoctor.ValueMember = "id";
+            // 
+            // btnDateByDoctor
+            // 
+            this.btnDateByDoctor.Location = new System.Drawing.Point(705, 33);
+            this.btnDateByDoctor.Name = "btnDateByDoctor";
+            this.btnDateByDoctor.Size = new System.Drawing.Size(123, 23);
+            this.btnDateByDoctor.TabIndex = 4;
+            this.btnDateByDoctor.Text = "citas de doctor";
+            this.btnDateByDoctor.UseVisualStyleBackColor = true;
+            this.btnDateByDoctor.Click += new System.EventHandler(this.btnDateByDoctor_Click);
+            // 
+            // btnDatesTrue
+            // 
+            this.btnDatesTrue.Location = new System.Drawing.Point(358, 33);
+            this.btnDatesTrue.Name = "btnDatesTrue";
+            this.btnDatesTrue.Size = new System.Drawing.Size(123, 23);
+            this.btnDatesTrue.TabIndex = 3;
+            this.btnDatesTrue.Text = "citas apobadas";
+            this.btnDatesTrue.UseVisualStyleBackColor = true;
+            this.btnDatesTrue.Click += new System.EventHandler(this.btnDatesTrue_Click);
             // 
             // btnDatesFalse
             // 
@@ -110,23 +148,12 @@
             this.statusDataGridViewCheckBoxColumn,
             this.weightDataGridViewTextBoxColumn,
             this.heightDataGridViewTextBoxColumn,
-            this.alergiesDataGridViewTextBoxColumn,
-            this.paciente});
+            this.alergiesDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.clinicDateBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(844, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(738, 252);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // btnDatesTrue
-            // 
-            this.btnDatesTrue.Location = new System.Drawing.Point(358, 33);
-            this.btnDatesTrue.Name = "btnDatesTrue";
-            this.btnDatesTrue.Size = new System.Drawing.Size(123, 23);
-            this.btnDatesTrue.TabIndex = 3;
-            this.btnDatesTrue.Text = "citas apobadas";
-            this.btnDatesTrue.UseVisualStyleBackColor = true;
-            this.btnDatesTrue.Click += new System.EventHandler(this.btnDatesTrue_Click);
             // 
             // clinicDateBindingSource
             // 
@@ -174,40 +201,6 @@
             this.alergiesDataGridViewTextBoxColumn.HeaderText = "alergies";
             this.alergiesDataGridViewTextBoxColumn.Name = "alergiesDataGridViewTextBoxColumn";
             // 
-            // paciente
-            // 
-            this.paciente.HeaderText = "paciente";
-            this.paciente.Name = "paciente";
-            // 
-            // btnDateByDoctor
-            // 
-            this.btnDateByDoctor.Location = new System.Drawing.Point(705, 33);
-            this.btnDateByDoctor.Name = "btnDateByDoctor";
-            this.btnDateByDoctor.Size = new System.Drawing.Size(123, 23);
-            this.btnDateByDoctor.TabIndex = 4;
-            this.btnDateByDoctor.Text = "citas de doctor";
-            this.btnDateByDoctor.UseVisualStyleBackColor = true;
-            this.btnDateByDoctor.Click += new System.EventHandler(this.btnDateByDoctor_Click);
-            // 
-            // cbDoctor
-            // 
-            this.cbDoctor.DisplayMember = "id";
-            this.cbDoctor.FormattingEnabled = true;
-            this.cbDoctor.Location = new System.Drawing.Point(569, 35);
-            this.cbDoctor.Name = "cbDoctor";
-            this.cbDoctor.Size = new System.Drawing.Size(121, 21);
-            this.cbDoctor.TabIndex = 5;
-            this.cbDoctor.ValueMember = "id";
-            // 
-            // lblInfoBtn
-            // 
-            this.lblInfoBtn.AutoSize = true;
-            this.lblInfoBtn.Location = new System.Drawing.Point(569, 13);
-            this.lblInfoBtn.Name = "lblInfoBtn";
-            this.lblInfoBtn.Size = new System.Drawing.Size(81, 13);
-            this.lblInfoBtn.TabIndex = 6;
-            this.lblInfoBtn.Text = "Citas por doctor";
-            // 
             // frmReporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -235,6 +228,10 @@
         private System.Windows.Forms.Button btnDatesFalse;
         private System.Windows.Forms.Label lblOpciones;
         private System.Windows.Forms.Button btnDatesTrue;
+        private System.Windows.Forms.BindingSource clinicDateBindingSource;
+        private System.Windows.Forms.Label lblInfoBtn;
+        private System.Windows.Forms.ComboBox cbDoctor;
+        private System.Windows.Forms.Button btnDateByDoctor;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfRequestDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfAppointmentDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
@@ -242,10 +239,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn weightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn heightDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn alergiesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paciente;
-        private System.Windows.Forms.BindingSource clinicDateBindingSource;
-        private System.Windows.Forms.Label lblInfoBtn;
-        private System.Windows.Forms.ComboBox cbDoctor;
-        private System.Windows.Forms.Button btnDateByDoctor;
     }
 }
