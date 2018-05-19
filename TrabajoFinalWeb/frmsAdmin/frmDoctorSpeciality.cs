@@ -2,6 +2,8 @@
 using buisnessLogic.Doctor;
 using buisnessLogic.User;
 using buisnessLogic.Speciality;
+
+using buisnessLogic.DoctorSpeciality;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +22,7 @@ namespace TrabajoFinalWeb
         IDoctorService doctorService = new DoctorService();
         IUserService userService = new UserService();
         ISpecialityService specialityService = new SpecialityService();
+        IDoctorSpecialityService doctorSpecialityService = new DoctorSpecialityService();
         int doctorid;
         public frmDoctorSpeciality()
         {
@@ -55,8 +58,12 @@ namespace TrabajoFinalWeb
                     txtLastName.Text = objPerson.lastName;
                     btnAdd.Enabled = true;
                     String datafilter = "doctorid = " + doctorid.ToString();
-                    DataTable dataTable = this.finalAppWebDataSet4.doctor_speciality;
-                    dataTable.DefaultView.RowFilter=datafilter;
+
+
+
+                    //DataTable dataTable = this.finalAppWebDataSet4.doctor_speciality;
+                    //dataTable.DefaultView.RowFilter=datafilter;
+                    List<doctor_speciality> dataTable = doctorSpecialityService.GetDoctor_Specialities(doctorid);
                     dataGridView1.DataSource = dataTable;
 
                 }

@@ -26,7 +26,7 @@ namespace DataAccess.DoctorSpeciality
             {
                 //LINQ
                 //return dataContext.Customers.ToList();
-                var custs = from c in dataContext.doctor_speciality
+                var custs = from c in dataContext.doctor_speciality.Include("doctor").Include("speciality")
                             where c.doctorId==doctorid
                             select c;
                 List<doctor_speciality> objDoctor_Speciality = custs.ToList();

@@ -42,15 +42,13 @@
             this.cmbSpeciality = new System.Windows.Forms.ComboBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specialityIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.doctorspecialityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.finalAppWebDataSet4 = new TrabajoFinalWeb.FinalAppWebDataSet4();
             this.finalAppWebDataSet1 = new TrabajoFinalWeb.FinalAppWebDataSet1();
             this.specialityBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.specialityTableAdapter = new TrabajoFinalWeb.FinalAppWebDataSet1TableAdapters.specialityTableAdapter();
             this.doctor_specialityTableAdapter = new TrabajoFinalWeb.FinalAppWebDataSet4TableAdapters.doctor_specialityTableAdapter();
+            this.specialityIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericDNI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -78,7 +76,7 @@
             this.tableLayoutPanel1.Controls.Add(this.btnAdd, 0, 7);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
@@ -115,7 +113,7 @@
             // numericDNI
             // 
             this.numericDNI.Location = new System.Drawing.Point(268, 27);
-            this.numericDNI.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericDNI.Margin = new System.Windows.Forms.Padding(2);
             this.numericDNI.Maximum = new decimal(new int[] {
             99999999,
             0,
@@ -128,7 +126,7 @@
             // btnSearch
             // 
             this.btnSearch.Location = new System.Drawing.Point(2, 52);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(50, 19);
             this.btnSearch.TabIndex = 3;
@@ -160,7 +158,7 @@
             // 
             this.txtName.Enabled = false;
             this.txtName.Location = new System.Drawing.Point(268, 77);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(248, 20);
             this.txtName.TabIndex = 6;
@@ -169,7 +167,7 @@
             // 
             this.txtLastName.Enabled = false;
             this.txtLastName.Location = new System.Drawing.Point(268, 102);
-            this.txtLastName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLastName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(248, 20);
             this.txtLastName.TabIndex = 7;
@@ -190,7 +188,7 @@
             this.cmbSpeciality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSpeciality.FormattingEnabled = true;
             this.cmbSpeciality.Location = new System.Drawing.Point(268, 152);
-            this.cmbSpeciality.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbSpeciality.Margin = new System.Windows.Forms.Padding(2);
             this.cmbSpeciality.Name = "cmbSpeciality";
             this.cmbSpeciality.Size = new System.Drawing.Size(248, 21);
             this.cmbSpeciality.TabIndex = 9;
@@ -200,7 +198,7 @@
             // 
             this.btnAdd.Enabled = false;
             this.btnAdd.Location = new System.Drawing.Point(2, 177);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(50, 23);
             this.btnAdd.TabIndex = 10;
@@ -213,36 +211,15 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.doctorIdDataGridViewTextBoxColumn,
             this.specialityIdDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.doctorspecialityBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 205);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(533, 162);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // doctorIdDataGridViewTextBoxColumn
-            // 
-            this.doctorIdDataGridViewTextBoxColumn.DataPropertyName = "doctorId";
-            this.doctorIdDataGridViewTextBoxColumn.HeaderText = "doctorId";
-            this.doctorIdDataGridViewTextBoxColumn.Name = "doctorIdDataGridViewTextBoxColumn";
-            // 
-            // specialityIdDataGridViewTextBoxColumn
-            // 
-            this.specialityIdDataGridViewTextBoxColumn.DataPropertyName = "specialityId";
-            this.specialityIdDataGridViewTextBoxColumn.HeaderText = "specialityId";
-            this.specialityIdDataGridViewTextBoxColumn.Name = "specialityIdDataGridViewTextBoxColumn";
             // 
             // doctorspecialityBindingSource
             // 
@@ -272,6 +249,12 @@
             // 
             this.doctor_specialityTableAdapter.ClearBeforeFill = true;
             // 
+            // specialityIdDataGridViewTextBoxColumn
+            // 
+            this.specialityIdDataGridViewTextBoxColumn.DataPropertyName = "specialityName";
+            this.specialityIdDataGridViewTextBoxColumn.HeaderText = "specialityId";
+            this.specialityIdDataGridViewTextBoxColumn.Name = "specialityIdDataGridViewTextBoxColumn";
+            // 
             // frmDoctorSpeciality
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -280,7 +263,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmDoctorSpeciality";
             this.Text = "frmDoctorSpeciality";
             this.Load += new System.EventHandler(this.frmDoctorSpeciality_Load);
@@ -317,8 +300,6 @@
         private FinalAppWebDataSet4 finalAppWebDataSet4;
         private System.Windows.Forms.BindingSource doctorspecialityBindingSource;
         private FinalAppWebDataSet4TableAdapters.doctor_specialityTableAdapter doctor_specialityTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doctorIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn specialityIdDataGridViewTextBoxColumn;
     }
 }
