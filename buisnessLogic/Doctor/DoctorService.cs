@@ -15,6 +15,12 @@ namespace buisnessLogic.Doctor
             repo.CreateDoctor(objDoctor);
         }
 
+        public void DeleteDoctor(int id)
+        {
+            IDoctorRepository repo = new DoctorRepository();
+            repo.DeleteDoctor(id);
+        }
+
         public doctor GetDoctorByPersonId(int personid)
         {
             IDoctorRepository repo = new DoctorRepository();

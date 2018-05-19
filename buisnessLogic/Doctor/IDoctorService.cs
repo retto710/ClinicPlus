@@ -13,5 +13,6 @@ namespace buisnessLogic.Doctor
         doctor GetDoctorByUserId(int userid);
         doctor GetDoctorByPersonId(int personid);
         List<doctor> GetDoctors();
+        void DeleteDoctor(int id);
     }
 }

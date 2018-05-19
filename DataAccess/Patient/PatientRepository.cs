@@ -20,6 +20,20 @@ namespace DataAccess.Patient
             }
         }
 
+        public void DeletePatient(int id)
+        {
+            using (var dataContext =
+                new FinalAppWebEntities())
+            {
+                var cust = from c in dataContext.patients
+                           where c.id == id
+                           select c;
+                patient objPatient = cust.FirstOrDefault();
+                dataContext.patients.Remove(objPatient);
+                dataContext.SaveChanges();
+            }
+        }
+
         public patient GetPatientByPersonId(int personid)
         {
             using (var dataContext = new FinalAppWebEntities())

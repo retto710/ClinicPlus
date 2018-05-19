@@ -49,7 +49,18 @@ namespace TrabajoFinalWeb
                         objNurse=nurseService.GetNurseByPersonId(personId);
                         nurseService.DeleteNurse(objNurse.id);
                     }
-                   
+                    else if (type == "Doctor")
+                    {
+                        doctor objDoctor = new doctor();
+                        objDoctor = doctorService.GetDoctorByPersonId(personId);
+                        doctorService.DeleteDoctor(objDoctor.id);
+                    }
+                    else if (type == "Patient")
+                    {
+                        patient objPatient = new patient();
+                        objPatient = patientService.GetPatientByPersonId(personId);
+                        patientService.DeletePatient(objPatient.id);
+                    }
 
                     dataGridView1.DataBindings.Clear();
                     loadPersons();
@@ -93,6 +104,7 @@ namespace TrabajoFinalWeb
 
         private void btnDoctors_Click(object sender, EventArgs e)
         {
+            type = "Doctor";
             List<doctor> doctors = doctorService.GetDoctors();
             List<person> filterlist = new List<person>();
             int contador = 0;
@@ -112,6 +124,7 @@ namespace TrabajoFinalWeb
 
         private void btnPatient_Click(object sender, EventArgs e)
         {
+            type = "Patient";
             List<patient> patients = patientService.GetPatients();
             List<person> filterlist = new List<person>();
             int contador = 0;
