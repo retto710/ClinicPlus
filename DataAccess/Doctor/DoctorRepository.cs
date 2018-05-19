@@ -68,7 +68,7 @@ namespace DataAccess.Doctor
             {
                 //LINQ
                 //return dataContext.Customers.ToList();
-                var custs = from c in dataContext.doctors
+                var custs = from c in dataContext.doctors.Include("person")
                             select c;
                 List<doctor> objDoctor = custs.ToList();
                 return objDoctor;

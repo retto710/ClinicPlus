@@ -79,7 +79,7 @@
             // 
             // cbDoctor
             // 
-            this.cbDoctor.DisplayMember = "id";
+            this.cbDoctor.DisplayMember = "doctorName";
             this.cbDoctor.FormattingEnabled = true;
             this.cbDoctor.Location = new System.Drawing.Point(569, 35);
             this.cbDoctor.Name = "cbDoctor";
@@ -152,7 +152,7 @@
             this.dataGridView1.DataSource = this.clinicDateBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(7, 20);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(738, 252);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 252);
             this.dataGridView1.TabIndex = 1;
             // 
             // dateOfRequestDataGridViewTextBoxColumn
